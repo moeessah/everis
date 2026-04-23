@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Maureen Essah | Everis Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --p-deep: #280A50;
+  --p-dark: #2C1860;
+  --p-mid: #3D1F82;
+  --p-core: #5E1FAE;
+  --p-bright: #8040D8;
+  --p-light: #BCA8E8;
+  --g: #E09010;
+  --g-bright: #F0A820;
+  --ink-muted: #9080B8;
+  --white: #FFFFFF;
+  --teal: #12B5A5;
+  --teal-dim: rgba(18, 181, 165, 0.15);
+  --teal-border: rgba(18, 181, 165, 0.22);
+  --accent-cyan: #1CC9D6;
+  --accent-cyan-soft: rgba(28, 201, 214, 0.09);
+  --accent-cyan-border: rgba(28, 201, 214, 0.36);
+  --accent-blue: #6BA3D6;
+  --accent-blue-soft: rgba(107, 163, 214, 0.12);
+  --accent-blue-border: rgba(107, 163, 214, 0.35);
+  --logo-ink: #fcfbec;
+  --logo-accent: #18C8CA;
+  --display: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --logo-serif: 'Fraunces', Georgia, serif;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: #07091a;
+  color: var(--white);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+#bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--g-bright);
+  z-index: 999;
+  transition: width 0.08s linear;
+}
+
+.w {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 2.5rem;
+}
+
+@media (max-width: 640px) {
+  .w { padding: 0 1.5rem; }
+  .wrap { padding: 0 1.25rem; }
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: #060817;
+  border-bottom: 1px solid rgba(94, 31, 174, 0.3);
+}
+
+.nav-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 58px;
+  gap: 1rem;
+}
+
+.nav-logo {
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding-right: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.nav-logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--logo-accent);
+  box-shadow: 0 0 16px rgba(24, 200, 202, 0.8);
+}
+
+.nav-logo-label {
+  display: inline-flex;
+  align-items: center;
+  font: 700 9.5px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.brand-logo {
+  display: inline-block;
+  font-family: var(--logo-serif);
+  font-size: inherit;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: var(--logo-ink);
+}
+
+.logo-italic,
+.logo-period {
+  font-family: inherit;
+  font-size: inherit;
+  color: var(--logo-accent);
+}
+
+.logo-italic { font-style: italic; }
+.logo-period { font-style: normal; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  flex: 0 0 auto;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .nav-links { display: none; }
+}
+
+.nav-link {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  text-decoration: none;
+  padding: 0.4rem 0.85rem;
+  border-radius: 3px;
+  transition: color 0.15s, background 0.15s;
+}
+
+.nav-link:hover {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.hero {
+  padding: 4.75rem 0 4.5rem;
+  text-align: center;
+}
+
+.hero-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-cyan);
+  border: 1px solid var(--accent-cyan-border);
+  background: var(--accent-cyan-soft);
+  padding: 0.38rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 2.2rem;
+  opacity: 0;
+  animation: up 0.7s var(--ease) 0.05s forwards;
+}
+
+.hero-pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  flex-shrink: 0;
+}
+
+.hero-name {
+  font-family: var(--display);
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 300;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: up 0.7s var(--ease) 0.12s forwards;
+}
+
+.hero-role {
+  font-family: var(--display);
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--p-light);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: up 0.7s var(--ease) 0.19s forwards;
+}
+
+.hero-rule {
+  width: 40px;
+  height: 1px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(90deg, transparent, var(--g-bright), transparent);
+  opacity: 0;
+  animation: up 0.5s var(--ease) 0.24s forwards;
+}
+
+.hero-body {
+  max-width: 540px;
+  margin: 0 auto 1rem;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  animation: up 0.7s var(--ease) 0.3s forwards;
+}
+
+.hero-meta {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.28);
+  letter-spacing: 0.03em;
+  opacity: 0;
+  animation: up 0.7s var(--ease) 0.36s forwards;
+}
+
+.hero-meta strong {
+  color: var(--g-bright);
+  font-weight: 600;
+}
+
+.portfolio { padding-bottom: 6rem; }
+
+.chapter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  animation: up 0.6s var(--ease) 0.4s forwards;
+}
+
+.chapter-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(188, 168, 232, 0.15), transparent);
+}
+
+.chapter-text {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.32);
+  white-space: nowrap;
+}
+
+.gap { margin-bottom: 3.5rem; }
+.gap-sm { margin-bottom: 1rem; }
+
+.card {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(188, 168, 232, 0.1);
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.28s var(--ease), background 0.28s var(--ease), border-color 0.28s var(--ease);
+}
+
+.flat-card { height: 100%; }
+
+.card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.card--static,
+.card--static:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.035);
+  border-color: rgba(188, 168, 232, 0.1);
+  cursor: default;
+}
+
+.card-top-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.28s;
+}
+
+.card:hover .card-top-bar { opacity: 1; }
+
+.card--static .card-top-bar,
+.card--static:hover .card-top-bar { opacity: 0; }
+
+.card-body { padding: 1.8rem 2rem 1.7rem; }
+.card-body-sm { padding: 1.5rem 1.75rem 1.5rem; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.57rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.22rem 0.65rem;
+  border-radius: 2px;
+  margin-bottom: 0.9rem;
+}
+
+.badge-playbook,
+.badge-acquisition,
+.badge-content {
+  color: var(--accent-cyan);
+  background: var(--accent-cyan-soft);
+  border: 1px solid var(--accent-cyan-border);
+}
+
+.badge-amber {
+  color: var(--g-bright);
+  background: rgba(240, 168, 32, 0.1);
+  border: 1px solid rgba(240, 168, 32, 0.28);
+}
+
+.badge-dark {
+  color: var(--p-light);
+  background: rgba(128, 64, 216, 0.1);
+  border: 1px solid rgba(128, 64, 216, 0.28);
+}
+
+.badge-blue {
+  color: var(--accent-blue);
+  background: var(--accent-blue-soft);
+  border: 1px solid var(--accent-blue-border);
+}
+
+.card-num {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  font-family: var(--display);
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.11);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.card-title {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 0.3rem;
+}
+
+.card-title-sm {
+  font-family: var(--display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.card-subtitle {
+  font-size: 0.77rem;
+  color: rgba(255, 255, 255, 0.32);
+  line-height: 1.45;
+  margin-bottom: 0.85rem;
+  font-style: italic;
+}
+
+.card-desc {
+  font-size: 0.83rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 1.4rem;
+}
+
+.card-desc-sm {
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 0;
+}
+
+.card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
+  transition: color 0.22s, gap 0.22s;
+}
+
+.card:hover .card-cta { gap: 0.7rem; }
+.card--playbook:hover .card-cta,
+.card--amber:hover .card-cta { color: var(--g-bright); }
+.card--acquisition:hover .card-cta,
+.card--content:hover .card-cta { color: var(--accent-cyan); }
+.card--dark:hover .card-cta { color: var(--p-light); }
+.card--blue:hover .card-cta { color: var(--accent-blue); }
+
+.bar-playbook,
+.bar-amber { background: linear-gradient(90deg, var(--g), var(--g-bright)); }
+.bar-acquisition,
+.bar-content { background: linear-gradient(90deg, var(--teal), #40D8C8); }
+.bar-dark { background: linear-gradient(90deg, var(--p-core), var(--p-bright)); }
+.bar-blue { background: linear-gradient(90deg, #4A90D9, #6BA3D6); }
+
+.card--playbook:hover,
+.card--acquisition:hover,
+.card--content:hover,
+.card--amber:hover,
+.card--dark:hover,
+.card--blue:hover { border-color: var(--accent-cyan-border); }
+
+.card-full { width: 100%; }
+
+.landing-block {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0 2.5rem;
+  align-items: start;
+}
+
+.landing-block + .landing-block { margin-top: 2.5rem; }
+
+@media (max-width: 700px) {
+  .landing-block { grid-template-columns: 1fr; }
+  .landing-label {
+    display: block;
+    position: static;
+    margin-bottom: 1.2rem;
+    padding-top: 0;
+  }
+}
+
+.landing-label {
+  padding-top: 0.25rem;
+  position: sticky;
+  top: 80px;
+}
+
+.landing-label-eyebrow {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  margin-bottom: 0.6rem;
+}
+
+.landing-label-title {
+  font-family: var(--display);
+  font-size: 1.5rem;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.2;
+  margin-bottom: 0.8rem;
+}
+
+.landing-label-note {
+  font-size: 0.73rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.landing-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.landing-cards > * { min-width: 0; }
+
+@media (max-width: 500px) {
+  .landing-cards { grid-template-columns: 1fr; }
+}
+
+footer {
+  background: #060817;
+  border-top: 1px solid rgba(94, 31, 174, 0.25);
+  padding: 2rem 0;
+}
+
+.foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.foot-brand {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.45);
+  letter-spacing: -0.01em;
+}
+
+.foot-brand.brand-logo {
+  font-family: var(--logo-serif);
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--logo-ink);
+}
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-1 { opacity: 0; animation: up 0.6s var(--ease) 0.42s forwards; }
+.fade-2 { opacity: 0; animation: up 0.6s var(--ease) 0.5s forwards; }
+.fade-3 { opacity: 0; animation: up 0.6s var(--ease) 0.58s forwards; }
+.fade-4 { opacity: 0; animation: up 0.6s var(--ease) 0.66s forwards; }
+.fade-5 { opacity: 0; animation: up 0.6s var(--ease) 0.74s forwards; }
+.fade-6 { opacity: 0; animation: up 0.6s var(--ease) 0.82s forwards; }
+.fade-7 { opacity: 0; animation: up 0.6s var(--ease) 0.9s forwards; }
+.fade-8 { opacity: 0; animation: up 0.6s var(--ease) 0.98s forwards; }
+</style>
+</head>
+<body>
+<div id="bar"></div>
+
+<nav>
+  <div class="w">
+    <div class="nav-inner">
+      <a class="nav-logo" href="#"><span class="nav-logo-dot" aria-hidden="true"></span><span class="nav-logo-label">EVERIS</span></a>
+      <div class="nav-links">
+        <a class="nav-link" href="#playbooks">Playbooks</a>
+        <a class="nav-link" href="#site-designs">Site Designs</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-pill"><span class="hero-pill-dot"></span>Application Work Sample</div>
+      <h1 class="hero-name">Maureen Essah</h1>
+      <p class="hero-role">Marketing Growth, Content &amp; Acquisition</p>
+      <div class="hero-rule"></div>
+      <p class="hero-body">I created a marketing playbook for Everis and used it as the basis for strategy, content and landing pages for two potential portfolio companies. I also drafted three website designs for Everis.</p>
+      
+    </section>
+
+    <div class="portfolio">
+      <div class="chapter fade-1" id="playbooks">
+        <span class="chapter-text">01 &nbsp; Acquisition Playbooks</span>
+        <span class="chapter-line"></span>
+      </div>
+
+      <div class="gap-sm fade-2">
+        <a class="card card--playbook card-full" href="https://moeessah.github.io/everisplaybook/" target="_blank" rel="noreferrer">
+          <div class="card-top-bar bar-playbook"></div>
+          <div class="card-body">
+            <span class="card-num">01</span>
+            <span class="badge badge-playbook">Everis Framework</span>
+            <h2 class="card-title">The Acquisition Marketing Playbook</h2>
+            <p class="card-subtitle">The first 90 days</p>
+            <p class="card-desc">This is the system to use. It starts with the audit, gets the positioning right, and builds channels that can compound across a portfolio without everything becoming scattered. Who doesn't love a good system.</p>
+            <span class="card-cta">View Playbook &rarr;</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="landing-block fade-4" id="acquisition">
+        <div class="landing-label">
+          <p class="landing-label-eyebrow">Target Company</p>
+          <p class="landing-label-title">Simple Analytics</p>
+          <p class="landing-label-note">A product I already use. That made it an easy one to picture properly, with a strategy, an article, and two market-specific landing pages.</p>
+          <p class="landing-label-note">Everis website drafts... just because.</p>
+        </div>
+
+        <div class="landing-cards">
+          <div class="card card--acquisition card--static flat-card">
+            <div class="card-top-bar bar-acquisition"></div>
+            <div class="card-body-sm">
+              <span class="card-num">02</span>
+              <span class="badge badge-acquisition">Marketing Playbook</span>
+              <h3 class="card-title-sm">Simple Analytics Strategy</h3>
+              <p class="card-desc-sm">This one is really about the compliance shift around analytics in Europe and how to turn that into a clear growth angle. The job is to meet demand with the right positioning.</p>
+            </div>
+          </div>
+
+          <div class="card card--content card--static flat-card">
+            <div class="card-top-bar bar-content"></div>
+            <div class="card-body-sm">
+              <span class="card-num">03</span>
+              <span class="badge badge-content">Article</span>
+              <h3 class="card-title-sm">Safe Harbour Died. Privacy Shield Died. What Happens to Your Analytics If the Data Privacy Framework Goes the Same Way?</h3>
+            </div>
+          </div>
+
+          <div class="card card--content card--static flat-card">
+            <div class="card-top-bar bar-content"></div>
+            <div class="card-body-sm">
+              <span class="card-num">04</span>
+              <span class="badge badge-content">Landing Page</span>
+              <h3 class="card-title-sm">France Market</h3>
+              <p class="card-desc-sm">Built around the CNIL ruling and the wider European decisions that followed. The point was to make the compliance case feel clear, urgent, and easy to act on.</p>
+            </div>
+          </div>
+
+          <div class="card card--content card--static flat-card">
+            <div class="card-top-bar bar-content"></div>
+            <div class="card-body-sm">
+              <span class="card-num">05</span>
+              <span class="badge badge-content">Landing Page</span>
+              <h3 class="card-title-sm">Germany Market Entry</h3>
+              <p class="card-desc-sm">This one is more compliance-first and more technical. It is built around DSGVO risk, consent drop-off, and the business case for removing the banner entirely.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="landing-block fade-6">
+        <div class="landing-label">
+          <p class="landing-label-eyebrow">Target Company</p>
+          <p class="landing-label-title">Nolt</p>
+          <p class="landing-label-note">I found Nolt after the founder of Pally, the original company I wanted to work on, was complaining about Nolt's competitor's pricing.</p>
+        </div>
+
+        <div class="landing-cards">
+          <div class="card card--acquisition card--static flat-card">
+            <div class="card-top-bar bar-acquisition"></div>
+            <div class="card-body-sm">
+              <span class="card-num">06</span>
+              <span class="badge badge-acquisition">Marketing Playbook</span>
+              <h3 class="card-title-sm">Nolt Growth Strategy</h3>
+              <p class="card-desc-sm">Nolt already has a lot of goodwill to work with. It is also simple enough that the value clicks quickly. I would focus on turning that into steady visibility and better word of mouth, instead of reaching for paid acquisition too early.</p>
+            </div>
+          </div>
+
+          <div class="card card--content card--static flat-card">
+            <div class="card-top-bar bar-content"></div>
+            <div class="card-body-sm">
+              <span class="card-num">07</span>
+              <span class="badge badge-content">Article</span>
+              <h3 class="card-title-sm">Why Most Feedback Boards Die in the First 30 Days</h3>
+              <p class="card-desc-sm">This content is shaped by a strategy that prioritises durability and relevance. It reinforces a clear product perspective while engaging with a problem the audience already understands, allowing it to perform consistently as an evergreen resource.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gap"></div>
+      <div class="chapter fade-7" id="site-designs">
+        <span class="chapter-text">02 &nbsp; Site Designs</span>
+        <span class="chapter-line"></span>
+      </div>
+
+      <div class="landing-block fade-8">
+        <div class="landing-label">
+          <p class="landing-label-eyebrow">Brand Evolution</p>
+          <p class="landing-label-title">Three Design Concepts</p>
+        </div>
+
+        <div class="landing-cards">
+          <a class="card card--amber flat-card" href="https://moeessah.github.io/everiswebsiteamber/" target="_blank" rel="noreferrer">
+            <div class="card-top-bar bar-amber"></div>
+            <div class="card-body-sm">
+              <span class="card-num">08</span>
+              <span class="badge badge-amber">Amber Concept</span>
+              <h3 class="card-title-sm">Warm &amp; Professional</h3>
+              <p class="card-desc-sm">Beiges, greens, and a warmer feel. She's warm, she's home, she's safe, she's not like the other acquisition firms.</p>
+              <span class="card-cta">View Design &rarr;</span>
+            </div>
+          </a>
+
+          <a class="card card--dark flat-card" href="https://moeessah.github.io/everiswebsitesdark/" target="_blank" rel="noreferrer">
+            <div class="card-top-bar bar-dark"></div>
+            <div class="card-body-sm">
+              <span class="card-num">09</span>
+              <span class="badge badge-dark">Dark Concept</span>
+              <h3 class="card-title-sm">Sophisticated &amp; Bold</h3>
+              <p class="card-desc-sm">Black, mustard, and more contrast. She's dark, she's trying to be different.</p>
+              <span class="card-cta">View Design &rarr;</span>
+            </div>
+          </a>
+
+          <a class="card card--blue flat-card" href="https://moeessah.github.io/everiswebsitesblue/" target="_blank" rel="noreferrer">
+            <div class="card-top-bar bar-blue"></div>
+            <div class="card-body-sm">
+              <span class="card-num">10</span>
+              <span class="badge badge-blue">Blue Concept</span>
+              <h3 class="card-title-sm">Enterprise &amp; Approachable</h3>
+              <p class="card-desc-sm">My favourite. Cleaner structure, calmer blue palette, random stick figures. She's odd. It can do without the stick figures I guess =(</p>
+              <span class="card-cta">View Design &rarr;</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="foot">
+      
+      <span class="foot-brand" style="margin-left:auto;color:rgba(255,255,255,0.3);font-weight:400">Marketing Growth, Content &amp; Acquisition</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll', function () {
+  const bar = document.getElementById('bar');
+  const scrollable = document.body.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+  if (bar) {
+    bar.style.width = Math.min(progress, 100) + '%';
+  }
+});
+</script>
+</body>
+</html>
