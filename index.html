@@ -88,17 +88,43 @@ nav {
 }
 
 .nav-inner {
+  position: relative;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   height: 58px;
   gap: 1rem;
 }
 
 .nav-logo {
-  font-size: 1.25rem;
-  text-decoration: none;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 58px;
+  padding-right: 16px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.nav-logo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--logo-accent);
+  box-shadow: 0 0 16px rgba(24, 200, 202, 0.8);
+}
+
+.nav-logo-label {
+  display: inline-flex;
+  align-items: center;
+  font: 700 9.5px/1 var(--sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .brand-logo {
@@ -126,7 +152,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 0.15rem;
-  flex: 1;
+  flex: 0 0 auto;
   justify-content: center;
 }
 
@@ -136,9 +162,9 @@ nav {
 
 .nav-link {
   font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.07em;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.45);
   text-decoration: none;
@@ -364,7 +390,7 @@ nav {
 .card-title {
   font-family: var(--display);
   font-size: 1.5rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
   color: var(--white);
@@ -374,7 +400,7 @@ nav {
 .card-title-sm {
   font-family: var(--display);
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 700;
   line-height: 1.2;
   color: var(--white);
   margin-bottom: 0.25rem;
@@ -552,7 +578,7 @@ footer {
 <nav>
   <div class="w">
     <div class="nav-inner">
-      <a class="nav-logo brand-logo" href="#">Ever<span class="logo-italic">is</span><span class="logo-period">.</span></a>
+      <a class="nav-logo" href="#"><span class="nav-logo-dot" aria-hidden="true"></span><span class="nav-logo-label">EVERIS</span></a>
       <div class="nav-links">
         <a class="nav-link" href="#playbooks">Playbooks</a>
         <a class="nav-link" href="#site-designs">Site Designs</a>
@@ -726,8 +752,8 @@ footer {
 <footer>
   <div class="w">
     <div class="foot">
-      <span class="foot-brand brand-logo">Ever<span class="logo-italic">is</span><span class="logo-period">.</span></span>
-      <span class="foot-brand" style="color:rgba(255,255,255,0.3);font-weight:400">Marketing Growth, Content &amp; Acquisition</span>
+      
+      <span class="foot-brand" style="margin-left:auto;color:rgba(255,255,255,0.3);font-weight:400">Marketing Growth, Content &amp; Acquisition</span>
     </div>
   </div>
 </footer>
