@@ -323,6 +323,28 @@ nav {
   cursor: default;
 }
 
+.card--acquisition-sa.card--static,
+.card--content-sa.card--static,
+.card--acquisition-nolt.card--static,
+.card--content-nolt.card--static {
+  cursor: pointer;
+}
+
+.card--acquisition-sa:hover,
+.card--content-sa:hover,
+.card--acquisition-nolt:hover,
+.card--content-nolt:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.card--acquisition-sa:hover .card-top-bar,
+.card--content-sa:hover .card-top-bar,
+.card--acquisition-nolt:hover .card-top-bar,
+.card--content-nolt:hover .card-top-bar {
+  opacity: 1;
+}
+
 .card-top-bar {
   position: absolute;
   top: 0;
