@@ -30,6 +30,9 @@
   --accent-blue: #6BA3D6;
   --accent-blue-soft: rgba(107, 163, 214, 0.12);
   --accent-blue-border: rgba(107, 163, 214, 0.35);
+  --coral: #ff8060;
+  --coral-soft: rgba(255, 128, 96, 0.1);
+  --coral-border: rgba(255, 128, 96, 0.28);
   --logo-ink: #fcfbec;
   --logo-accent: #18C8CA;
   --display: 'Cormorant Garamond', Georgia, serif;
@@ -57,7 +60,7 @@ body {
   left: 0;
   height: 2px;
   width: 0;
-  background: var(--g-bright);
+  background: var(--coral);
   z-index: 999;
   transition: width 0.08s linear;
 }
@@ -369,6 +372,12 @@ nav {
   border: 1px solid rgba(128, 64, 216, 0.28);
 }
 
+.badge-coral {
+  color: var(--coral);
+  background: var(--coral-soft);
+  border: 1px solid var(--coral-border);
+}
+
 .badge-blue {
   color: var(--accent-blue);
   background: var(--accent-blue-soft);
@@ -445,6 +454,7 @@ nav {
 .card--amber:hover .card-cta { color: var(--g-bright); }
 .card--acquisition:hover .card-cta,
 .card--content:hover .card-cta { color: var(--accent-cyan); }
+.card--coral:hover .card-cta { color: var(--coral); }
 .card--dark:hover .card-cta { color: var(--p-light); }
 .card--blue:hover .card-cta { color: var(--accent-blue); }
 
@@ -452,6 +462,7 @@ nav {
 .bar-amber { background: linear-gradient(90deg, var(--g), var(--g-bright)); }
 .bar-acquisition,
 .bar-content { background: linear-gradient(90deg, var(--teal), #40D8C8); }
+.bar-coral { background: linear-gradient(90deg, var(--coral), #ff9070); }
 .bar-dark { background: linear-gradient(90deg, var(--p-core), var(--p-bright)); }
 .bar-blue { background: linear-gradient(90deg, #4A90D9, #6BA3D6); }
 
@@ -459,6 +470,7 @@ nav {
 .card--acquisition:hover,
 .card--content:hover,
 .card--amber:hover,
+.card--coral:hover,
 .card--dark:hover,
 .card--blue:hover { border-color: var(--accent-cyan-border); }
 
@@ -594,7 +606,7 @@ footer {
       <h1 class="hero-name">Maureen Essah</h1>
       <p class="hero-role">Marketing Growth, Content &amp; Acquisition</p>
       <div class="hero-rule"></div>
-      <p class="hero-body">I created a marketing playbook for Everis and used it as the basis for strategy, content and landing pages for two potential portfolio companies. I also drafted three website designs for Everis.</p>
+      <p class="hero-body">I created a marketing playbook for Everis and used it as the basis for strategy, content and landing pages for two potential portfolio companies. I also drafted four website designs for Everis.</p>
       
     </section>
 
@@ -707,7 +719,7 @@ footer {
       <div class="landing-block fade-8">
         <div class="landing-label">
           <p class="landing-label-eyebrow">Brand Evolution</p>
-          <p class="landing-label-title">Three Design Concepts</p>
+          <p class="landing-label-title">Four Design Concepts</p>
         </div>
 
         <div class="landing-cards">
@@ -740,6 +752,17 @@ footer {
               <span class="badge badge-blue">Blue Concept</span>
               <h3 class="card-title-sm">Enterprise &amp; Approachable</h3>
               <p class="card-desc-sm">My favourite. Cleaner structure, calmer blue palette, random stick figures. She's odd. It can do without the stick figures I guess =(</p>
+              <span class="card-cta">View Design &rarr;</span>
+            </div>
+          </a>
+
+          <a class="card card--coral flat-card" href="https://moeessah.github.io/everiswebsitegradient/" target="_blank" rel="noreferrer">
+            <div class="card-top-bar bar-coral"></div>
+            <div class="card-body-sm">
+              <span class="card-num">11</span>
+              <span class="badge badge-coral">Gradient Concept</span>
+              <h3 class="card-title-sm">Gradient &amp; Vibrant</h3>
+              <p class="card-desc-sm">Soft cream background with shifting teal, amber, and coral gradients. She's fun, she's a bit loud, she catches your eye.</p>
               <span class="card-cta">View Design &rarr;</span>
             </div>
           </a>
