@@ -323,28 +323,6 @@ nav {
   cursor: default;
 }
 
-.card--acquisition-sa.card--static,
-.card--content-sa.card--static,
-.card--acquisition-nolt.card--static,
-.card--content-nolt.card--static {
-  cursor: pointer;
-}
-
-.card--acquisition-sa:hover,
-.card--content-sa:hover,
-.card--acquisition-nolt:hover,
-.card--content-nolt:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.065);
-}
-
-.card--acquisition-sa:hover .card-top-bar,
-.card--content-sa:hover .card-top-bar,
-.card--acquisition-nolt:hover .card-top-bar,
-.card--content-nolt:hover .card-top-bar {
-  opacity: 1;
-}
-
 .card-top-bar {
   position: absolute;
   top: 0;
@@ -482,10 +460,8 @@ nav {
 
 .bar-playbook,
 .bar-amber { background: linear-gradient(90deg, var(--g), var(--g-bright)); }
-.bar-acquisition-sa { background: linear-gradient(90deg, #E8495A, #ff6b63); }
-.bar-acquisition-nolt { background: linear-gradient(90deg, #b7d94a, #c8e074); }
-.bar-content-sa { background: linear-gradient(90deg, #E8495A, #ff6b63); }
-.bar-content-nolt { background: linear-gradient(90deg, #b7d94a, #c8e074); }
+.bar-acquisition,
+.bar-content { background: linear-gradient(90deg, var(--teal), #40D8C8); }
 .bar-coral { background: linear-gradient(90deg, var(--coral), #ff9070); }
 .bar-dark { background: linear-gradient(90deg, var(--p-core), var(--p-bright)); }
 .bar-blue { background: linear-gradient(90deg, #4A90D9, #6BA3D6); }
@@ -497,24 +473,6 @@ nav {
 .card--coral:hover,
 .card--dark:hover,
 .card--blue:hover { border-color: var(--accent-cyan-border); }
-
-.card--acquisition-sa .badge-acquisition,
-.card--content-sa .badge-content { 
-  border: 1px solid #E8495A; 
-  color: #E8495A; 
-}
-.card--acquisition-nolt .badge-acquisition,
-.card--content-nolt .badge-content { 
-  border: 1px solid #b7d94a; 
-  color: #b7d94a; 
-}
-
-.card--acquisition-sa.card--static,
-.card--content-sa.card--static,
-.card--acquisition-nolt.card--static,
-.card--content-nolt.card--static {
-  cursor: pointer;
-}
 
 .card-full { width: 100%; }
 
@@ -681,44 +639,44 @@ footer {
         </div>
 
         <div class="landing-cards">
-          <a href="Everis final/simple-analytics-playbook.html" class="card card--acquisition-sa card--static flat-card">
-            <div class="card-top-bar bar-acquisition-sa"></div>
+          <div class="card card--acquisition card--static flat-card">
+            <div class="card-top-bar bar-acquisition"></div>
             <div class="card-body-sm">
               <span class="card-num">02</span>
               <span class="badge badge-acquisition">Marketing Playbook</span>
               <h3 class="card-title-sm">Simple Analytics Strategy</h3>
               <p class="card-desc-sm">This one is really about the compliance shift around analytics in Europe and how to turn that into a clear growth angle. The job is to meet demand with the right positioning.</p>
             </div>
-          </a>
+          </div>
 
-          <a href="Everis final/simple-analytics-playbook.html#article" class="card card--content-sa card--static flat-card">
-            <div class="card-top-bar bar-content-sa"></div>
+          <div class="card card--content card--static flat-card">
+            <div class="card-top-bar bar-content"></div>
             <div class="card-body-sm">
               <span class="card-num">03</span>
               <span class="badge badge-content">Article</span>
               <h3 class="card-title-sm">Safe Harbour Died. Privacy Shield Died. What Happens to Your Analytics If the Data Privacy Framework Goes the Same Way?</h3>
             </div>
-          </a>
+          </div>
 
-          <a href="Everis final/france-landing-page.html" class="card card--content-sa card--static flat-card">
-            <div class="card-top-bar bar-content-sa"></div>
+          <div class="card card--content card--static flat-card">
+            <div class="card-top-bar bar-content"></div>
             <div class="card-body-sm">
               <span class="card-num">04</span>
               <span class="badge badge-content">Landing Page</span>
               <h3 class="card-title-sm">France Market</h3>
               <p class="card-desc-sm">Built around the CNIL ruling and the wider European decisions that followed. The point was to make the compliance case feel clear, urgent, and easy to act on.</p>
             </div>
-          </a>
+          </div>
 
-          <a href="Everis final/germany-landing-page.html" class="card card--content-sa card--static flat-card">
-            <div class="card-top-bar bar-content-sa"></div>
+          <div class="card card--content card--static flat-card">
+            <div class="card-top-bar bar-content"></div>
             <div class="card-body-sm">
               <span class="card-num">05</span>
               <span class="badge badge-content">Landing Page</span>
               <h3 class="card-title-sm">Germany Market Entry</h3>
               <p class="card-desc-sm">This one is more compliance-first and more technical. It is built around DSGVO risk, consent drop-off, and the business case for removing the banner entirely.</p>
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
@@ -730,25 +688,25 @@ footer {
         </div>
 
         <div class="landing-cards">
-          <a href="Everis final/nolt-playbook.html" class="card card--acquisition-nolt card--static flat-card">
-            <div class="card-top-bar bar-acquisition-nolt"></div>
+          <div class="card card--acquisition card--static flat-card">
+            <div class="card-top-bar bar-acquisition"></div>
             <div class="card-body-sm">
               <span class="card-num">06</span>
               <span class="badge badge-acquisition">Marketing Playbook</span>
               <h3 class="card-title-sm">Nolt Growth Strategy</h3>
               <p class="card-desc-sm">Nolt already has a lot of goodwill to work with. It is also simple enough that the value clicks quickly. I would focus on turning that into steady visibility and better word of mouth, instead of reaching for paid acquisition too early.</p>
             </div>
-          </a>
+          </div>
 
-          <a href="Everis final/nolt-playbook.html#days31" target="_blank" class="card card--content-nolt card--static flat-card">
-            <div class="card-top-bar bar-content-nolt"></div>
+          <div class="card card--content card--static flat-card">
+            <div class="card-top-bar bar-content"></div>
             <div class="card-body-sm">
               <span class="card-num">07</span>
               <span class="badge badge-content">Article</span>
               <h3 class="card-title-sm">Why Most Feedback Boards Die in the First 30 Days</h3>
               <p class="card-desc-sm">This content is shaped by a strategy that prioritises durability and relevance. It reinforces a clear product perspective while engaging with a problem the audience already understands, allowing it to perform consistently as an evergreen resource.</p>
             </div>
-          </a>
+          </div>
         </div>
       </div>
 
