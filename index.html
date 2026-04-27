@@ -17,8 +17,8 @@
   --p-core: #5E1FAE;
   --p-bright: #8040D8;
   --p-light: #BCA8E8;
-  --g: #E09010;
-  --g-bright: #F0A820;
+  --g: var(--coral);
+  --g-bright: #ff9070;
   --ink-muted: #9080B8;
   --white: #FFFFFF;
   --teal: #12B5A5;
@@ -323,6 +323,15 @@ nav {
   cursor: default;
 }
 
+.card--static:hover .card-cta {
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.card--static:hover {
+  border-color: rgba(188, 168, 232, 0.1) !important;
+}
+
 .card-top-bar {
   position: absolute;
   top: 0;
@@ -362,8 +371,23 @@ nav {
 
 .badge-amber {
   color: var(--g-bright);
+  background: var(--coral-soft);
+  border: 1px solid var(--coral-border);
+}
+
+/* Keep amber concept card yellow */
+.card--amber .badge-amber {
+  color: #F0A820;
   background: rgba(240, 168, 32, 0.1);
   border: 1px solid rgba(240, 168, 32, 0.28);
+}
+
+.bar-amber {
+  background: linear-gradient(90deg, #E09010, #F0A820) !important;
+}
+
+.card--amber:hover .card-cta {
+  color: #F0A820 !important;
 }
 
 .badge-dark {
