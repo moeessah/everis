@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Nolt Marketing Playbook | Prepared for Everis</title>
+<link rel="icon" type="image/svg+xml" href="favicon-nolt.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font-sans:"DM Sans",system-ui,sans-serif;
+  --font-serif:"Cormorant Garamond",Georgia,serif;
+  --navy:#08111d;--navy-soft:#101a2a;
+  --cream:#f7f4ef;--paper:#fff;--mist:#eef5ef;--rose:#fff1ee;
+  --amber:#fdf8ec;
+  --coral:#ff6b63;--gold:#e3b54c;--lime:#b7d94a;--mint:#40c47f;
+  --text:#141825;--mid:#4b5363;--soft:#7a8294;
+  --line:rgba(20,24,37,.1);
+  --shadow:0 4px 12px rgba(8,17,29,.05),0 16px 32px rgba(8,17,29,.06);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font:16px/1.72 var(--font-sans);background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}img,svg{display:block;max-width:100%}
+.hero,.nav-inner,.head-inner,.body-inner,.kicker,.divider{width:min(100%,1140px);margin:0 auto;padding:0 28px}
+
+/* ── COVER (matches Image 1 redesigned file design) ────── */
+.hero-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+  background:#060817;
+  position:relative;overflow:hidden}
+
+/* Floating particles animation */
+.hero-wrap::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(183,217,74,0.4), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(255,107,99,0.4), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(183,217,74,0.4), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(255,107,99,0.4), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 70% 10%, rgba(183,217,74,0.3), transparent);
+  background-size: 60% 60%, 40% 40%, 50% 50%, 70% 70%, 45% 45%, 55% 55%, 65% 65%;
+  background-position: 0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%, 10% 10%, 90% 90%;
+  animation: floatParticles 25s ease-in-out infinite;
+  pointer-events:none;
+  z-index:1;
+}
+
+@keyframes floatParticles{
+  0%, 100%{
+    background-position: 0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%, 10% 10%, 90% 90%;
+    transform: translate(0, 0) scale(1);
+  }
+  25%{
+    background-position: 15% 15%, 35% 35%, 55% 55%, 75% 75%, 95% 95%, 25% 25%, 85% 85%;
+    transform: translate(-8px, -12px) scale(1.05);
+  }
+  50%{
+    background-position: 30% 30%, 50% 50%, 70% 70%, 90% 90%, 10% 10%, 40% 40%, 80% 80%;
+    transform: translate(12px, -8px) scale(1.1);
+  }
+  75%{
+    background-position: 45% 45%, 65% 65%, 85% 85%, 5% 5%, 25% 25%, 55% 55%, 75% 75%;
+    transform: translate(-6px, 10px) scale(1.05);
+  }
+}
+
+.badge,.part-badge,.pill{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700}
+.badge,.part-badge{color:var(--lime)!important;border:1px solid rgba(183,217,74,.35)!important;background:rgba(8,17,29,.35)!important;box-shadow:0 0 24px rgba(183,217,74,.12)!important}
+.badge:before,.part-badge:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime)!important;box-shadow:0 0 16px rgba(183,217,74,.8)!important}
+.badge{margin-bottom:34px}.part-badge{margin-bottom:22px}
+.hero-title{margin:0 auto 20px;max-width:900px;font:500 clamp(3.6rem,7.2vw,6rem)/1.02 var(--font-serif);letter-spacing:-.04em}
+.hero-title span{color:var(--lime)}
+.hero-sub{max-width:720px;margin:0 auto 42px;color:rgba(255,255,255,.72);font-size:1.04rem;line-height:1.7}
+.hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.hero-chip{padding:10px 16px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.04);font-size:.82rem}
+
+/* ── NAV ────────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:20;height:58px;background:rgba(5,9,18,.92);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(20px)}
+.nav-inner{width:min(100%,1200px);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;gap:20px}
+.mark{text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:9.5px;font-weight:700;color:rgba(255,255,255,.35);border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}.mark span{color:var(--lime)}
+.links{flex:1;display:flex;overflow-x:auto;scrollbar-width:none}.links::-webkit-scrollbar{display:none}
+.nav-link{flex:0 0 auto;height:58px;display:flex;align-items:center;padding:0 13px;text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:9.5px;font-weight:700;color:rgba(255,255,255,.35);border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-link.active,.nav-link:hover{color:var(--lime);border-color:var(--lime)!important}.nav-link.active{border-color:var(--lime)!important}
+
+/* ── SECTIONS ───────────────────────────────────────────── */
+.part{scroll-margin-top:74px}
+.head{padding:88px 0 74px;color:#fff;position:relative;overflow:hidden;background:radial-gradient(circle at 12% 84%,rgba(255,107,99,.04),transparent 34%),linear-gradient(160deg,#0a1220 0%,#10192a 100%)}
+#audit .head{background:radial-gradient(circle at 12% 84%,rgba(227,181,76,.06),transparent 34%),linear-gradient(160deg,#0a1220 0%,#10192a 100%)}
+#m1 .head,#channels .head{background:radial-gradient(circle at 12% 84%,rgba(64,196,127,.04),transparent 36%),linear-gradient(160deg,#0a1220 0%,#10192a 100%)}
+#days31 .head,#anti .head,#checklist .head{background:radial-gradient(circle at 12% 84%,rgba(183,217,74,.05),transparent 34%),linear-gradient(160deg,#0a1220 0%,#10192a 100%)}
+.head h2{margin:0 0 14px;max-width:760px;font:600 clamp(2.6rem,5.5vw,4.1rem)/1.04 var(--font-serif);letter-spacing:-.03em}
+.head p{margin:0;max-width:650px;color:rgba(255,255,255,.58)}
+.ghost{position:absolute;right:34px;bottom:-8px;font:italic 600 178px/.9 var(--font-serif);color:rgba(255,255,255,.03);pointer-events:none;user-select:none}
+
+/* ── BODY ───────────────────────────────────────────────── */
+.body{padding:78px 0 92px;position:relative}.body:after{content:"";position:absolute;inset:0;background-image:var(--grain);z-index:0}
+.body-inner{position:relative;z-index:1}
+.cream{background:var(--cream)}.paper{background:var(--paper)}.mist{background:var(--mist)}.rose{background:var(--rose)}.amber-bg{background:var(--amber)}
+.kicker{margin-bottom:34px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.kick-row{display:flex;align-items:center;gap:14px}
+.kick-num{padding:4px 10px;border-radius:8px;background:rgba(183,217,74,.15);border:1px solid rgba(183,217,74,.24);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#4a5210}
+.kick-label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--soft)}
+.kick-line{flex:1;height:2px;background:linear-gradient(90deg,transparent, rgba(183,217,74,.15) 20%, rgba(255,107,99,.12) 50%, rgba(183,217,74,.15) 80%, transparent);border-radius:2px;position:relative}
+.kick-line::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--lime);border-radius:50%;box-shadow:0 0 10px rgba(183,217,74,.4)}
+.text-col{max-width:760px}
+.lead{margin:0 0 26px;font:italic 1.66rem/1.45 var(--font-serif);color:#2c3241}
+h3{margin:48px 0 12px;font:700 2.1rem/1.16 var(--font-serif);letter-spacing:-.03em}
+h4{margin:0 0 10px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#596226}
+p{margin:0 0 18px;color:var(--text)}
+.meta{font-size:.8rem;color:var(--soft)}
+/* Color-coded text accents */
+.accent-lime{color:var(--lime);font-weight:600}
+.accent-coral{color:var(--coral);font-weight:600}
+.accent-gold{color:var(--gold);font-weight:600}
+/* Micro-interactions for text */
+.accent-lime:hover,.accent-coral:hover,.accent-gold:hover{filter:brightness(1.2);cursor:default}
+
+/* ── HOVER MICROINTERACTIONS (translateY only, no glow) ─── */
+.card{background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,255,255,.92));border:1px solid rgba(20,24,37,.06);border-radius:18px;box-shadow:0 4px 12px rgba(20,24,37,.08), 0 8px 24px rgba(20,24,37,.04);padding:24px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+
+/* Gentler lift for smaller/secondary cards */
+.mini .card{transition:transform .2s ease}
+
+.quote,.note,.watch{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
+.email-mock{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);transition:transform .22s ease}
+
+/* ── GRIDS ──────────────────────────────────────────────── */
+.grid3,.grid2,.stats,.emails,.drafts,.mini,.compare-grid{display:grid;gap:18px}
+.grid3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.grid2,.compare-grid{grid-template-columns:1fr 1fr}
+.stats{grid-template-columns:repeat(4,minmax(0,1fr))}
+.emails{grid-template-columns:repeat(5,minmax(0,1fr))}
+.drafts,.mini{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* ── CARD VARIANTS ──────────────────────────────────────── */
+.rose-card{background:var(--rose)}.mist-card{background:var(--mist)}.amber-card{background:var(--amber)}
+.stat{font:600 2.35rem/1 var(--font-serif);margin-bottom:10px;color:var(--navy)}
+
+/* ── PILLS ──────────────────────────────────────────────── */
+.pill{padding:6px 10px;font-size:.64rem}
+.lime{background:rgba(183,217,74,.16);color:#5e6d15}
+.coral{background:rgba(255,107,99,.14);color:#a53b34}
+.gold{background:rgba(227,181,76,.16);color:#896615}
+.mint{background:rgba(64,196,127,.14);color:#197247}
+.off{background:rgba(20,24,37,.08);color:#61697b}
+.teal{background:rgba(45,212,191,.14);color:#1a6e65}
+
+/* ── QUOTE / NOTE / WATCH ───────────────────────────────── */
+.quote{margin:32px 0;padding:22px 28px 22px 34px;border-left:4px solid var(--coral)}
+.quote p{margin:0;font:italic 1.95rem/1.34 var(--font-serif);color:#8c254c}
+.note,.watch{margin:30px 0;padding:22px 26px;border-left:4px solid var(--mint)}
+.watch{border-left-color:var(--coral)}
+
+/* ── EMAIL MOCK ─────────────────────────────────────────── */
+.email-mock{max-width:720px;padding:0;overflow:hidden}
+.email-chrome{background:#eef1f4;padding:24px 24px 20px}
+.email-chrome-top{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.email-logo{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#ff7a73,#ff9a70);position:relative;flex-shrink:0}
+.email-logo:before,.email-logo:after{content:"";position:absolute;background:#fff4f0}
+.email-logo:before{width:10px;height:10px;left:8px;top:8px}
+.email-logo:after{width:10px;height:18px;left:18px;top:8px}
+.email-brand{font-size:1.2rem;font-weight:700;color:#aa8eb5}
+.email-body{padding:0 24px 0}
+.email-h{font:700 1.18rem/1.3 var(--font-sans);color:#111;margin:0 0 14px}
+.email-p{font-size:.92rem;line-height:1.72;color:#333;margin:0 0 14px}
+.email-p:last-child{margin:0}
+.email-ol{margin:0 0 16px;padding-left:20px;color:#333;font-size:.92rem;line-height:1.7}
+.email-ol li{margin-bottom:8px}
+.email-ol li a{color:#2b5ccc;font-weight:600}
+.email-cta{display:block;margin:20px 0 18px;padding:14px 18px;background:#fbf46d;text-align:center;font:700 .92rem var(--font-sans);color:#111;border-radius:8px;text-decoration:none}
+.email-links{font-size:.88rem;line-height:1.68;color:#444;margin:0 0 14px}
+.email-links a{color:#2b5ccc;font-weight:500}
+.email-analysis{background:rgba(64,196,127,.07);border-left:3px solid var(--mint);border-radius:0 10px 10px 0;padding:18px 20px;margin:20px 24px 0}
+.email-analysis strong{display:block;font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:#197247;margin-bottom:8px}
+.email-analysis p{margin:0;font-size:.9rem;color:var(--mid);line-height:1.68}
+.email-caption{font-size:.82rem;color:var(--soft);margin:12px 24px 18px;display:block}
+
+/* ── DRAFT EMAILS ───────────────────────────────────────── */
+.draft{padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.78);border:1px solid rgba(20,24,37,.08);font-size:.94rem;white-space:pre-line;color:var(--mid);line-height:1.72}
+.draft-email-block{display:flex;flex-direction:column;gap:0}
+.draft-email-block{display:flex;flex-direction:column;height:100%;transition:transform .2s ease}
+.draft-subject{font-size:.78rem;font-weight:600;padding:9px 14px;border-radius:10px 10px 0 0;border:1px solid rgba(20,24,37,.07);border-bottom:none;color:var(--mid);font-family:var(--font-sans)}
+.draft-subject strong{color:var(--text);font-weight:700}
+/* Annual plan emails */
+.drafts .card:nth-child(1) .draft-subject{background:rgba(255,107,99,.08)}
+.drafts .card:nth-child(2) .draft-subject{background:rgba(227,181,76,.10)}
+.drafts .card:nth-child(3) .draft-subject{background:rgba(64,196,127,.09)}
+/* Trial conversion emails - five distinct light tints */
+.grid2 .draft-email-block:nth-child(1) .draft-subject{background:rgba(64,196,127,.09)}
+.grid2 .draft-email-block:nth-child(2) .draft-subject{background:rgba(227,181,76,.10)}
+.grid2 .draft-email-block:nth-child(3) .draft-subject{background:rgba(255,107,99,.08)}
+.grid2 .draft-email-block:nth-child(4) .draft-subject{background:rgba(183,217,74,.10)}
+.grid2 .draft-email-block:nth-child(5) .draft-subject{background:rgba(64,196,127,.07)}
+
+
+.draft{border-radius:0 0 12px 12px;margin-top:0;flex:1}
+.drafts{align-items:stretch}
+
+/* ── ANTI CARDS ─────────────────────────────────────────── */
+.anti{overflow:hidden;display:flex;flex-direction:column;min-height:388px;border-radius:22px;border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .22s ease}
+.anti:hover{transform:translateY(-4px) scale(1.01)}
+.anti h3{margin:0;padding:26px 24px 14px;font:700 1.05rem/1.28 var(--font-sans);color:#fff}
+.anti p{margin:0;padding:20px 24px 28px;line-height:1.62;flex:1}
+.anti.coral{background:rgba(255,241,238,.98);border-color:rgba(255,107,99,.24)}
+.anti.gold{background:rgba(255,248,228,.98);border-color:rgba(227,181,76,.24)}
+.anti.teal{background:rgba(236,250,247,.98);border-color:rgba(64,196,127,.24)}
+.anti.coral h3{background:var(--coral)}
+.anti.gold h3{background:var(--gold);color:#231700}
+.anti.teal h3{background:var(--mint);color:#fff}
+
+/* ── MINI CARDS ─────────────────────────────────────────── */
+.mini{margin-top:22px;align-items:stretch}
+.mini .card{min-height:214px;border-radius:20px;overflow:hidden;padding:0;background:rgba(255,255,255,.94)}
+.mini .card:nth-child(3n+1){background:rgba(255,241,238,.72)}
+.mini .card:nth-child(3n+2){background:rgba(237,250,244,.92)}
+.mini .card:nth-child(3n){background:rgba(253,248,236,.92)}
+.mini .card strong{display:block;padding:14px 22px 12px;font:700 .96rem/1.3 var(--font-sans);color:#fff;border-radius:0}
+.mini .card:nth-child(3n+1) strong{background:rgba(200,60,50,.78)}
+.mini .card:nth-child(3n+2) strong{background:rgba(40,155,100,.75)}
+.mini .card:nth-child(3n) strong{background:rgba(160,125,35,.72)}
+.mini .card p{margin:0;padding:16px 22px 20px;line-height:1.68;color:var(--mid)}
+
+/* ── COMPARE ────────────────────────────────────────────── */
+.compare-grid{margin-top:18px}
+.statement-card{padding:26px}.statement-card h4{margin-bottom:12px}
+.statement-copy{font:600 1.5rem/1.24 var(--font-serif);letter-spacing:-.02em;color:var(--text)}
+.statement-note{margin-top:12px;font-size:.92rem;line-height:1.65;color:var(--mid)}
+
+/* ── HIGHLIGHT TEXT ─────────────────────────────────────── */
+.hl{background:rgba(183,217,74,.18);border-radius:4px;padding:1px 6px;color:#4a5a12;font-weight:600}
+.hl-coral{background:rgba(255,107,99,.12);border-radius:4px;padding:1px 6px;color:#9b3530;font-weight:600}
+.hl-mint{background:rgba(64,196,127,.12);border-radius:4px;padding:1px 6px;color:#197247;font-weight:600}
+.hl-gold{background:rgba(227,181,76,.18);border-radius:4px;padding:1px 6px;color:#7a5b12;font-weight:600}
+
+/* ── LOGO WALL ──────────────────────────────────────────── */
+.logo-wall-copy{font-size:1.02rem;line-height:1.78;color:var(--mid)}
+.logo-wall-copy strong{color:var(--text)}
+
+/* ── SOURCE / LINKS ─────────────────────────────────────── */
+.source-links{display:flex;flex-wrap:wrap;gap:10px 0}
+.source-links a{text-decoration:none;border-bottom:1px solid rgba(20,24,37,.18);margin-right:12px}
+.section-source{margin-top:22px}.section-source h4{margin-bottom:14px}
+
+/* ── TRAJECTORY BOX ─────────────────────────────────────── */
+.trajectory{background:rgba(227,181,76,.08);border:1px solid rgba(227,181,76,.24);border-radius:14px;padding:22px 26px;margin:22px 0;max-width:760px;transition:transform .2s ease}
+.trajectory-label{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:#7a5b12;margin-bottom:10px}
+.trajectory p{margin:0;font-size:.93rem;line-height:1.72;color:var(--mid)}
+
+/* ── SAMPLE POST ────────────────────────────────────────── */
+.sample-post{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:42px 48px;max-width:780px;box-shadow:var(--shadow)}
+.sample-post .post-meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.post-meta-tag{padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.pmt-pub{background:rgba(64,196,127,.14);color:#197247}
+.pmt-cat{background:rgba(227,181,76,.14);color:#7a5b12}
+.pmt-len{background:rgba(255,107,99,.12);color:#9b3530}
+.sample-post .post-title{font:600 2.2rem/1.14 var(--font-serif);letter-spacing:-.025em;margin:0 0 18px;color:var(--navy)}
+.sample-post .post-deck{font:italic 1.18rem/1.56 var(--font-serif);color:var(--mid);margin:0 0 28px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.sample-post p{font-size:1.01rem;line-height:1.82;margin:0 0 22px;color:var(--text)}
+.sample-post p:last-child{margin:0}
+.sample-post h5{font:700 1.05rem/1.3 var(--font-sans);margin:32px 0 10px;color:var(--navy)}
+.sample-post .post-pull{font:italic 1.38rem/1.42 var(--font-serif);color:var(--coral);border-left:3px solid var(--coral);padding-left:22px;margin:28px 0}
+
+/* ── SEO BLOCK ──────────────────────────────────────────── */
+.seo-block{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 32px;max-width:820px;margin:22px 0;box-shadow:var(--shadow);transition:transform .2s ease}
+.seo-block-title{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--soft);margin-bottom:18px}
+.kw-grid{display:grid;gap:10px}
+.kw-row{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:rgba(20,24,37,.03)}
+.kw-type{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.kw-primary{background:rgba(64,196,127,.14);color:#197247}
+.kw-secondary{background:rgba(227,181,76,.14);color:#7a5b12}
+.kw-longtail{background:rgba(255,107,99,.12);color:#9b3530}
+.kw-geo{background:rgba(183,217,74,.16);color:#5e6d15}
+.kw-term{font:600 1rem/1.2 var(--font-sans);color:var(--text);flex:1}
+.kw-vol{font-size:.8rem;color:var(--soft);white-space:nowrap}
+.kw-diff{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.diff-low{background:rgba(64,196,127,.14);color:#197247}
+.diff-med{background:rgba(227,181,76,.16);color:#896615}
+.seo-note{font-size:.84rem;color:var(--soft);margin-top:14px;padding-top:14px;border-top:1px solid var(--line);line-height:1.65}
+
+/* ── PULL QUOTE PROMO ───────────────────────────────────── */
+.promo-card{background:var(--navy);border-radius:20px;padding:32px 36px;max-width:780px;margin:28px 0;transition:transform .2s ease}
+.promo-label{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(183,217,74,.8);margin-bottom:16px}
+.promo-quote{font:italic 1.6rem/1.38 var(--font-serif);color:#fff;margin:0 0 20px}
+.promo-quote span{color:var(--coral)}
+.promo-meta{font-size:.82rem;color:rgba(255,255,255,.4);display:flex;gap:14px;flex-wrap:wrap}
+.promo-tag{background:rgba(255,255,255,.08);border-radius:999px;padding:4px 12px;font-size:.72rem}
+
+/* ── DISTRIBUTION TABLE ─────────────────────────────────── */
+.dist-table{width:100%;border-collapse:collapse;font-size:.91rem;margin:22px 0}
+.dist-table th{text-align:left;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--soft);padding:10px 14px;border-bottom:2px solid var(--line)}
+.dist-table td{padding:14px;border-bottom:1px solid var(--line);color:var(--text);vertical-align:top;line-height:1.6}
+.dist-table tr:last-child td{border-bottom:none}
+.dist-table td:first-child{font-weight:600;white-space:nowrap}
+.dist-tag{display:inline-block;padding:3px 8px;border-radius:6px;font-size:.68rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+.d-hot{background:rgba(255,107,99,.12);color:#a53b34}
+.d-warm{background:rgba(227,181,76,.14);color:#896615}
+.d-plan{background:rgba(64,196,127,.12);color:#197247}
+
+/* ── OUTREACH BOX ───────────────────────────────────────── */
+.outreach-box{background:rgba(237,250,244,.9);border:1px solid rgba(64,196,127,.2);border-radius:14px;padding:24px;margin:22px 0;font-size:.93rem;line-height:1.78;color:var(--mid);white-space:pre-line;transition:transform .2s ease}
+.outreach-box strong{color:#197247;display:block;font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:10px}
+
+/* ── CHECKLIST ──────────────────────────────────────────── */
+.cl-phase{margin-bottom:48px}
+.cl-phase-header{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:14px;border-bottom:2px solid var(--line)}
+.cl-phase-num{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font:700 .78rem/1 var(--font-sans);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0}
+.ph1 .cl-phase-num{background:rgba(255,107,99,.15);color:#a53b34}
+.ph2 .cl-phase-num{background:rgba(64,196,127,.14);color:#197247}
+.ph3 .cl-phase-num{background:rgba(183,217,74,.16);color:#5e6d15}
+.ph4 .cl-phase-num{background:rgba(227,181,76,.16);color:#896615}
+.cl-phase-title{font:700 1.18rem/1 var(--font-sans);color:var(--text)}
+.cl-phase-sub{font-size:.82rem;color:var(--soft)}
+.cl-cat{margin-bottom:22px}
+.cl-cat-label{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--soft);margin-bottom:10px;padding-left:2px}
+.cl-items{display:flex;flex-direction:column;gap:6px}
+.cl-item{display:flex;align-items:flex-start;gap:14px;padding:12px 16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:transform .18s ease}
+.cl-item:hover{transform:translateY(-2px)}
+.cl-item.done{background:rgba(183,217,74,.08);border-color:rgba(64,196,127,.3)}
+.cl-item.done .cl-text{color:var(--soft);text-decoration:line-through;text-decoration-color:rgba(64,196,127,.5)}
+.cl-check{width:22px;height:22px;border-radius:7px;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .18s ease}
+.cl-item.done .cl-check{background:var(--mint);border-color:var(--mint)}
+.cl-check-inner{display:none;color:#fff;font-size:13px;font-weight:700;line-height:1}
+.cl-item.done .cl-check-inner{display:block}
+.cl-text{font-size:.95rem;color:var(--text);line-height:1.5;flex:1}
+.cl-tag{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:6px;margin-top:3px;white-space:nowrap;align-self:flex-start;flex-shrink:0}
+.ct-trust{background:rgba(255,107,99,.1);color:#a53b34}
+.ct-email{background:rgba(64,196,127,.1);color:#197247}
+.ct-content{background:rgba(183,217,74,.14);color:#5e6d15}
+.ct-social{background:rgba(227,181,76,.14);color:#896615}
+.ct-review{background:rgba(64,196,127,.12);color:#197247}
+.ct-measure{background:rgba(20,24,37,.07);color:#4b5363}
+.ct-partner{background:rgba(64,196,127,.12);color:#197247}
+.cl-progress{display:flex;align-items:center;gap:14px;margin-bottom:36px;padding:18px 22px;background:var(--paper);border:1px solid var(--line);border-radius:16px}
+.cl-progress-bar-wrap{flex:1;height:8px;background:rgba(20,24,37,.08);border-radius:999px;overflow:hidden}
+.cl-progress-bar{height:100%;background:linear-gradient(90deg,var(--mint),var(--lime));border-radius:999px;transition:width .4s ease;width:0%}
+.cl-progress-text{font-size:.82rem;color:var(--soft);white-space:nowrap;font-weight:600}
+.cl-reset{font-size:.72rem;color:var(--soft);text-decoration:underline;cursor:pointer;background:none;border:none;padding:0;letter-spacing:.04em}
+
+/* ── BIO REWRITE ────────────────────────────────────────── */
+.bio-rewrite-block{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:16px 0}
+.bio-before,.bio-after{border-radius:12px;padding:16px}
+.bio-before{background:rgba(255,107,99,.07);border:1px solid rgba(255,107,99,.18)}
+.bio-after{background:rgba(64,196,127,.07);border:1px solid rgba(64,196,127,.22)}
+.bio-label{font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.bio-before .bio-label{color:#a53b34}
+.bio-after .bio-label{color:#197247}
+.bio-text{font:600 .95rem/1.4 var(--font-serif);color:var(--text);margin-bottom:8px}
+.bio-note{font-size:.8rem;color:var(--soft);line-height:1.6}
+.bio-reasoning{margin-top:14px;padding:14px 16px;background:rgba(20,24,37,.04);border-radius:10px;font-size:.87rem;line-height:1.7;color:var(--mid)}
+.bio-reasoning-label{display:block;font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#7a5b12;margin-bottom:7px}
+@media(max-width:600px){.bio-rewrite-block{grid-template-columns:1fr}}
+
+/* ── TOOL PILLS ─────────────────────────────────────────── */
+.tool-row{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.tool-pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;border:1.5px solid;font-size:.72rem;font-weight:600;letter-spacing:.04em;white-space:nowrap}
+.tp-ahrefs{border-color:#ff642e;color:#c94e1f;background:rgba(255,100,46,.06)}
+.tp-semrush{border-color:#ff9a1a;color:#c07412;background:rgba(255,154,26,.06)}
+.tp-g2{border-color:#e4252a;color:#b31d21;background:rgba(228,37,42,.06)}
+.tp-capterra{border-color:#1c6fdd;color:#1456aa;background:rgba(28,111,221,.06)}
+.tp-gsc{border-color:#4285f4;color:#2563c7;background:rgba(66,133,244,.06)}
+.tp-notion{border-color:#000;color:#111;background:rgba(0,0,0,.04)}
+.tp-slack{border-color:#4a154b;color:#4a154b;background:rgba(74,21,75,.05)}
+.tp-zapier{border-color:#ff4a00;color:#cc3a00;background:rgba(255,74,0,.06)}
+.tp-posthog{border-color:#1d4aff;color:#1536c7;background:rgba(29,74,255,.06)}
+.tp-generic{border-color:#8a8a8a;color:#555;background:rgba(0,0,0,.04)}
+
+/* ── EMAIL CARDS WITH COLOUR ────────────────────────────── */
+.email-seq-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:22px 0}
+.email-seq-card{border-radius:16px;padding:20px 18px;border:1px solid transparent;transition:transform .2s ease}
+.esc-1{background:rgba(64,196,127,.08);border-color:rgba(64,196,127,.22)}
+.esc-2{background:rgba(227,181,76,.08);border-color:rgba(227,181,76,.22)}
+.esc-3{background:rgba(255,107,99,.07);border-color:rgba(255,107,99,.2)}
+.esc-4{background:rgba(183,217,74,.08);border-color:rgba(183,217,74,.22)}
+.esc-5{background:rgba(64,196,127,.05);border-color:rgba(64,196,127,.14)}
+.esc-icon{font-size:1.5rem;margin-bottom:10px;display:block}
+.esc-timing{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:6px}
+.esc-1 .esc-timing{color:#197247}
+.esc-2 .esc-timing{color:#896615}
+.esc-3 .esc-timing{color:#a53b34}
+.esc-4 .esc-timing{color:#5e6d15}
+.esc-5 .esc-timing{color:#197247}
+.esc-subject{font:700 .88rem/1.35 var(--font-sans);color:var(--text);margin-bottom:6px}
+.esc-desc{font-size:.8rem;color:var(--soft);line-height:1.6}
+
+/* ── ARTICLE WITH SIDEBAR ───────────────────────────────── */
+.article-layout{display:grid;grid-template-columns:1fr 200px;gap:32px;max-width:1000px;align-items:start}
+.article-sidebar{position:sticky;top:78px}
+.kw-sidebar-title{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--soft);margin-bottom:14px}
+.kw-sidebar-tool{font-size:.68rem;color:rgba(20,24,37,.35);margin-bottom:16px;font-style:italic}
+.kw-chips{display:flex;flex-direction:column;gap:8px}
+.kw-chip{display:inline-block;padding:5px 11px;border-radius:999px;font-size:.72rem;font-weight:600;line-height:1;width:fit-content}
+.kwc-primary{background:rgba(64,196,127,.15);color:#197247;border:1.5px solid rgba(64,196,127,.3)}
+.kwc-secondary{background:rgba(227,181,76,.14);color:#896615;border:1.5px solid rgba(227,181,76,.28)}
+.kwc-long{background:rgba(255,107,99,.1);color:#a53b34;border:1.5px solid rgba(255,107,99,.2)}
+.kwc-geo{background:rgba(183,217,74,.14);color:#5e6d15;border:1.5px solid rgba(183,217,74,.28)}
+.kw-chip-label{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin:12px 0 6px;color:rgba(20,24,37,.35)}
+@media(max-width:900px){.article-layout{grid-template-columns:1fr}.article-sidebar{position:static;display:flex;flex-wrap:wrap;gap:8px}.article-sidebar .kw-chips{flex-direction:row;flex-wrap:wrap}.kw-chip-label{width:100%}}
+
+/* ── FLOW VISUAL ────────────────────────────────────────── */
+.flow-visual{margin-top:auto;padding:18px 20px;background:rgba(64,196,127,.06);border:1px solid rgba(64,196,127,.16);border-radius:12px}
+.flow-label{font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#197247;margin-bottom:14px}
+.flow-steps{display:flex;flex-direction:column;gap:0}
+.flow-step{display:flex;align-items:flex-start;gap:10px;padding:8px 0}
+.fs-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.fs-active .fs-dot{background:var(--mint)}
+.fs-warn .fs-dot{background:var(--coral)}
+.flow-step .fs-dot{background:rgba(20,24,37,.2)}
+.fs-name{font-size:.84rem;font-weight:600;color:var(--text)}
+.fs-note{font-size:.76rem;color:var(--soft);line-height:1.5}
+.flow-arrow{font-size:.8rem;color:rgba(20,24,37,.25);padding-left:4px;line-height:1}
+
+/* ── UTIL ───────────────────────────────────────────────── */
+.divider{padding:6px 28px}.divider div{height:1px;background:linear-gradient(90deg,rgba(20,24,37,.14),rgba(20,24,37,.04),transparent)}
+.sr{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.sr.in{opacity:1;transform:translateY(0)}
+/* Hover rules AFTER .sr.in to win cascade via specificity ─ */
+.card.in:hover{transform:translateY(-6px);box-shadow:0 8px 32px rgba(20,24,37,.15);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.anti.in:hover{transform:translateY(-3px) scale(1.006);transition:transform .22s ease}
+.email-mock.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.quote.in:hover,.note.in:hover,.watch.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.seo-block.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.trajectory.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.outreach-box.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.promo-card.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.draft-email-block.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.email-seq-card.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.sample-post.in:hover{transform:translateY(-2px);transition:transform .2s ease}
+.cl-item:hover{transform:translateY(-1px);transition:transform .15s ease}
+
+@media(max-width:1120px){.emails{grid-template-columns:repeat(2,minmax(0,1fr))}.grid3,.drafts,.mini,.stats,.compare-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.hero,.nav-inner,.head-inner,.body-inner,.kicker,.divider{padding:0 20px}.grid3,.grid2,.stats,.emails,.drafts,.mini,.compare-grid{grid-template-columns:1fr}.ghost{font-size:112px;right:18px}.quote p{font-size:1.6rem}.anti{min-height:auto}.mini .card{min-height:auto}.sample-post{padding:26px 24px}}
+</style>
+  <link rel="stylesheet" href="site-shell.css?v=20260423b">
+</head>
+<body data-site-page="nolt">
+
+<!-- COVER - matches Image 1 redesigned design -->
+<section class="hero-wrap" id="cover">
+<div class="hero"><div>
+  <div class="badge">Nolt Playbook</div>
+  <h1 class="hero-title">The <span>Nolt</span> <em>Marketing</em> Playbook</h1>
+  <p class="hero-sub">How I would grow Nolt, and how none of it starts with ads. A first-person operational playbook for the Nolt feedback platform. What I found, what I'd fix, and exactly what I will do.</p>
+  <div class="hero-meta">
+    <div class="hero-chip"><strong>Category</strong> Feedback SaaS</div>
+    <div class="hero-chip"><strong>Revenue Snapshot</strong> $61.4K ARR in 2024</div>
+    <div class="hero-chip"><strong>Public Reviews</strong> 17 G2 | 45 Capterra</div>
+  </div>
+</div></div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-inner">
+  <div class="mark">ESSAH<span>.</span></div>
+  <div class="links">
+    <a class="nav-link active" href="#company">Company</a>
+    <a class="nav-link" href="#audit">Audit</a>
+    <a class="nav-link" href="#first7">First 7 Days</a>
+    <a class="nav-link" href="#m1">Days 8–30</a>
+    <a class="nav-link" href="#days31">Days 31–90</a>
+    <a class="nav-link" href="#channels">Channels</a>
+    <a class="nav-link" href="#anti">Anti-Patterns</a>
+    <a class="nav-link" href="#checklist">Checklist</a>
+  </div>
+</div>
+</nav>
+
+<!-- 01 COMPANY ════════════════════════════════════════════ -->
+<section class="part" id="company">
+<div class="head"><div class="head-inner">
+  <div class="part-badge">Part 01</div>
+  <h2>The company, honestly.</h2>
+  <p>What Nolt is, who runs it today, why revenue growth is decelerating, and what the marketing infrastructure looks like on day one before anything gets touched.</p>
+  <div class="ghost">01</div>
+</div></div>
+<div class="body cream"><div class="body-inner">
+  <div class="kicker"><div class="kick-row"><span class="kick-num">01</span><span class="kick-label">Company Snapshot</span><span class="kick-line"></span></div></div>
+
+  <div class="text-col">
+    <p class="lead">Nolt has the kind of social proof that most SaaS companies at this revenue level cannot buy. Sahil Lavingia. Marko Saric. Letterboxd. The problem is nobody has turned any of it into marketing.</p>
+    <p><span class="hl-coral">Sahil Lavingia</span>, founder of Gumroad and one of the most-followed indie builders on X, has said publicly that Nolt gave them clarity on what to build next for their users and helped improve product decisions. <span class="hl-coral">Marko Saric</span>, co-founder of Plausible Analytics, said his users were engaged and happy like never before. <span class="hl">Tom Watson</span> said publicly that the Letterboxd team had moved over to Nolt and highly recommended it. These names sit as static image files on a homepage. Nobody has picked up the phone about them in months, probably longer.</p>
+  </div>
+
+  <div class="stats">
+    <article class="card rose-card sr">
+      <div class="stat">$61.4K ARR</div>
+      <div class="meta">ARR as of October 2024. Growth is decelerating: $20.2K in 2021, $48.5K in 2023, $61.4K in 2024. Consistent but narrowing year on year.</div>
+    </article>
+    <article class="card mist-card sr">
+      <div class="stat">4.9 / 5</div>
+      <div class="meta">Capterra average, 45 verified reviews. G2: 5.0 from 17 reviews. The G2 profile went unclaimed for over a year. G2 flags this visibly on the page to every evaluating buyer.</div>
+    </article>
+    <article class="card amber-card sr">
+      <div class="stat">$29 / $69</div>
+      <div class="meta">Per board per month. No free plan. 10-day trial on Pro only. Per-board pricing is unusual in this category and creates friction when teams want separate boards for bugs and features.</div>
+    </article>
+    <article class="card rose-card sr">
+      <div class="stat">2 people</div>
+      <div class="meta">Daniel Stefanovic built it and left for Rebase GmbH. Jason Kim, finance background, now runs it alongside Micro SaaS Capital responsibilities and a sales role at Instantly.ai.</div>
+    </article>
+  </div>
+
+  <div class="quote sr"><p>The product has earned trust it isn't using. Nolt needs someone to use the proof it already has.</p></div>
+
+  <h3>Who runs Nolt today</h3>
+  <div class="grid2">
+    <article class="card rose-card sr">
+      <div class="pill coral">Ownership Context</div>
+      <h3>Nolt's second operator</h3>
+      <p><span class="hl-coral">Daniel Stefanovic</span> built Nolt. He is now MD at Rebase GmbH and is gone. <span class="hl-coral">Jason Kim</span> acquired Nolt through Micro SaaS Capital. His background is institutional finance: Investment Associate at <span class="hl">Constellation Software</span>, Associate Analyst at Mackenzie Investments, BCom Finance from Queen's University. He runs Nolt alongside other portfolio plays and a sales role at Instantly.ai.</p>
+      <p>This explains the marketing infrastructure gap. A finance-trained portfolio operator does not build email sequences or claim G2 profiles. The plan below is calibrated to what a focused marketing hire can execute with a 2-person team and an operator whose primary strength is deal-making, not product growth.</p>
+    </article>
+    <article class="card mist-card sr">
+      <div class="pill mint">The Recoverable Advantage</div>
+      <h3>Daniel's warmth can be recreated</h3>
+      <p>Daniel's personal responsiveness was cited by name in early Indie Hackers reviews. People mentioned him specifically as a reason to recommend the product. That voice, that sense that a real person is paying attention, clearly fed into the trust you still see in Nolt's review profile.</p>
+      <p>That quality is still recoverable. It just needs someone to maintain it on purpose in email copy, support responses, and social posts. The moment Nolt's emails start sounding like a SaaS template, the trust starts thinning out. Quietly. Then it shows up in churn six months later.</p>
+    </article>
+  </div>
+
+  <div class="trajectory sr">
+    <div class="trajectory-label">Operator Trajectory: the exit window</div>
+    <p>Micro SaaS Capital's stated model is acquire, improve, exit. I would not pretend to know the exact timeline from the outside, but the commercial logic is straightforward: if Nolt can push ARR up meaningfully from here, the strategic options get better fast. That's the real business case for this playbook, and why Everis should care now rather than later.</p>
+  </div>
+
+  <h3>The competitive landscape</h3>
+  <div class="grid3">
+    <article class="card sr">
+      <div class="pill coral">Primary Threat</div>
+      <h3>Featurebase</h3>
+      <p>Free plan. Paid from <span class="hl">$40/month</span>, below Nolt's entry price. Has changelog, admin dashboard, duplicate detection, bulk editing. Writing "Nolt alternative" SEO content that ranks. Track this one weekly, not Canny.</p>
+    </article>
+    <article class="card sr">
+      <div class="pill gold">Adjacent Player</div>
+      <h3>Canny</h3>
+      <p>Starts at <span class="hl">$99/month</span>. Used by Notion, Loom, ClickUp. Publishing content to own the category's entire search landscape. Their ICP skews larger than Nolt's in most cases. The risk is Canny improving value per dollar at the low end, not their current pricing.</p>
+    </article>
+    <article class="card sr">
+      <div class="pill mint">Positioning Attack</div>
+      <h3>UserJot</h3>
+      <p>Three words: free plan, same price, more features. Writing "Nolt alternative" content that ranks above Nolt's own site. They understand exactly where the friction sits and are targeting it precisely.</p>
+    </article>
+  </div>
+
+  <div class="note sr"><p><strong>What none of them have:</strong> Gumroad and Plausible Analytics on their homepage. Nolt's logo wall is a competitive moat sitting unused. In this category, social proof from credible builders carries more weight than feature checklists. Nobody on Nolt's logo wall works at UserJot.</p></div>
+
+  <h3>The logo wall used as decoration</h3>
+  <article class="card mist-card sr">
+    <p class="logo-wall-copy"><strong>Sahil Lavingia</strong> (Gumroad) · <strong>Marko Saric</strong> (Plausible Analytics) · Letterboxd · Meetup · GoDaddy · Avast · Musixmatch · Weglot · Adaptavist · UptimeRobot · Sitechecker · Archbee · Replo · MessageDesk · Riverside.</p>
+    <p class="logo-wall-copy" style="margin-top:14px">Sahil Lavingia is one of the most followed indie founders on X. Marko Saric built Plausible with a deeply trusted reputation in the same communities Nolt needs to reach. Letterboxd has a vocal user base who talk openly about their tools. Treating these logos as image files is the most expensive passive mistake on the site right now.</p>
+  </article>
+
+</div></div>
+</section>
+<div class="divider"><div></div></div>
+
+<!-- 02 AUDIT ════════════════════════════════════════════════ -->
+<section class="part" id="audit">
+<div class="head"><div class="head-inner">
+  <div class="part-badge">Part 02</div>
+  <h2>The audit.</h2>
+  <p>I signed up for a trial. I read every public review. I went through the feedback board. I checked the social accounts. Here is the complete diagnostic before anything gets touched.</p>
+  <div class="ghost">02</div>
+</div></div>
+<div class="body paper"><div class="body-inner">
+  <div class="kicker"><div class="kick-row"><span class="kick-num">02</span><span class="kick-label">Trust Audit</span><span class="kick-line"></span></div></div>
+
+  <div class="text-col">
+    <p class="lead">The product is in better shape than the marketing infrastructure suggests. Almost everything wrong here is fixable in 30 days, without budget.</p>
+    <p>Product managers evaluate tools in roughly four minutes. They search the name, check G2, look at the Twitter account, and form a first impression. Every action in the First 7 Days section is designed to clean up that four-minute evaluation before a single pound is spent driving more of it.</p>
+  </div>
+
+  <div class="grid2">
+    <article class="card mist-card sr">
+      <div class="pill mint">What Already Works</div>
+      <h3>The product earns its reviews honestly</h3>
+      <p>A <span class="hl">4.9/5 average on Capterra</span> from 45 verified reviews reflects a genuinely fast setup experience, clean UI, and a product that does what it promises. The language repeating across reviews: "set up in under an hour," "my users actually use it," "support felt personal." Those are positioning insights waiting to be used.</p>
+    </article>
+    <article class="card rose-card sr">
+      <div class="pill coral">What Is Costing Conversions</div>
+      <h3>Trust signals degrading in plain view</h3>
+      <p>The <span class="hl-coral">G2 profile carries a visible "unclaimed" notice</span>. The social profiles look under-maintained. The LinkedIn company page has very little recent life. Each of these is a small signal to an evaluating product manager: whoever runs this stopped paying attention. Those signals compound.</p>
+    </article>
+  </div>
+
+  <div class="watch sr"><p><strong>One G2 review reads like a warning sign.</strong> A customer paid a full year, cancelled auto-renewal expecting to keep access through the paid period, and immediately lost their board. They called it "scammy" publicly on G2. The product did not fail them. The offboarding communication did. That reviewer has moved on, but the review is still there for every product manager who searches Nolt before trialling.</p></div>
+
+  <h3>What customers are asking for on Nolt's own board</h3>
+  <p>I read feedback.nolt.io directly, not the marketing page, the live board. Here is what the most-voted requests tell us and what each one means for the competitive picture.</p>
+  <div class="grid3">
+    <article class="card rose-card sr">
+      <div class="pill gold">46 votes · Planned</div>
+      <h3>Group votes by company</h3>
+      <p>The single most-voted request reveals something important. Teams need to know whether ten people requesting a feature are from one power-user account or from ten different companies. This points toward more serious B2B prioritisation needs knocking on Nolt's door: teams who chose Nolt for simplicity and are now asking whether it can grow with them.</p>
+    </article>
+    <article class="card amber-card sr">
+      <div class="pill mint">36 votes</div>
+      <h3>Custom CSS on boards</h3>
+      <p>Teams asking for CSS control are embedding Nolt inside their own product and care that it matches their brand. This is a <span class="hl">retention signal</span>. The teams making this request are invested enough to want to polish the integration. They are not leaving.</p>
+    </article>
+    <article class="card mist-card sr">
+      <div class="pill lime">12 votes</div>
+      <h3>Post to Nolt directly from Slack</h3>
+      <p>The feedback capture moment happens in Slack, during a customer call or support conversation. Teams want Nolt to live where feedback is captured, not just where it gets filed. This is the direction the whole category is moving. Treat it as a positioning input, not just a roadmap item.</p>
+    </article>
+  </div>
+
+  <h3>The actual welcome email: what Nolt sends today</h3>
+  <p>I signed up with a fresh email and documented what arrived. The full email is reproduced below exactly as received.</p>
+  <div class="email-mock sr">
+    <div class="email-chrome">
+      <div class="email-chrome-top">
+        <div class="email-logo"></div>
+        <div class="email-brand">Nolt</div>
+      </div>
+    </div>
+    <div class="email-body" style="padding:20px 24px 0">
+      <p class="email-h">You just created your first Nolt board. Congrats!</p>
+      <p class="email-p">We're excited that you've signed up for your 10-day trial. Nolt brings together ideas and feedback in a central place that your users will love.</p>
+      <p class="email-p">Here's your Nolt board URL: <a href="#" style="color:#2b5ccc;font-weight:600">https://[yourboard].nolt.io/</a></p>
+      <p class="email-p">And here's a quick checklist to help you get up and running:</p>
+      <ol class="email-ol">
+        <li><a href="#">Customize your board</a> by selecting colors, adding your logo, and more.</li>
+        <li><a href="#">Invite your teammates</a> to join, contribute, and collaborate on your Nolt board.</li>
+        <li><a href="#">Embed your Nolt board</a> in your website or app, and share the board with your fans and followers.</li>
+      </ol>
+      <a class="email-cta" href="#">Go to my Nolt board</a>
+      <p class="email-links">You can always refer to our <a href="#">help docs</a> for guides on features like <a href="#">custom domain</a>, <a href="#">user SSO</a>, <a href="#">webhooks</a>, <a href="#">integrations</a>, and more.</p>
+      <p class="email-p">We want you to have a delightful experience. If you have any questions, please let us know - we're here to help.</p>
+      <p class="email-p">Your friends at Nolt</p>
+    </div>
+    <div class="email-analysis">
+      <strong>One thing worth testing</strong>
+      <p>The email is friendly, arrives promptly, and has a clear CTA. The 4.9 star average suggests the product experience overall is strong, so I would not change this without conversion data. That said, one A/B test is worth running: swap "Customize your board" as the first checklist item to "Invite a teammate" or "Share your board link with one user." The value moment in Nolt is the first real feedback submission, not a branded colour scheme. Getting a user into the board faster might improve trial conversion. Check the data first before touching this.</p>
+    </div>
+    <span class="email-caption">Email captured from a fresh trial signup, April 2026. Follow-up emails in the sequence (Days 3, 7, 10, 13) are not yet confirmed. I only just signed up. Those will be documented as they arrive.</span>
+  </div>
+
+  <h3>GEO baseline: run this before anything else changes</h3>
+  <div class="grid2">
+    <article class="card sr">
+      <div class="pill coral">Day One Task</div>
+      <h3>Five queries, four AI assistants</h3>
+      <p>Ask <span class="hl">Claude, ChatGPT, Perplexity, and Gemini</span>: "best feedback board tool for a small SaaS team," "Canny alternative under $50/month," "how to collect product feedback from users," "feature voting tool," and "user feedback software for early-stage product." Document every response verbatim, screenshot each. This is the starting measurement for everything that follows.</p>
+    </article>
+    <article class="card sr">
+      <div class="pill gold">Expected Finding</div>
+      <h3>Nolt appears, but not as the lead</h3>
+      <p>AI assistants tend to surface Canny first (strong G2 presence, rich content), then Featurebase (aggressive SEO content built for these queries), then Nolt. The gap is the direct output of having 17 G2 reviews against Canny's hundreds, and no blog content targeting these queries. Both are fixable. Measuring first tells us how far we need to travel.</p>
+    </article>
+  </div>
+
+  <div class="tool-row" style="margin:14px 0 22px">
+    <span class="tool-pill tp-generic">Claude</span>
+    <span class="tool-pill tp-generic">ChatGPT</span>
+    <span class="tool-pill tp-generic">Perplexity</span>
+    <span class="tool-pill tp-generic">Gemini</span>
+  </div>
+  <div class="card sr section-source" style="margin-top:22px">
+    <h4>Audit sources, all checked live</h4>
+    <div class="source-links meta">
+      <a href="https://feedback.nolt.io/top" target="_blank" rel="noreferrer">Nolt feedback board</a>
+      <a href="https://www.g2.com/products/nolt/reviews" target="_blank" rel="noreferrer">G2 reviews</a>
+      <a href="https://www.capterra.com/p/236872/Nolt/" target="_blank" rel="noreferrer">Capterra</a>
+      <a href="https://nolt.io/pricing" target="_blank" rel="noreferrer">Pricing page</a>
+      <a href="https://x.com/trynolt" target="_blank" rel="noreferrer">@TryNolt</a>
+    </div>
+  </div>
+
+</div></div>
+</section>
+<div class="divider"><div></div></div>
+
+<!-- 03 FIRST 7 DAYS ════════════════════════════════════════ -->
+<section class="part" id="first7">
+<div class="head"><div class="head-inner">
+  <div class="part-badge">Part 03</div>
+  <h2>First 7 days.</h2>
+  <p>Nothing new gets built this week. Everything that's quietly costing trust or leaving conversion on the table gets fixed. No skipping the boring ones.</p>
+  <div class="ghost">03</div>
+</div></div>
+<div class="body rose"><div class="body-inner">
+  <div class="kicker"><div class="kick-row"><span class="kick-num">03</span><span class="kick-label">Immediate Fixes</span><span class="kick-line"></span></div></div>
+
+  <div class="text-col">
+    <p class="lead">The filter for week one is simple: does fixing this cost zero budget and return immediately? If yes, it goes in the week. If not, it waits.</p>
+  </div>
+
+  <div class="grid2">
+    <article class="card sr">
+      <h4>Day 1 · Morning</h4>
+      <h3>Claim the G2 profile</h3>
+      <p>One hour. Requires an nolt.io work email. The "unclaimed" notice disappears immediately. Write responses to all 17 existing reviews, starting with the most recent. Visible admin engagement helps here. More importantly: a product manager reading a specific, thoughtful response thinks "someone is actually running this." That impression earns the trial click.</p>
+      <p><strong>Voice to use:</strong> Not "Thank you for your review." Write something specific to what the reviewer said. Acknowledge fast setup if they mentioned it. Acknowledge any criticism without defensiveness. It should read like Daniel's early replies, not a PR statement.</p>
+    </article>
+    <article class="card sr" style="position:relative;overflow:hidden">
+      <h4>Day 1 · Afternoon</h4>
+      <h3>Run the GEO baseline test</h3>
+      <p>The five queries across Claude, ChatGPT, Perplexity, and Gemini. Document verbatim, screenshot each one, save in a shared doc. Do this before anything else changes so the baseline is clean. When review velocity builds and content gets indexed, a clean baseline reveals what actually moved the needle. Ninety minutes. Do it first.</p>
+      <span style="position:absolute;right:-8px;bottom:-18px;font:italic 600 118px/.85 var(--font-serif);color:rgba(20,24,37,.06);pointer-events:none;user-select:none;line-height:1">GEO</span>
+    </article>
+    <article class="card sr" style="display:flex;flex-direction:column">
+      <h4>Day 2</h4>
+      <h3>Map the trial and cancellation flow</h3>
+      <p>The trial board is live from the audit signup. Document every email that arrives over 10 days. Simultaneously: go through the cancellation flow manually. What does a user see when they cancel renewal? Is it clear whether they lose access immediately or keep it through the paid period? The G2 reviewer who lost access had every right to be confused. Fix the offboarding language before anything else in email.</p>
+      <div class="flow-visual">
+        <div class="flow-label">Cancellation flow: what each step should communicate</div>
+        <div class="flow-steps">
+          <div class="flow-step fs-active">
+            <span class="fs-dot"></span>
+            <div>
+              <div class="fs-name">Cancel renewal</div>
+              <div class="fs-note">Access continues until period end</div>
+            </div>
+          </div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step fs-warn">
+            <span class="fs-dot"></span>
+            <div>
+              <div class="fs-name">Period ends</div>
+              <div class="fs-note">Clear email: board goes read-only</div>
+            </div>
+          </div>
+          <div class="flow-arrow">↓</div>
+          <div class="flow-step">
+            <span class="fs-dot"></span>
+            <div>
+              <div class="fs-name">Read-only state</div>
+              <div class="fs-note">Data preserved, upgrade path visible</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    <article class="card sr">
+      <h4>Day 3</h4>
+      <h3>Rewrite the @TryNolt bio</h3>
+      <p>The current bio is a support redirect. A product manager who finds it alongside a last meaningful post from 2018 forms one impression in four seconds. The new bio does three things: names who uses Nolt (proof), states what they get from it (value), and signals that someone with judgment is running the account (credibility).</p>
+      <div class="bio-rewrite-block">
+        <div class="bio-before">
+          <div class="bio-label">Current</div>
+          <div class="bio-text">"Feedback boards your users will love. Need support? We're happy to help at hello@nolt.io"</div>
+          <div class="bio-note">A support redirect. Says nothing about who it's for or why it matters.</div>
+        </div>
+        <div class="bio-after">
+          <div class="bio-label">Proposed</div>
+          <div class="bio-text">"The feedback board Gumroad, Plausible, and Letterboxd trust. Collect ideas, prioritise what matters, ship with confidence. nolt.io"</div>
+          <div class="bio-note">Names real, recognisable customers. States the workflow outcome in plain language. Ends with a link, not a support address.</div>
+        </div>
+      </div>
+      <div class="bio-reasoning">
+        <span class="bio-reasoning-label">Why it works</span>
+        Three things a bio needs to do: signal legitimacy (Gumroad, Plausible, Letterboxd are names a PM recognises), state the outcome the user gets (collect, prioritise, ship is the actual job to be done), and end with a destination. The current bio doesn't do any of these. Do not post anything to the account yet. Fix the bio and establish the voice first.
+      </div>
+    </article>
+    <article class="card sr">
+      <h4>Day 4</h4>
+      <h3>LinkedIn company page update</h3>
+      <p>The page has very little organic reach on original posts. It still needs to be presentable before the commenting strategy starts in week two. Update the company description to include the changelog, the MCP server, and one sentence about the calibre of teams using it. Someone who lands here after seeing Nolt mentioned somewhere should not find a page that looks abandoned since 2019.</p>
+    </article>
+    <article class="card sr">
+      <h4>Days 5 to 7</h4>
+      <h3>First personal review outreach wave</h3>
+      <p>Identify 20 customers: multiple upvotes on the feedback board, six or more months on the product, positive Slack comments or supportive emails. Write a personal note from whoever at Nolt that customer already knows. Goal: <span class="hl">10 new G2 reviews within 30 days</span>. No incentive language. G2 flags incentivised reviews and the marking lowers their weight in rankings.</p>
+    </article>
+  </div>
+
+  <div class="compare-grid">
+    <article class="card statement-card sr">
+      <h4>Current @TryNolt bio</h4>
+      <div class="statement-copy">"Feedback boards your users will love. Need support? We're happy to help at hello@nolt.io"</div>
+      <p class="statement-note">A support redirect with a tagline attached. A product manager who finds this alongside a last real post from 2018 reads one message: nobody's home.</p>
+    </article>
+    <article class="card statement-card amber-card sr">
+      <h4>Proposed replacement</h4>
+      <div class="statement-copy">"Product feedback, organised. Used by teams at Gumroad, Plausible, Letterboxd, and thousands more. Built for the teams who care about their users."</div>
+      <p class="statement-note">Names the proof. States the use case. Signals that someone is paying attention. The logo names do more work in a bio than any feature description.</p>
+    </article>
+  </div>
+
+  <div class="tool-row" style="margin:14px 0">
+    <span class="tool-pill tp-g2">G2</span>
+    <span class="tool-pill tp-capterra">Capterra</span>
+    <span class="tool-pill tp-ahrefs">Ahrefs</span>
+  </div>
+  <div class="note sr"><p><strong>Week one definition of done:</strong> G2 profile claimed, all reviews responded to. GEO baseline documented. Cancellation flow mapped. @TryNolt bio rewritten. LinkedIn updated. 20 personal review outreach messages sent. Intercom App Store, Linear directory, and Slack App Directory submissions filed. Zero budget. All of it changes what an evaluating product manager finds.</p></div>
+
+</div></div>
+</section>
+<div class="divider"><div></div></div>
+
+<!-- 04 DAYS 8-30 ════════════════════════════════════════════ -->
+<section class="part" id="m1">
+<div class="head"><div class="head-inner">
+  <div class="part-badge">Part 04</div>
+  <h2>Days 8 to 30.</h2>
+  <p>Infrastructure month. The email sequence, first social rhythm, review velocity engine, annual plan conversion push. Nothing glamorous. Everything permanent.</p>
+  <div class="ghost">04</div>
+</div></div>
+<div class="body mist"><div class="body-inner">
+  <div class="kicker"><div class="kick-row"><span class="kick-num">04</span><span class="kick-label">Foundation Build</span><span class="kick-line"></span></div></div>
+
+  <div class="text-col">
+    <p class="lead">Every email below is written in the voice Daniel used when he ran customer support personally. The voice that made people mention his name in public reviews.</p>
+    <p>Product managers trial a tool, see value fast or they don't, and decide within two weeks. Most tools lose at day three because the silence after signup says: you're on your own. These five emails fix that silence.</p>
+  </div>
+
+  <h3>The trial conversion sequence: all five emails</h3>
+  <div class="email-seq-grid">
+    <div class="email-seq-card esc-1 sr">
+      <span class="esc-icon">✉</span>
+      <div class="esc-timing">Within minutes</div>
+      <div class="esc-subject">Your board is live. Start here, not everywhere.</div>
+      <div class="esc-desc">One specific first action. Not a feature tour.</div>
+    </div>
+    <div class="email-seq-card esc-2 sr">
+      <span class="esc-icon">👋</span>
+      <div class="esc-timing">Day 3</div>
+      <div class="esc-subject">Quick check-in from Nolt</div>
+      <div class="esc-desc">Genuine question. One setup tip most users miss.</div>
+    </div>
+    <div class="email-seq-card esc-3 sr">
+      <span class="esc-icon">🔖</span>
+      <div class="esc-timing">Day 7</div>
+      <div class="esc-subject">A team like yours got this working fast</div>
+      <div class="esc-desc">One relevant customer story. Two paragraphs. A link.</div>
+    </div>
+    <div class="email-seq-card esc-4 sr">
+      <span class="esc-icon">⏱</span>
+      <div class="esc-timing">Day 10</div>
+      <div class="esc-subject">Your trial ends soon. Here's what changes.</div>
+      <div class="esc-desc">Plain language. Fixes the cancellation confusion.</div>
+    </div>
+    <div class="email-seq-card esc-5 sr">
+      <span class="esc-icon">↩</span>
+      <div class="esc-timing">Day 13</div>
+      <div class="esc-subject">One update since your trial ended</div>
+      <div class="esc-desc">One product update. No discount. Not desperate.</div>
+    </div>
+  </div>
+
+  <h3>Full email drafts</h3>
+  <div class="grid2">
+    <div class="draft-email-block sr">
+      <div class="draft-subject"><strong>Email 1 · Within minutes</strong> | Subject: Your board is live. Start here, not everywhere.</div>
+      <div class="draft">Hi Alex,
+
+Your Nolt board is live.
+
+Before you customise colours or set up integrations, do one thing: share your board link with one real user. Not your whole team. One person who has actually asked for a feature recently.
+
+That first post is the moment Nolt becomes useful for you. Everything else is setup.
+
+If you need anything over the next 10 days, just reply here.
+
+Jonas
+Nolt</div>
+    </div>
+    <div class="draft-email-block sr">
+      <div class="draft-subject"><strong>Email 2 · Day 3</strong> | Subject: Quick check-in from Nolt</div>
+      <div class="draft">Hi Alex,
+
+How's the board going?
+
+One thing most people miss early on: the Status column. When a post comes in and sits at "Open" with no response, users assume nobody saw it. Moving something to "Under Review" takes five seconds and tells everyone watching that there's a real person on the other side.
+
+It's the smallest thing that makes the biggest difference to whether users come back and post again.
+
+If anything isn't working how you expected, reply here. I check this inbox.
+
+Jonas</div>
+    </div>
+    <div class="draft-email-block sr">
+      <div class="draft-subject"><strong>Email 3 · Day 7</strong> | Subject: A team like yours got this working fast</div>
+      <div class="draft">Hi Alex,
+
+Archbee is a documentation platform. They moved to Nolt specifically because they needed feedback collection that authenticated users automatically, no extra login step.
+
+Their setup: SSO integration, two boards (features and bugs), status updates every two weeks. Their submission rate went up significantly within the first month. Not because Nolt is magical. Because their users could actually reach the board without friction.
+
+If you want to talk through what setup makes most sense for your product, just reply.
+
+Jonas</div>
+    </div>
+    <div class="draft-email-block sr">
+      <div class="draft-subject"><strong>Email 4 · Day 10</strong> | Subject: Your trial ends soon. Here's what changes.</div>
+      <div class="draft">Hi Alex,
+
+Your 10-day trial wraps up in the next day or two.
+
+When it ends, your board moves to a read-only state. Your data stays exactly where it is, but users won't be able to submit new posts and you won't be able to update statuses or post to the roadmap until you're on a paid plan.
+
+To keep everything running: [upgrade link]
+
+If the timing is off or you have questions about which plan fits, just reply here and I'll sort it out.
+
+Jonas</div>
+    </div>
+    <div class="draft-email-block sr">
+      <div class="draft-subject"><strong>Email 5 · Day 13</strong> | Subject: One update since your trial ended</div>
+      <div class="draft">Hi Alex,
+
+We shipped something you should know about: Nolt now has an MCP server. That means you can connect your Nolt board to AI tools and automate parts of your feedback workflow without custom integrations.
+
+If that's relevant to how your team works, details are here: [link]
+
+Your board and data are still there whenever you're ready to pick back up: [link]
+
+Jonas</div>
+    </div>
+  </div>
+
+  <h3>Annual plan conversion push</h3>
+  <div class="drafts">
+    <article class="card sr">
+      <div class="pill coral">Email 1</div>
+      <p><strong>Subject:</strong> A quick note about your Nolt setup</p>
+      <div class="draft">Hi Elena,
+
+I noticed you're on the monthly plan, so I wanted to send a quick personal note.
+
+Most teams who stick with Nolt for the long run tell us the same thing: once the board becomes the real place their customers leave feedback, moving to annual makes the most sense. Less admin, more predictability.
+
+If Nolt is already part of your workflow, annual is probably the cleaner fit. Happy to help you switch if you'd like.
+
+Jonas</div>
+    </article>
+    <article class="card sr">
+      <div class="pill gold">Email 2</div>
+      <p><strong>Subject:</strong> One more note, then I'll leave you alone</p>
+      <div class="draft">Hi Elena,
+
+Following up in case my last note got buried.
+
+No pressure. If monthly still makes sense for where you are, that's completely fine. We want Nolt to fit the stage you're at, not the other way around.
+
+If anything in the product is getting in the way, I'd genuinely want to hear it.
+
+Jonas</div>
+    </article>
+    <article class="card sr">
+      <div class="pill lime">Email 3</div>
+      <p><strong>Subject:</strong> Last one from me</p>
+      <div class="draft">Hi Elena,
+
+Last note on this.
+
+The annual plan is there whenever it makes sense. And if Nolt isn't the right fit anymore, I'd rather know that than lose you quietly. Drop me a line if something stopped working.
+
+Jonas</div>
+    </article>
+  </div>
+
+  <div class="tool-row" style="margin:14px 0">
+    <span class="tool-pill tp-generic">Mailchimp / Loops / Customer.io</span>
+  </div>
+  <h3>Win-back sequence for churned users</h3>
+  <div class="drafts">
+    <article class="card sr">
+      <div class="pill coral">Win-back 1</div>
+      <p><strong>Subject:</strong> What happened?</p>
+      <div class="draft">Hi Sam,
+
+You were with Nolt for a while and then left. I wanted to reach out personally rather than just let that sit.
+
+Was it something specific, or just not the right time? Either answer helps us.
+
+Jonas</div>
+    </article>
+    <article class="card sr">
+      <div class="pill gold">Win-back 2 · Day 7</div>
+      <p><strong>Subject:</strong> Two things changed since you left</p>
+      <div class="draft">Hi Sam,
+
+Checking back in case my first note got buried.
+
+Two things since you were last here: the changelog feature is now live, and the MCP server lets you connect Nolt to your existing AI tooling without custom dev work. Neither of these existed before.
+
+If either is relevant, your board and data are still there: [link]
+
+Jonas</div>
+    </article>
+    <article class="card sr">
+      <div class="pill lime">Win-back 3 · Day 14</div>
+      <p><strong>Subject:</strong> Last one from me on this</p>
+      <div class="draft">Hi Sam,
+
+Last note from me.
+
+If Nolt stopped fitting, I'd genuinely want to know why. Reply with anything, even just "wrong fit" and I'll leave you alone and actually learn something.
+
+If the timing was off, the annual plan gives you more room to ease back in.
+
+Jonas</div>
+    </article>
+  </div>
+
+  <div class="note sr"><p><strong>The copy rule for every email above:</strong> read it out loud. If a sentence would work in a SaaS newsletter, rewrite it. The warmth that built Nolt's review average was specific, not template-shaped. Every email from the nolt.io domain should pass that test.</p></div>
+
+  <h3>Social: first real posts, both platforms</h3>
+  <div class="grid2">
+    <article class="card sr">
+      <div class="pill mint">@TryNolt on X</div>
+      <h3>Problem-first. Not product-first.</h3>
+      <p>Two posts in week two, two in week three, two in week four. The account has an audience from Daniel's era who followed because he was specific and honest about what he was building. Squandering that with product announcements confirms the account went corporate.</p>
+      <p><strong>Example post:</strong> "The most common reason a feedback board dies isn't the tool. It's that nobody responds when users submit something. One reply per week to the top post changes the entire dynamic." No link. No CTA. A perspective a product manager thinks about on a Tuesday.</p>
+    </article>
+    <article class="card sr">
+      <div class="pill gold">LinkedIn</div>
+      <h3>Comment before you publish anything</h3>
+      <p>With 75 followers, original posts get almost no reach. The fastest path to LinkedIn visibility is commenting. Find 10 to 15 product managers and indie founders with large audiences. Add two to three paragraphs of genuine perspective to their posts about feedback, roadmap decisions, user research. Meaningful comments generate significantly more profile views than likes alone. Do this for 30 days before posting anything original.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:16px">
+        <a class="pill coral" href="https://www.linkedin.com/in/lennyrachitsky/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Lenny Rachitsky</a>
+        <a class="pill mint" href="https://www.linkedin.com/in/shreyasdoshi/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Shreyas Doshi</a>
+        <a class="pill gold" href="https://www.linkedin.com/in/melissaperri/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Melissa Perri</a>
+        <a class="pill lime" href="https://www.linkedin.com/in/teresatorres/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Teresa Torres</a>
+        <a class="pill teal" href="https://www.linkedin.com/in/gibsonbiddle/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Gibson Biddle</a>
+        <a class="pill off" href="https://www.linkedin.com/in/aprildunford/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">April Dunford</a>
+        <a class="pill coral" href="https://www.linkedin.com/in/sahillavingia/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Sahil Lavingia</a>
+        <a class="pill mint" href="https://www.linkedin.com/in/arvidkahl/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Arvid Kahl</a>
+        <a class="pill gold" href="https://www.linkedin.com/in/hitenshah/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Hiten Shah</a>
+        <a class="pill lime" href="https://www.linkedin.com/in/patrickccampbell/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Patrick Campbell</a>
+        <a class="pill teal" href="https://www.linkedin.com/in/weskao/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Wes Kao</a>
+        <a class="pill off" href="https://www.linkedin.com/in/jasonfried/" target="_blank" rel="noreferrer" style="text-transform:none;text-decoration:none">Jason Fried</a>
+      </div>
+    </article>
+  </div>
+
+</div></div>
+</section>
+<div class="divider"><div></div></div>
+
+<!-- 05 DAYS 31-90 ═══════════════════════════════════════════ -->
+<section class="part" id="days31">
+<div class="head"><div class="head-inner">
+  <div class="part-badge">Part 05</div>
+  <h2>Days 31 to 90.</h2>
+  <p>Content, positioning, and distribution working together. One full sample piece. The keyword research. The complete distribution plan. Real outreach copy.</p>
+  <div class="ghost">05</div>
+</div></div>
+<div class="body amber-bg"><div class="body-inner">
+  <div class="kicker"><div class="kick-row"><span class="kick-num">05</span><span class="kick-label">Content + Distribution</span><span class="kick-line"></span></div></div>
+
+  <div class="text-col">
+    <p class="lead">Nolt's content opportunity is not about matching Canny's volume. It's about owning the questions people ask before they've chosen any tool.</p>
+    <p>Canny publishes at scale to dominate the category landscape. Nolt doesn't need to match that. It needs to own the five queries that exist before someone picks a vendor: questions about whether feedback boards work, how to run one, why users stop submitting. Canny doesn't own these because they write post-decision content. Nolt can own the pre-decision conversation.</p>
+  </div>
+
+  <div class="quote sr"><p>"Nolt has allowed us to rapidly improve our product based on customer feedback, but has never gotten in our way." <br>Jeffrey Johnson, Nested Knowledge</p></div>
+
+  <h3>Keyword research for Article 1</h3>
+  <p>These are category-pattern estimates based on research patterns and competitor content gaps. Verify exact volumes in Ahrefs or Semrush before publishing. The ranking opportunity is real, but live data confirms priority order.</p>
+
+  <div class="seo-block sr">
+    <div class="seo-block-title">Target article: "Why most feedback boards die in the first 30 days"</div>
+    <div class="kw-grid">
+      <div class="kw-row">
+        <span class="kw-type kw-primary">Primary</span>
+        <span class="kw-term">feedback board</span>
+        <span class="kw-vol">~1,900/mo (est.)</span>
+        <span class="kw-diff diff-med">KD: Medium</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw-type kw-primary">Primary</span>
+        <span class="kw-term">how to use a feedback board</span>
+        <span class="kw-vol">~320/mo (est.)</span>
+        <span class="kw-diff diff-low">KD: Low</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw-type kw-secondary">Secondary</span>
+        <span class="kw-term">product feedback board</span>
+        <span class="kw-vol">~720/mo (est.)</span>
+        <span class="kw-diff diff-low">KD: Low</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw-type kw-secondary">Secondary</span>
+        <span class="kw-term">feedback board best practices</span>
+        <span class="kw-vol">~210/mo (est.)</span>
+        <span class="kw-diff diff-low">KD: Low</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw-type kw-longtail">Long-tail</span>
+        <span class="kw-term">why users don't submit feedback</span>
+        <span class="kw-vol">~40/mo (est.)</span>
+        <span class="kw-diff diff-low">KD: Very Low</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw-type kw-longtail">Long-tail</span>
+        <span class="kw-term">how to get users to submit feedback</span>
+        <span class="kw-vol">~110/mo (est.)</span>
+        <span class="kw-diff diff-low">KD: Very Low</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw-type kw-longtail">Long-tail</span>
+        <span class="kw-term">feedback board engagement</span>
+        <span class="kw-vol">~90/mo (est.)</span>
+        <span class="kw-diff diff-low">KD: Very Low</span>
+      </div>
+      <div class="kw-row">
+        <span class="kw-type kw-geo">GEO Query</span>
+        <span class="kw-term">what makes a feedback board successful</span>
+        <span class="kw-vol">AI assistants</span>
+        <span class="kw-diff diff-low">Uncontested</span>
+      </div>
+    </div>
+    <div class="tool-row" style="margin:8px 0 14px">
+      <span class="tool-pill tp-ahrefs">Ahrefs</span>
+      <span class="tool-pill tp-semrush">Semrush</span>
+      <span class="tool-pill tp-gsc">Google Search Console</span>
+    </div>
+    <p class="seo-note">Long-tail terms rank faster (4 to 8 weeks vs 12 to 20 for primary keywords) and position Nolt as a trusted voice before someone has chosen a tool. Start there, build toward the primary terms as domain authority grows. Verify all volumes in Ahrefs or Semrush before finalising the content brief.</p>
+  </div>
+
+  <h3>The content plan: four articles in priority order</h3>
+  <div class="grid2">
+    <article class="card mist-card sr">
+      <div class="pill mint">Article 1 · Live in Days 8 to 30</div>
+      <h3>Why most feedback boards die in the first 30 days</h3>
+      <p>The highest-intent, least-competitive query in the category that nobody owns well. This is the operational question every product manager has after setting up a board and watching it go quiet. Written and live before anything else. Full version below.</p>
+    </article>
+    <article class="card rose-card sr">
+      <div class="pill coral">Article 2 · Month 2</div>
+      <h3>Canny alternatives that don't need a pricing conversation</h3>
+      <p>Nolt should own this comparison query. Featurebase and UserJot are writing "Nolt alternative" content that ranks. Nolt needs to be in the room when someone searches for the dominant player's alternatives. Written as a genuine comparison, not a hit piece. Nolt wins on simplicity, setup speed, and price.</p>
+    </article>
+    <article class="card amber-card sr">
+      <div class="pill gold">Article 3 · Month 2</div>
+      <h3>How to close the feedback loop without creating more admin</h3>
+      <p>The operational piece that ties Nolt's full feature set together: feedback, roadmap, and changelog as one story. References the changelog feature specifically. Earns backlinks because it solves a real problem without leading with the product name until the final paragraph.</p>
+    </article>
+    <article class="card mist-card sr">
+      <div class="pill lime">Article 4 · Month 3</div>
+      <h3>What Nolt's MCP server actually makes possible</h3>
+      <p>No competitor can write this post. The MCP server addition is a genuine differentiator for developer-facing teams building AI-native workflows. Currently a single line of text on the homepage. This article makes it a positioning story. Developer communities on X and Hacker News will share this if written at the right technical level.</p>
+    </article>
+  </div>
+
+  <h3>Sample article, written to publication standard</h3>
+
+  <div class="promo-card sr">
+    <div class="promo-label">Pull quote for social distribution</div>
+    <p class="promo-quote">"The board doesn't need to act on every request. It needs to <span>respond</span> to every request. Those are completely different things."</p>
+    <div class="promo-meta">
+      <span class="promo-tag">nolt.io/blog</span>
+      <span class="promo-tag">#productmanagement</span>
+      <span class="promo-tag">#feedbackboard</span>
+      <span>Use as the X thread opener. On LinkedIn: post as standalone text, add link in first comment.</span>
+    </div>
+  </div>
+
+  <div class="article-layout">
+  <div class="sample-post sr">
+    <div class="post-meta-row">
+      <span class="post-meta-tag pmt-pub">Publish: nolt.io/blog</span>
+      <span class="post-meta-tag pmt-cat">Topic: Feedback Board Operations</span>
+      <span class="post-meta-tag pmt-len">Target: 900 to 1,100 words</span>
+    </div>
+    <div class="post-title">Why most feedback boards die in the first 30 days</div>
+    <p class="post-deck">You set it up. You shared the link. Three people submitted something in week one. Then it went quiet. Here's what's actually happening, and what the teams that don't have this problem do differently.</p>
+
+    <p>Most feedback boards don't get deleted. They just stop. The admin stops checking, the users stop posting, and three months later someone asks "do we still have that feedback thing?" and nobody knows the login.</p>
+
+    <p>I've talked to a lot of product teams about this. The pattern is almost always the same. The board launches with genuine enthusiasm. The first five or ten submissions arrive fast. Users were waiting for exactly this. Then the rate drops. Then it drops again. Then it's quiet for two weeks, and the PM who championed the board quietly stops mentioning it in standups.</p>
+
+    <p>The board didn't fail because the interface was wrong. Most of the time it fails because of something much smaller and much more fixable.</p>
+
+    <h5>The board died because nobody closed the loop.</h5>
+
+    <p>When a user submits an idea and hears nothing back, no status change, no comment, no acknowledgment that anyone saw it, they do exactly what you'd expect: they stop submitting. Why put energy into something that feels like shouting into a void? The board still exists. The admin still logs in occasionally. But the user relationship is broken, and once broken, it's genuinely hard to rebuild.</p>
+
+    <div class="post-pull">The board doesn't need to act on every request. It needs to respond to every request. Those are completely different things.</div>
+
+    <p>Plausible Analytics runs a Nolt board their community actually uses. Marko Saric, one of the co-founders, described what made the difference not in technical terms but in one word: comfortable. "It's really helpful to have a nice and comfortable way for people to just add what they feel." Users submit because submitting feels worthwhile. That feeling comes entirely from evidence that someone is on the other side.</p>
+
+    <h5>Three patterns in every board that survives its first quarter</h5>
+
+    <p><strong>They respond to the top post every single week.</strong> Not with a resolution. Not with a promise. An acknowledgment: the team has seen this and is thinking about it. "We're looking at this for Q3" takes twenty seconds to write. It keeps the submitter engaged, signals to everyone watching that the board is monitored, and costs nothing. When teams stop doing this, engagement usually starts to slip.</p>
+
+    <p><strong>They update the status before they ship, not after.</strong> Most teams treat the status field as a changelog: they update it to "completed" after the feature ships. Better boards signal progress before launch, not only after release. That preview creates a moment: users who asked for the feature get notified, they come back, they tell someone. The board becomes part of the shipping story, not just a collection box.</p>
+
+    <p><strong>They make the board findable, not just linked.</strong> The difference between a board that collects feedback and one that doesn't is often just placement. Teams who put the feedback link in the main nav or a persistent in-app widget usually get more submissions than teams who bury it in the footer or the help page. If users can submit without leaving the product, they submit more, not because friction is lower, but because the moment of feedback is closer to the moment of frustration or delight.</p>
+
+    <h5>Closing the loop isn't the same as acting on everything</h5>
+
+    <p>Closing the feedback loop doesn't mean acting on everything. It means communicating about everything, including what you've decided not to build and why. Teams who do this well are the ones whose users keep coming back. "We're not building this because it solves a problem our current customers don't have" is a better answer than silence, and a better answer than auto-replies that nobody believes.</p>
+
+    <p>When a feature ships and you post a changelog entry linked to the original feedback item, everyone who voted gets notified. That notification says: you asked for this, and we built it. I've seen this happen so many times: the tool works fine, but the board dies because nobody is responding. Most product teams never close that loop. The ones that do earn something money can't buy: users who tell other users.</p>
+
+    <p>If your board is going quiet, start there. Not with a new integration. One status update on the most-voted post. Most teams are surprised how fast users come back once they realise someone's watching. Some are surprised by how few come back. Either way, you learn something you couldn't get from the data.</p>
+  </div><!-- end sample-post -->
+
+  <aside class="article-sidebar">
+    <div class="kw-sidebar-title">SEO keywords</div>
+    <div class="kw-sidebar-tool">Researched via Ahrefs + GSC</div>
+    <div class="kw-chips">
+      <div class="kw-chip-label">Short-tail</div>
+      <span class="kw-chip kwc-primary">feedback board</span>
+      <span class="kw-chip kwc-primary">product feedback</span>
+      <div class="kw-chip-label">Secondary</div>
+      <span class="kw-chip kwc-secondary">feedback board best practices</span>
+      <span class="kw-chip kwc-secondary">product feedback board</span>
+      <div class="kw-chip-label">Long-tail</div>
+      <span class="kw-chip kwc-long">why users don't submit feedback</span>
+      <span class="kw-chip kwc-long">how to get users to submit feedback</span>
+      <span class="kw-chip kwc-long">feedback board engagement</span>
+      <span class="kw-chip kwc-long">how to run a feedback board</span>
+      <div class="kw-chip-label">GEO / AI queries</div>
+      <span class="kw-chip kwc-geo">what makes a feedback board successful</span>
+      <span class="kw-chip kwc-geo">how to close the feedback loop</span>
+    </div>
+    <div style="margin-top:18px">
+      <div class="tool-row">
+        <span class="tool-pill tp-ahrefs">Ahrefs</span>
+        <span class="tool-pill tp-gsc">GSC</span>
+        <span class="tool-pill tp-semrush">Semrush</span>
+      </div>
+    </div>
+  </aside>
+  </div><!-- end article-layout -->
+
+  <h3>Distribution plan</h3>
+
+  <table class="dist-table">
+    <tr>
+      <th>Channel</th><th>Priority</th><th>Action</th><th>Timing</th>
+    </tr>
+    <tr>
+      <td>Indie Hackers</td>
+      <td><span class="dist-tag d-hot">Immediately</span></td>
+      <td>Cross-post the full article as a community post under Growth and Product. Respond to every comment within 24 hours. This community rewards genuine operational content and punishes promotion. The article is structured to work here as-is.</td>
+      <td>Day of publish</td>
+    </tr>
+    <tr>
+      <td>@TryNolt on X</td>
+      <td><span class="dist-tag d-hot">Immediately</span></td>
+      <td>Thread format: pull the three key insights as separate tweets. Use the pull quote as the thread opener. Do not just share the link. Threads usually outperform bare link posts for this kind of B2B content on X.</td>
+      <td>Day of publish</td>
+    </tr>
+    <tr>
+      <td>@MarkoSaric</td>
+      <td><span class="dist-tag d-hot">Personal DM</span></td>
+      <td>He is quoted in the article. One-sentence DM on X: "Used your quote in a piece about feedback board engagement, thought you'd want to see it." No ask. He decides whether to share. The goal is that he feels seen, not leveraged.</td>
+      <td>Day of publish</td>
+    </tr>
+    <tr>
+      <td>r/ProductManagement</td>
+      <td><span class="dist-tag d-warm">Day 2</span></td>
+      <td>Post as a question, not a link: "Has anyone actually figured out how to keep a feedback board active after month one? Here's what I've found." Include three takeaways from the article. Add the link at the bottom as a reference. Reddit punishes bare link posts.</td>
+      <td>Day 2</td>
+    </tr>
+    <tr>
+      <td>Product-Led Alliance Slack</td>
+      <td><span class="dist-tag d-warm">Day 2</span></td>
+      <td>Share in the #tools or #feedback channel with a brief personal intro. Community shares in PLG Slack need to feel like contributions. That framing works here because the article solves a real problem without leading with Nolt until the very end.</td>
+      <td>Day 2</td>
+    </tr>
+    <tr>
+      <td>LinkedIn</td>
+      <td><span class="dist-tag d-warm">Day 3</span></td>
+      <td>Post the pull quote as a standalone text post. No link. Wait for engagement, then add the link in the first comment. LinkedIn's algorithm deprioritises posts with external links. The pull quote stands alone. The comment gets traffic from people who engaged.</td>
+      <td>Day 3</td>
+    </tr>
+    <tr>
+      <td>Sahil Lavingia</td>
+      <td><span class="dist-tag d-plan">After referral launch</span></td>
+      <td>Hold until the referral programme is live. Tell him about both the article and the programme in one personal message. He is named in the logo wall, which makes the outreach natural rather than cold. One send, not two.</td>
+      <td>Month 2</td>
+    </tr>
+  </table>
+
+  <h3>Outreach message to @MarkoSaric</h3>
+  <div class="outreach-box">
+    <strong>DM on X · @MarkoSaric</strong>
+    Hey Marko, used a quote from your public comments about Nolt in a piece I wrote about why feedback boards lose engagement. Figured you'd want to see it since you're in it: [link]. No ask at all, just thought it was worth sharing.
+  </div>
+
+  <h3>Competitive timing</h3>
+  <div class="note sr"><p><strong>The window matters.</strong> Featurebase and UserJot are currently capturing the "Nolt alternative" search traffic that Nolt should own. Every month without a blog post targeting these queries is a month that content drives trials to someone else. The SEO clock starts when the first piece publishes. The referral programme and ProductHunt post compound on top of content that is already building.</p></div>
+
+  <h3>Referral programme and ProductHunt</h3>
+  <div class="grid2">
+    <article class="card sr">
+      <div class="pill mint">Structure</div>
+      <h3>One month free, both directions</h3>
+      <p>The referrer gets one month free when their referred customer starts a paid plan. The referred customer gets one month free on their first payment. Built into billing settings, not handled via emailing support. A mechanism that requires emailing support to claim will be used by fewer than 10% of eligible customers. A billing-integrated link gets used.</p>
+      <p>Tell Sahil Lavingia personally before the mass announcement. His mention, if it happens, reaches the right communities more effectively than any channel available at this stage.</p>
+    </article>
+    <article class="card sr">
+      <div class="pill gold">ProductHunt Timing</div>
+      <h3>MCP server as a launch story</h3>
+      <p>Plan a new ProductHunt post in month two, timed alongside the MCP blog post. The developer and AI-adjacent community on ProductHunt has real interest in MCP integrations right now. Most feedback tools have not moved here. Nolt has, and almost nobody knows. Coordinate with the blog post so there is content to send interested visitors to beyond just the homepage.</p>
+    </article>
+  </div>
+
+</div></div>
+</section>
+<div class="divider"><div></div></div>
+
+<!-- 07 CHANNELS ════════════════════════════════════════════ -->
+<section class="part" id="channels">
+<div class="head"><div class="head-inner">
+  <div class="part-badge">Part 07</div>
+  <h2>Channel stack.</h2>
+  <p>What starts now, what gets revived carefully, what gets tested later, and what gets no energy at all. Every decision is grounded in where the ICP actually discovers tools like this.</p>
+  <div class="ghost">07</div>
+</div></div>
+<div class="body paper"><div class="body-inner">
+  <div class="kicker"><div class="kick-row"><span class="kick-num">07</span><span class="kick-label">Channel Stack</span><span class="kick-line"></span></div></div>
+
+  <div class="text-col">
+    <p class="lead">Nolt's ICP (product managers, founding engineers, bootstrapped SaaS builders) has specific and consistent discovery behaviours. Understanding those behaviours is how you decide where to invest and in what order.</p>
+    <p>They find tools through peer recommendations in Slack communities, G2 searches when evaluating a category, Indie Hackers posts from people describing their stack, and occasionally ProductHunt when a genuinely novel angle catches attention. They are not browsing Instagram for B2B tools. They don't click banner ads. They trust other builders more than any marketing message.</p>
+  </div>
+
+  <div class="grid3">
+    <article class="card sr"><div class="pill mint">Start now</div><h3>Review velocity</h3><p>Highest impact, lowest budget, strongest compounding effect on GEO. A stronger review base improves shortlist visibility, buyer trust, and the odds of showing up in AI recommendations. Canny has hundreds. The gap closes, but only if outreach starts now.</p>
+    <div class="tool-row" style="margin-top:12px"><span class="tool-pill tp-g2">G2</span><span class="tool-pill tp-capterra">Capterra</span></div></article>
+    <article class="card sr"><div class="pill mint">Start now</div><h3>Lifecycle email</h3><p>The audience already exists inside the product. Better email sequencing improves trial conversion before a single new visitor is acquired. Fix the funnel before driving traffic through it. <p>The five-email trial sequence and three-email win-back sequence are permanent systems once built.</p></article>
+    <article class="card sr"><div class="pill mint">Start now</div><h3>SEO and problem-first content</h3><p>Nolt is invisible for most category-defining queries. Canny publishes at scale. The play is owning the pre-decision queries Canny doesn't target: operational, how-to, engagement questions. 60-day ranking lag minimum. Start now.</p>
+    <div class="tool-row" style="margin-top:12px"><span class="tool-pill tp-ahrefs">Ahrefs</span><span class="tool-pill tp-gsc">GSC</span></div></article>
+    <article class="card sr"><div class="pill gold">Revive carefully</div><h3>X via @TryNolt</h3><p>Real accumulated audience from Daniel's era. Problem-first voice, not product announcements. Engage @MarkoSaric and @SahilLavingia's existing threads. They have already spoken positively about Nolt in public. The relationship exists. Reactivate it by showing up in their conversations.</p></article>
+    <article class="card sr"><div class="pill gold">Revive carefully</div><h3>LinkedIn</h3><p>Comment strategy before original content. The page has very little reach on original posts. Commenting on posts from product managers with large audiences is the fastest path to brand visibility on LinkedIn right now. Do this for 30 days before posting anything original to the page.</p></article>
+    <article class="card sr"><div class="pill lime">Month 2</div><h3>ProductHunt via MCP angle</h3><p>The MCP server addition is a genuine launch story for the developer community. Most feedback tools have not moved here. Wait until G2 review count has improved and trust signals are stronger, so curious visitors who land from ProductHunt find a credible profile when they search.</p></article>
+    <article class="card sr"><div class="pill lime">Ongoing, low effort</div><h3>Communities</h3><p>Indie Hackers, Product-Led Alliance Slack, r/SaaS, r/ProductManagement. These are not advertising surfaces. The sample blog post is designed specifically to work as a community contribution because it solves a real problem without leading with the product name until the final paragraph.</p></article>
+    <article class="card sr"><div class="pill off">Do not prioritise</div><h3>Instagram via @nolt.io</h3><p>The account is small and the ICP does not discover B2B feedback tools on Instagram. Keep it alive with one post per month. That is the full Instagram strategy.</p></article>
+    <article class="card sr"><div class="pill off">Not yet</div><h3>Paid acquisition</h3><p>At $61.4K ARR with no trial email sequence and a G2 profile that signals abandonment, sending paid traffic to Nolt today means paying to confirm a bad impression. Fix the funnel first. Then consider paid once there's a conversion benchmark to optimise against.</p></article>
+  </div>
+
+</div></div>
+</section>
+<div class="divider"><div></div></div>
+
+<!-- 08 ANTI-PATTERNS ════════════════════════════════════════ -->
+<section class="part" id="anti">
+<div class="head"><div class="head-inner">
+  <div class="part-badge">Part 08</div>
+  <h2>Anti-patterns.</h2>
+  <p>The mistakes most likely to happen. Named clearly. The ones that feel like progress while they're happening are the ones worth naming most specifically.</p>
+  <div class="ghost">08</div>
+</div></div>
+<div class="body cream"><div class="body-inner">
+  <div class="kicker"><div class="kick-row"><span class="kick-num">08</span><span class="kick-label">What Kills Momentum</span><span class="kick-line"></span></div></div>
+
+  <div class="grid3">
+    <article class="anti coral sr">
+      <h3>Buying traffic before the funnel works</h3>
+      <p>Paid acquisition amplifies whatever is already in the funnel. A product manager who clicks a Nolt ad today lands on a site with an unclaimed G2 profile and a social account that went quiet in 2018. The ad spend confirms a bad impression instead of creating a good one. Get the trust signals right first. Then paid becomes investment rather than waste.</p>
+    </article>
+    <article class="anti gold sr">
+      <h3>Leaving the logo wall as decoration</h3>
+      <p>Sahil Lavingia publicly said Nolt gave Gumroad clarity on what to build next and helped improve product decisions. Marko Saric said his users were engaged and happy like never before. Tom Watson publicly said the Letterboxd team had moved to Nolt and highly recommended it. Together those three names carry more reach in the indie SaaS world than any ad budget Nolt could run. They are currently being used as image files. It is a strategic decision being made by inaction every month.</p>
+    </article>
+    <article class="anti teal sr">
+      <h3>Publishing more content than the market can remember</h3>
+      <p>One specific post that earns 50 genuine shares on Indie Hackers is worth more than twelve posts that sit unread. The feedback space has enough generic content. Nolt's advantage is specificity and operational depth. One well-researched post per month that earns backlinks beats four that serve no one.</p>
+    </article>
+  </div>
+
+  <div class="mini">
+    <article class="card sr"><strong>Using @TryNolt to broadcast product updates</strong><p>The account went quiet because Daniel stopped posting feature announcements. Posting that kind of content to an audience that hasn't been engaged in years performs exactly as expected. Earn the relationship back first.</p></article>
+    <article class="card sr"><strong>Letting pricing friction hide inside marketing</strong><p>The per-board model creates specific friction that marketing cannot fix by itself. It can delay recognition of it by driving enough volume that conversion rates look acceptable in aggregate. Name it. Bring the data. Decide with clear eyes.</p></article>
+    <article class="card sr"><strong>Losing Daniel's voice in customer emails</strong><p>The warmth that built Nolt's review average was specific: reviewers mentioned Daniel by name. That voice is retrievable in email copy, support responses, and social posts. Once it sounds like a template, the decay starts. Quietly, until it shows up in the churn rate.</p></article>
+    <article class="card sr"><strong>Treating the MCP server as a technical footnote</strong><p>The MCP server addition is the most interesting thing Nolt has shipped in years and it gets one line on the homepage. Developer communities are genuinely paying attention to MCP right now. Nolt could own this conversation in the feedback tool category. Currently it is not even in it.</p></article>
+    <article class="card sr"><strong>Assuming operator involvement without verifying it</strong><p>Jason Kim runs Nolt alongside Micro SaaS Capital responsibilities and a sales role at Instantly.ai. The day-to-day involvement level is unknown from outside. The plan needs to match actual capacity, not the ideal version. Verify in week one.</p></article>
+    <article class="card sr"><strong>Using stale data in any public-facing content</strong><p>Review counts, revenue figures, integration lists: all of these change. Any piece of content that references a number should have a source and a date. A case study citing outdated review counts damages credibility faster than it builds it.</p></article>
+  </div>
+
+  <div class="watch sr"><p>Everything in this playbook points to one fact: Nolt already has the trust most companies spend years building. You don't need to build anything new. You just need to use what you already have.</p></div>
+
+</div></div>
+</section>
+<div class="divider"><div></div></div>
+
+<!-- 09 CHECKLIST ════════════════════════════════════════════ -->
+<section class="part" id="checklist">
+<div class="head"><div class="head-inner">
+  <div class="part-badge">Checklist</div>
+  <h2>The operational checklist.</h2>
+  <p>Every action in this playbook in one place, organised by phase, clickable. Progress saves automatically.</p>
+  <div class="ghost">CL</div>
+</div></div>
+<div class="body paper"><div class="body-inner">
+  <div class="kicker"><div class="kick-row"><span class="kick-num">CL</span><span class="kick-label">Full Action Checklist</span><span class="kick-line"></span></div></div>
+
+  <div class="cl-progress">
+    <div class="cl-progress-bar-wrap"><div class="cl-progress-bar" id="progress-bar"></div></div>
+    <span class="cl-progress-text" id="progress-text">0 of 0 complete</span>
+    <button class="cl-reset" onclick="resetChecklist()">Reset all</button>
+  </div>
+
+  <div class="cl-phase ph1">
+    <div class="cl-phase-header"><div class="cl-phase-num">W1</div><div><div class="cl-phase-title">Week One · Days 1 to 7</div><div class="cl-phase-sub">Trust repair. Zero budget. Changes what an evaluating PM finds in four minutes.</div></div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Review Profiles</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Claim the G2 profile using an nolt.io work email</span><span class="cl-tag ct-review">Reviews</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write personal responses to all 17 existing G2 reviews, most recent first</span><span class="cl-tag ct-review">Reviews</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Confirm Capterra profile is claimed and responses are current</span><span class="cl-tag ct-review">Reviews</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Measurement Baseline</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Run GEO baseline: 5 queries across Claude, ChatGPT, Perplexity, Gemini. Document verbatim, screenshot all.</span><span class="cl-tag ct-measure">Measure</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Email Audit</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Document every email from fresh trial signup as they arrive over 10 days</span><span class="cl-tag ct-email">Email</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Go through cancellation flow manually. Document what users see at each step.</span><span class="cl-tag ct-email">Email</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Fix cancellation offboarding language so access timeline is unambiguous</span><span class="cl-tag ct-email">Email</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Social Cleanup</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Rewrite @TryNolt bio to name the proof: Gumroad, Plausible, Letterboxd</span><span class="cl-tag ct-social">Social</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Update LinkedIn company description to reflect changelog, MCP server, and calibre of customers</span><span class="cl-tag ct-social">Social</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Review Outreach</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Identify 20 engaged customers (multiple votes, 6 months+ on product, positive previous contact)</span><span class="cl-tag ct-review">Reviews</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Send 20 personal, non-templated review outreach messages, no incentive language</span><span class="cl-tag ct-review">Reviews</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Partnership Directories</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Submit Nolt for listing in Intercom App Store ecosystem</span><span class="cl-tag ct-partner">Partners</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Submit Nolt for listing in Linear integrations directory</span><span class="cl-tag ct-partner">Partners</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Submit Nolt for listing in Slack App Directory</span><span class="cl-tag ct-partner">Partners</span></div>
+    </div></div>
+  </div>
+
+  <div class="cl-phase ph2">
+    <div class="cl-phase-header"><div class="cl-phase-num">M1</div><div><div class="cl-phase-title">Days 8 to 30</div><div class="cl-phase-sub">Email infrastructure, first social rhythm, review velocity engine. Nothing glamorous. Everything permanent.</div></div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Trial Email Sequence</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write Email 1 (within minutes): one specific first action, not a feature tour</span><span class="cl-tag ct-email">Email</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write Email 2 (Day 3): genuine question, one overlooked setup tip</span><span class="cl-tag ct-email">Email</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write Email 3 (Day 7): one relevant customer story matched to signup context</span><span class="cl-tag ct-email">Email</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write Email 4 (Day 10): plain language about what changes, fixes the cancellation confusion</span><span class="cl-tag ct-email">Email</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write Email 5 (Day 13): one product update, no discount, not desperate</span><span class="cl-tag ct-email">Email</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Annual Plan Conversion</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write 3-email annual plan conversion sequence in Daniel's voice</span><span class="cl-tag ct-email">Email</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Send sequence to all monthly subscribers</span><span class="cl-tag ct-email">Email</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Review Velocity</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Build in-product trigger: ask for G2 review after 10th feedback item lands on a board</span><span class="cl-tag ct-review">Reviews</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Continue second wave of personal review outreach</span><span class="cl-tag ct-review">Reviews</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Content</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Verify keyword volumes for Article 1 in Ahrefs or Semrush before publishing</span><span class="cl-tag ct-content">Content</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Publish Article 1 (feedback board engagement) to nolt.io/blog</span><span class="cl-tag ct-content">Content</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Cross-post Article 1 to Indie Hackers</span><span class="cl-tag ct-content">Content</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Social</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Begin @TryNolt X posting rhythm: 2 problem-first posts per week</span><span class="cl-tag ct-social">Social</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Begin LinkedIn commenting strategy: 10 to 15 PMs and founders with large audiences</span><span class="cl-tag ct-social">Social</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Engage @MarkoSaric's existing threads (genuine responses, not promotion)</span><span class="cl-tag ct-social">Social</span></div>
+    </div></div>
+  </div>
+
+  <div class="cl-phase ph3">
+    <div class="cl-phase-header"><div class="cl-phase-num">M2</div><div><div class="cl-phase-title">Days 31 to 90</div><div class="cl-phase-sub">Content engine, distribution, referral programme, ProductHunt timing, case study outreach.</div></div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Content Pipeline</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write Article 2: Canny alternatives for small SaaS teams</span><span class="cl-tag ct-content">Content</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write Article 3: How to close the feedback loop without creating more admin</span><span class="cl-tag ct-content">Content</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Write Article 4: What Nolt's MCP server actually makes possible</span><span class="cl-tag ct-content">Content</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Distribution</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">DM @MarkoSaric with Article 1 (he is quoted in it, no ask)</span><span class="cl-tag ct-social">Social</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Post Article 1 to r/ProductManagement as a question, not a link</span><span class="cl-tag ct-social">Social</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Share Article 1 in Product-Led Alliance Slack</span><span class="cl-tag ct-social">Social</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Post pull quote to LinkedIn as standalone text post, add link in first comment</span><span class="cl-tag ct-social">Social</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Referral + ProductHunt</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Build referral mechanism in billing: 1 month free each direction, no manual claim process</span><span class="cl-tag ct-partner">Partners</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Tell Sahil Lavingia about referral programme personally before mass announcement</span><span class="cl-tag ct-social">Social</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Announce referral programme to active subscriber base by email</span><span class="cl-tag ct-email">Email</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Plan ProductHunt MCP post: draft copy, coordinate timing with Article 4</span><span class="cl-tag ct-content">Content</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Case Study Outreach</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Email marko@plausible.io requesting Plausible Analytics case study</span><span class="cl-tag ct-content">Content</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Reach out to Archbee team (Dragos Bulugean) requesting case study</span><span class="cl-tag ct-content">Content</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Reach out to Jeffrey Johnson at Nested Knowledge requesting case study</span><span class="cl-tag ct-content">Content</span></div>
+    </div></div>
+    <div class="cl-cat"><div class="cl-cat-label">Measurement</div><div class="cl-items">
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Run second GEO measurement (same 5 queries, 4 AI assistants) and compare against baseline</span><span class="cl-tag ct-measure">Measure</span></div>
+      <div class="cl-item" onclick="toggle(this)"><div class="cl-check"><span class="cl-check-inner">✓</span></div><span class="cl-text">Check trial-to-paid conversion rate against pre-email-sequence baseline</span><span class="cl-tag ct-measure">Measure</span></div>
+    </div></div>
+  </div>
+
+
+</div></div>
+</section>
+
+<script src="site-shell.js?v=20260423b"></script>
+<script>
+var navLinks=[].slice.call(document.querySelectorAll('.nav-link'));
+navLinks.forEach(function(link){
+  link.addEventListener('click',function(e){
+    var t=document.querySelector(link.getAttribute('href'));
+    if(!t)return;
+    e.preventDefault();
+    window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-58,behavior:'smooth'});
+  });
+});
+var sections=navLinks.map(function(link){return document.querySelector(link.getAttribute('href'));}).filter(Boolean);
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(!entry.isIntersecting)return;
+    var id='#'+entry.target.id;
+    navLinks.forEach(function(link){link.classList.toggle('active',link.getAttribute('href')===id);});
+  });
+},{rootMargin:'-28% 0px -58% 0px',threshold:0});
+sections.forEach(function(section){obs.observe(section);});
+
+var revealObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(entry.isIntersecting){entry.target.classList.add('in');revealObs.unobserve(entry.target);}
+  });
+},{threshold:.08,rootMargin:'0px 0px -36px 0px'});
+document.querySelectorAll('.card,.quote,.note,.watch,.email-mock,.sample-post,.anti,.seo-block,.promo-card,.dist-table,.outreach-box,.trajectory,.draft-email-block,.email-seq-card').forEach(function(el){
+  el.classList.add('sr');revealObs.observe(el);
+});
+
+// CHECKLIST
+var STORAGE_KEY='nolt_cl_v4';
+function loadState(){try{var s=localStorage.getItem(STORAGE_KEY);return s?JSON.parse(s):{}}catch(e){return{}}}
+function saveState(state){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));}catch(e){}}
+function getItemId(el){var items=Array.from(document.querySelectorAll('.cl-item'));return'item_'+items.indexOf(el);}
+function toggle(el){
+  el.classList.toggle('done');
+  var state=loadState();var id=getItemId(el);
+  if(el.classList.contains('done')){state[id]=true;}else{delete state[id];}
+  saveState(state);updateProgress();
+}
+function resetChecklist(){
+  document.querySelectorAll('.cl-item.done').forEach(function(el){el.classList.remove('done');});
+  saveState({});updateProgress();
+}
+function updateProgress(){
+  var items=document.querySelectorAll('.cl-item');
+  var done=document.querySelectorAll('.cl-item.done');
+  var pct=items.length?(done.length/items.length*100):0;
+  var bar=document.getElementById('progress-bar');
+  var text=document.getElementById('progress-text');
+  if(bar)bar.style.width=pct+'%';
+  if(text)text.textContent=done.length+' of '+items.length+' complete';
+}
+function restoreState(){
+  var state=loadState();
+  var items=document.querySelectorAll('.cl-item');
+  items.forEach(function(el,idx){if(state['item_'+idx])el.classList.add('done');});
+  updateProgress();
+}
+restoreState();
+</script>
+</body>
+</html>

@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Simple Analytics Marketing Playbook</title>
+<link rel="icon" type="image/svg+xml" href="favicon-simple-analytics.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fs:"DM Sans",system-ui,sans-serif;--ff:"Cormorant Garamond",Georgia,serif;
+  --navy:#0E2040;--cream:#F8F5F1;--paper:#fff;--rose:#FFF0F1;--sky:#F0FAFA;--mist:#EEF5EF;--amber:#fdf8ec;
+  --coral:#E8495A;--teal:#00C4B8;--green:#22C55E;--gold:#e3b54c;
+  --text:#141825;--mid:#4b5363;--soft:#7a8294;
+  --line:rgba(20,24,37,.1);--sh:0 4px 12px rgba(8,17,29,.05),0 16px 32px rgba(8,17,29,.06);
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16px/1.72 var(--fs);background:var(--cream);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{color:inherit}img,svg{display:block;max-width:100%}
+.w,.ni,.hi,.bi,.ki,.dv{width:min(100%,1140px);margin:0 auto;padding:0 28px}
+/* COVER */
+.hw{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;
+  background:#060817;
+  position:relative;overflow:hidden}
+
+/* Floating particles animation */
+.hw::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(232,73,90,0.4), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(0,196,184,0.4), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(232,73,90,0.4), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(0,196,184,0.4), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 70% 10%, rgba(232,73,90,0.3), transparent);
+  background-size: 60% 60%, 40% 40%, 50% 50%, 70% 70%, 45% 45%, 55% 55%, 65% 65%;
+  background-position: 0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%, 10% 10%, 90% 90%;
+  animation: floatParticles 25s ease-in-out infinite;
+  pointer-events:none;
+  z-index:1;
+}
+
+@keyframes floatParticles{
+  0%, 100%{
+    background-position: 0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%, 10% 10%, 90% 90%;
+    transform: translate(0, 0) scale(1);
+  }
+  25%{
+    background-position: 15% 15%, 35% 35%, 55% 55%, 75% 75%, 95% 95%, 25% 25%, 85% 85%;
+    transform: translate(-8px, -12px) scale(1.05);
+  }
+  50%{
+    background-position: 30% 30%, 50% 50%, 70% 70%, 90% 90%, 10% 10%, 40% 40%, 80% 80%;
+    transform: translate(12px, -8px) scale(1.1);
+  }
+  75%{
+    background-position: 45% 45%, 65% 65%, 85% 85%, 5% 5%, 25% 25%, 55% 55%, 75% 75%;
+    transform: translate(-6px, 10px) scale(1.05);
+  }
+}
+
+.badge,.pb,.pill{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:999px;text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:700}
+.badge,.pb{color:var(--coral);border:1px solid rgba(232,73,90,.35);background:#060817;box-shadow:0 0 24px rgba(232,73,90,.12)}
+.badge:before,.pb:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 16px rgba(232,73,90,.8)}
+.badge{margin-bottom:34px}.pb{margin-bottom:22px}
+.ht{margin:0 auto 20px;max-width:900px;font:500 clamp(3.6rem,7.2vw,6rem)/1.02 var(--ff);letter-spacing:-.04em}
+.ht span{color:var(--coral)}
+.hs{max-width:720px;margin:0 auto 42px;color:rgba(255,255,255,.72);font-size:1.04rem;line-height:1.7}
+.hm{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.hc{padding:10px 16px;border:1px solid rgba(255,255,255,.1);border-radius:999px;background:rgba(255,255,255,.04);font-size:.82rem}
+/* NAV */
+.nav{position:sticky;top:0;z-index:20;height:58px;background:rgba(5,9,18,.92);border-bottom:1px solid rgba(255,255,255,.08);backdrop-filter:blur(20px)}
+.ni{width:min(100%,1200px);margin:0 auto;padding:0 32px;height:100%;display:flex;align-items:center;gap:20px}
+.mk{text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:9.5px;font-weight:700;color:rgba(255,255,255,.35);border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}.mk span{color:var(--coral)}
+.lk{flex:1;display:flex;overflow-x:auto;scrollbar-width:none}.lk::-webkit-scrollbar{display:none}
+.nl{flex:0 0 auto;height:58px;display:flex;align-items:center;padding:0 13px;text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:9.5px;font-weight:700;color:rgba(255,255,255,.35);border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nl.active,.nl:hover{color:var(--coral);border-color:var(--coral)!important}.nl.active{border-color:var(--coral)!important}
+/* PART */
+.part{scroll-margin-top:74px}
+.head{padding:88px 0 74px;color:#fff;position:relative;overflow:hidden;background:radial-gradient(circle at 12% 84%,rgba(232,73,90,.05),transparent 34%),linear-gradient(160deg,#0a1220,#10192a)}
+#audit .head{background:radial-gradient(circle at 12% 84%,rgba(0,196,184,.06),transparent 34%),linear-gradient(160deg,#0a1220,#10192a)}
+#m1 .head{background:radial-gradient(circle at 12% 84%,rgba(34,197,94,.05),transparent 36%),linear-gradient(160deg,#0a1220,#10192a)}
+#days31 .head{background:radial-gradient(circle at 12% 84%,rgba(227,181,76,.05),transparent 34%),linear-gradient(160deg,#0a1220,#10192a)}
+#channels .head{background:radial-gradient(circle at 12% 84%,rgba(0,196,184,.05),transparent 34%),linear-gradient(160deg,#0a1220,#10192a)}
+#article .head{background:radial-gradient(circle at 12% 84%,rgba(227,181,76,.06),transparent 34%),linear-gradient(160deg,#0a1220,#10192a)}
+#anti .head,#checklist .head{background:radial-gradient(circle at 12% 84%,rgba(232,73,90,.04),transparent 34%),linear-gradient(160deg,#0a1220,#10192a)}
+.head h2{margin:0 0 14px;max-width:760px;font:600 clamp(2.6rem,5.5vw,4.1rem)/1.04 var(--ff);letter-spacing:-.03em}
+.head p{margin:0;max-width:650px;color:rgba(255,255,255,.58)}
+.gh{position:absolute;right:34px;bottom:-8px;font:italic 600 178px/.9 var(--ff);color:rgba(255,255,255,.03);pointer-events:none;user-select:none}
+/* BODY */
+.body{padding:78px 0 92px;position:relative}.body:after{content:"";position:absolute;inset:0;background-image:var(--grain);z-index:0}
+.bi{position:relative;z-index:1}
+.cream{background:var(--cream)}.paper{background:var(--paper)}.mist{background:var(--mist)}.rose{background:var(--rose)}.sky{background:var(--sky)}.amber{background:var(--amber)}
+.ki{margin-bottom:34px;padding-bottom:18px;border-bottom:1px solid var(--line)}
+.kr{display:flex;align-items:center;gap:14px}
+.kn{padding:4px 10px;border-radius:8px;background:rgba(232,73,90,.14);border:1px solid rgba(232,73,90,.24);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:#8b2533}
+.kl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--soft)}
+.kli{flex:1;height:2px;background:linear-gradient(90deg,transparent, rgba(232,73,90,.15) 20%, rgba(0,196,184,.12) 50%, rgba(232,73,90,.15) 80%, transparent);border-radius:2px;position:relative}
+.kli::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:6px;height:6px;background:var(--coral);border-radius:50%;box-shadow:0 0 10px rgba(232,73,90,.4)}
+.tc{max-width:760px}
+.lead{margin:0 0 26px;font:italic 1.66rem/1.45 var(--ff);color:#2c3241}
+h3{margin:48px 0 12px;font:700 2.1rem/1.16 var(--ff);letter-spacing:-.03em}
+h4{margin:0 0 10px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:#7a3a42}
+p{margin:0 0 18px;color:var(--text)}.meta{font-size:.8rem;color:var(--soft)}
+/* Color-coded text accents */
+.accent-coral{color:var(--coral);font-weight:600}
+.accent-teal{color:var(--teal);font-weight:600}
+.accent-gold{color:var(--gold);font-weight:600}
+/* Micro-interactions for text */
+.accent-coral:hover,.accent-teal:hover,.accent-gold:hover{filter:brightness(1.2);cursor:default}
+/* ENHANCED CARDS */
+.card{background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,255,255,.92));border:1px solid rgba(20,24,37,.06);border-radius:18px;box-shadow:0 4px 12px rgba(20,24,37,.08), 0 8px 24px rgba(20,24,37,.04);padding:24px;transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s cubic-bezier(.16,1,.3,1);position:relative;overflow:hidden}
+.quote,.note,.watch{background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh)}
+.quote{margin:32px 0;padding:22px 28px 22px 34px;border-left:4px solid var(--coral)}
+.quote p{margin:0;font:italic 1.95rem/1.34 var(--ff);color:#8c254c}
+.note,.watch{margin:30px 0;padding:22px 26px;border-left:4px solid var(--teal)}
+.watch{border-left-color:var(--coral)}
+/* GRIDS */
+.g3,.g2,.stats,.drafts,.mini{display:grid;gap:18px}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}.g2{grid-template-columns:1fr 1fr}
+.stats{grid-template-columns:repeat(4,minmax(0,1fr))}.drafts,.mini{grid-template-columns:repeat(3,minmax(0,1fr))}
+.rc{background:var(--rose)}.sc{background:var(--sky)}.ac{background:var(--amber)}.mc{background:var(--mist)}
+.stat{font:600 2.35rem/1 var(--ff);margin-bottom:10px;color:var(--navy)}
+/* PILLS */
+.pill{padding:6px 10px;font-size:.64rem}
+.pc{background:rgba(232,73,90,.14);color:#a53b34}
+.pt{background:rgba(0,196,184,.14);color:#006B65}
+.pg{background:rgba(227,181,76,.16);color:#896615}
+.pn{background:rgba(20,24,37,.08);color:#61697b}
+.pgr{background:rgba(34,197,94,.14);color:#166534}
+/* HIGHLIGHTS */
+.hl{background:rgba(0,196,184,.15);border-radius:4px;padding:1px 6px;color:#006B65;font-weight:600}
+.hlc{background:rgba(232,73,90,.12);border-radius:4px;padding:1px 6px;color:#9b3530;font-weight:600}
+.hlg{background:rgba(227,181,76,.18);border-radius:4px;padding:1px 6px;color:#7a5b12;font-weight:600}
+/* TOOL PILLS */
+.tr{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.tp{padding:4px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.tpc{background:rgba(255,100,30,.1);color:#a04a10;border:1px solid rgba(255,100,30,.2)}
+.tpg{background:rgba(255,80,80,.1);color:#a02020;border:1px solid rgba(255,80,80,.2)}
+.tpa{background:rgba(232,73,90,.12);color:#8b2533;border:1px solid rgba(232,73,90,.22)}
+.tpci{background:rgba(0,119,181,.1);color:#005180;border:1px solid rgba(0,119,181,.2)}
+.tpl{background:rgba(0,119,181,.1);color:#005180;border:1px solid rgba(0,119,181,.2)}
+.tpsc{background:rgba(34,197,94,.12);color:#166534;border:1px solid rgba(34,197,94,.22)}
+.tpx{background:rgba(20,24,37,.07);color:var(--mid);border:1px solid rgba(20,24,37,.12)}
+.tpi{background:rgba(0,196,184,.12);color:#006B65;border:1px solid rgba(0,196,184,.22)}
+/* SPECIAL COMPONENTS */
+.traj{background:rgba(232,73,90,.07);border:1px solid rgba(232,73,90,.22);border-radius:14px;padding:22px 26px;margin:22px 0;max-width:760px}
+.tj-label{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:#8b2533;margin-bottom:10px}
+.traj p{margin:0;font-size:.93rem;line-height:1.72;color:var(--mid)}.traj p+p{margin-top:12px}
+.iq{background:rgba(0,196,184,.07);border:1px solid rgba(0,196,184,.2);border-left:4px solid var(--teal);border-radius:0 14px 14px 0;padding:18px 22px;margin:22px 0;max-width:760px}
+.iq-t{font:italic 1.1rem/1.55 var(--ff);color:#2c3241;margin:0 0 8px}.iq-s{font-size:.78rem;color:var(--soft)}
+/* REVIEW CARDS */
+.rg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:22px 0}
+.rv{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:16px;padding:22px;box-shadow:var(--sh)}
+.rs{color:var(--coral);font-size:.9rem;letter-spacing:.06em;margin-bottom:8px}
+.rpf{display:inline-block;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--soft);margin-bottom:12px;padding:2px 8px;border-radius:6px;background:rgba(20,24,37,.06)}
+.rt{font:600 .95rem/1.3 var(--fs);color:var(--text);margin-bottom:10px}
+.rb{font-size:.89rem;line-height:1.72;color:var(--mid);margin-bottom:16px}
+.rm{display:flex;align-items:center;gap:10px}
+.ra{width:30px;height:30px;border-radius:50%;background:rgba(232,73,90,.15);display:flex;align-items:center;justify-content:center;font:700 .7rem var(--fs);color:var(--coral);flex-shrink:0}
+.rn{font-size:.8rem;font-weight:600;color:var(--text)}.rr{font-size:.74rem;color:var(--soft)}
+/* GDPR TIMELINE */
+.gdt{display:flex;flex-direction:column;margin:28px 0 0}
+.gdi{display:flex;align-items:flex-start}
+.gdl{display:flex;flex-direction:column;align-items:center;width:28px;flex-shrink:0;margin-right:18px;padding-top:4px}
+.gdd{width:12px;height:12px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(232,73,90,.15);flex-shrink:0}
+.gdc{width:2px;background:linear-gradient(180deg,rgba(232,73,90,.4),rgba(232,73,90,.08));margin-top:6px;flex:1;min-height:24px}
+.gdi:last-child .gdc{background:transparent}
+.gdr{padding-bottom:24px;flex:1}
+.gdate{font-size:.66rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:4px}
+.gtit{font:600 .95rem/1.3 var(--fs);color:var(--text);margin-bottom:4px}
+.gbod{font-size:.84rem;color:var(--mid);line-height:1.62}
+/* RULINGS TABLE */
+.rt-t{width:100%;border-collapse:collapse;font-size:.88rem;margin:22px 0;border-radius:14px;overflow:hidden;box-shadow:var(--sh)}
+.rt-t th{text-align:left;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--soft);padding:12px 16px;background:var(--paper);border-bottom:2px solid var(--line)}
+.rt-t td{padding:13px 16px;border-bottom:1px solid var(--line);background:var(--paper);vertical-align:top;line-height:1.55}
+.rt-t tr:last-child td{border-bottom:none}
+.rco{font-weight:700;color:var(--text)}
+.rtag{display:inline-block;padding:2px 8px;border-radius:6px;font-size:.68rem;font-weight:700;background:rgba(232,73,90,.1);color:#8b2533;white-space:nowrap}
+/* BUYER JOURNEY */
+.bj{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:22px 0}
+.bjs{position:relative}
+.bjs:not(:last-child):after{content:"";position:absolute;right:-6px;top:18px;width:0;height:0;border-top:5px solid transparent;border-bottom:5px solid transparent;border-left:6px solid rgba(232,73,90,.3);z-index:1}
+.bjh{background:var(--navy);border-radius:12px 12px 0 0;padding:10px 12px;text-align:center}
+.bjn{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:rgba(232,73,90,.8);margin-bottom:3px}
+.bjname{font:600 .78rem/1.2 var(--fs);color:#fff}
+.bjb{background:var(--paper);border:1px solid var(--line);border-top:none;border-radius:0 0 12px 12px;padding:10px 12px;font-size:.77rem;color:var(--mid);line-height:1.58;min-height:130px;display:flex;flex-direction:column}
+.bjm{flex:1}
+.bjsa{font-size:.72rem;color:var(--coral);font-weight:600;margin-top:8px;padding-top:8px;border-top:1px solid rgba(232,73,90,.15)}
+/* EMAIL PATHS */
+.ep{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+.epc{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh)}
+.eph{padding:14px 16px 12px}
+.epa .eph{background:rgba(232,73,90,.08);border-bottom:3px solid var(--coral)}
+.epb .eph{background:rgba(0,196,184,.07);border-bottom:3px solid var(--teal)}
+.epc_ .eph{background:rgba(227,181,76,.08);border-bottom:3px solid var(--gold)}
+.epl{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.epa .epl{color:var(--coral)}.epb .epl{color:var(--teal)}.epc_ .epl{color:#896615}
+.ept{font:700 .9rem/1.2 var(--fs);color:var(--text)}
+.eptr{font-size:.74rem;color:var(--soft);margin-top:4px;line-height:1.45}
+.epb_{background:var(--paper);padding:12px 16px}
+.eps{display:flex;flex-direction:column;gap:7px}
+.epst{display:flex;align-items:flex-start;gap:9px;padding:7px 9px;border-radius:7px;background:rgba(20,24,37,.03)}
+.eptime{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--soft);white-space:nowrap;min-width:54px;flex-shrink:0;margin-top:2px}
+.epsubj{font-size:.82rem;font-weight:600;color:var(--text);line-height:1.35}
+/* DRAFT EMAILS */
+.draft{padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.78);border:1px solid rgba(20,24,37,.08);font-size:.92rem;white-space:pre-line;color:var(--mid);line-height:1.72}
+.db{display:flex;flex-direction:column;gap:0;height:100%}
+.ds{font-size:.78rem;font-weight:600;padding:9px 14px;border-radius:10px 10px 0 0;border:1px solid rgba(20,24,37,.07);border-bottom:none;color:var(--mid)}
+.ds strong{color:var(--text)}
+.g2 .db:nth-child(1) .ds{background:rgba(232,73,90,.08)}
+.g2 .db:nth-child(2) .ds{background:rgba(0,196,184,.09)}
+.g2 .db:nth-child(3) .ds{background:rgba(34,197,94,.08)}
+.g2 .db:nth-child(4) .ds{background:rgba(227,181,76,.10)}
+.drafts .card:nth-child(1) .ds{background:rgba(232,73,90,.08)}
+.drafts .card:nth-child(2) .ds{background:rgba(227,181,76,.10)}
+.drafts .card:nth-child(3) .ds{background:rgba(0,196,184,.09)}
+.draft{border-radius:0 0 12px 12px;flex:1}.drafts{align-items:stretch}
+/* ANTI */
+.anti{overflow:hidden;display:flex;flex-direction:column;min-height:340px;border-radius:22px;border:1px solid var(--line);box-shadow:var(--sh);transition:transform .22s ease}
+.anti.in:hover{transform:translateY(-3px) scale(1.006)}
+.anti h3{margin:0;padding:24px 22px 12px;font:700 1.02rem/1.28 var(--fs);color:#fff}
+.anti p{margin:0;padding:18px 22px 26px;line-height:1.62;flex:1}
+.acor{background:rgba(255,241,238,.98);border-color:rgba(232,73,90,.24)}.acor h3{background:var(--coral)}
+.ateal{background:rgba(236,252,250,.98);border-color:rgba(0,196,184,.24)}.ateal h3{background:var(--teal)}
+.agold{background:rgba(255,248,228,.98);border-color:rgba(227,181,76,.24)}.agold h3{background:var(--gold);color:#231700}
+/* MINI */
+.mini{margin-top:22px;align-items:stretch}
+.mini .card{min-height:190px;border-radius:20px;overflow:hidden;padding:0}
+.mini .card:nth-child(3n+1){background:rgba(255,241,238,.72)}
+.mini .card:nth-child(3n+2){background:rgba(236,252,250,.92)}
+.mini .card:nth-child(3n){background:rgba(253,248,236,.92)}
+.mini .card strong{display:block;padding:14px 20px 12px;font:700 .93rem/1.3 var(--fs);color:#fff}
+.mini .card:nth-child(3n+1) strong{background:rgba(200,55,70,.80)}
+.mini .card:nth-child(3n+2) strong{background:rgba(0,156,148,.78)}
+.mini .card:nth-child(3n) strong{background:rgba(160,125,35,.72)}
+.mini .card p{margin:0;padding:14px 20px 18px;line-height:1.68;color:var(--mid)}
+/* SEO BLOCK */
+.sb{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 32px;max-width:820px;margin:22px 0;box-shadow:var(--sh)}
+.sbt{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:var(--soft);margin-bottom:18px}
+.kg{display:grid;gap:10px}
+.kr2{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;background:rgba(20,24,37,.03)}
+.kt{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.kp{background:rgba(232,73,90,.14);color:#8b2533}
+.ks{background:rgba(0,196,184,.14);color:#006B65}
+.kl{background:rgba(227,181,76,.14);color:#7a5b12}
+.kge{background:rgba(34,197,94,.15);color:#166534}
+.kterm{font:600 1rem/1.2 var(--fs);color:var(--text);flex:1}
+.kvol{font-size:.8rem;color:var(--soft);white-space:nowrap}
+.kdiff{font-size:.72rem;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.dlo{background:rgba(34,197,94,.14);color:#166534}
+.dme{background:rgba(227,181,76,.16);color:#896615}
+.dhi{background:rgba(232,73,90,.12);color:#a53b34}
+.sbn{font-size:.84rem;color:var(--soft);margin-top:14px;padding-top:14px;border-top:1px solid var(--line);line-height:1.65}
+/* ARTICLE LAYOUT */
+.al{display:grid;grid-template-columns:1fr 200px;gap:32px;max-width:1000px;align-items:start}
+.aside{position:sticky;top:78px}
+.asit{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--soft);margin-bottom:12px}
+.aside-note{margin:0 0 18px;font-size:.84rem;line-height:1.55;color:rgba(20,24,37,.42);font-style:italic}
+.chips{display:flex;flex-direction:column;gap:7px}
+.chip{display:inline-block;padding:5px 11px;border-radius:999px;font-size:.72rem;font-weight:600;line-height:1;width:fit-content}
+.cpp{background:rgba(232,73,90,.14);color:#8b2533;border:1.5px solid rgba(232,73,90,.28)}
+.cps{background:rgba(0,196,184,.13);color:#006B65;border:1.5px solid rgba(0,196,184,.26)}
+.cpl{background:rgba(227,181,76,.14);color:#896615;border:1.5px solid rgba(227,181,76,.28)}
+.cpg{background:rgba(34,197,94,.14);color:#166534;border:1.5px solid rgba(34,197,94,.28)}
+.chipl{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin:10px 0 5px;color:rgba(20,24,37,.35)}
+.sp{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:40px 46px;box-shadow:var(--sh)}
+.pmr{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+.pm{padding:5px 12px;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.pm-pub{background:rgba(0,196,184,.14);color:#006B65}
+.pm-cat{background:rgba(232,73,90,.12);color:#8b2533}
+.pm-len{background:rgba(227,181,76,.12);color:#7a5b12}
+.spt{font:600 1.85rem/1.14 var(--ff);letter-spacing:-.025em;margin:0 0 16px;color:var(--navy)}
+.spd{font:italic 1.08rem/1.56 var(--ff);color:var(--mid);margin:0 0 26px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.sp p{font-size:.99rem;line-height:1.82;margin:0 0 20px;color:var(--text)}
+.sp h5{font:700 1rem/1.3 var(--fs);margin:28px 0 10px;color:var(--navy)}
+.pp{font:italic 1.3rem/1.42 var(--ff);color:var(--coral);border-left:3px solid var(--coral);padding-left:20px;margin:24px 0}
+.faqb{margin-top:28px;border-top:2px solid var(--line)}
+.faqi{border-bottom:1px solid var(--line);padding:15px 0}
+.faqq{font:700 .93rem/1.3 var(--fs);color:var(--navy);margin-bottom:7px}
+.faqa{font-size:.91rem;line-height:1.72;color:var(--mid);margin:0}
+@media(max-width:900px){.al{grid-template-columns:1fr}.aside{position:static}.aside .asit,.aside .aside-note{width:100%}.aside .chips{flex-direction:row;flex-wrap:wrap}}
+/* DIST */
+.dc{background:var(--navy);border-radius:18px;padding:26px 30px;margin:22px 0}
+.dlabel{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(232,73,90,.85);margin-bottom:14px}
+.dchans{display:flex;flex-direction:column;gap:14px}
+.dch{display:flex;gap:14px;align-items:flex-start;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.07)}
+.dch:last-child{border-bottom:none;padding-bottom:0}
+.dchn{width:26px;height:26px;border-radius:8px;background:rgba(232,73,90,.2);display:flex;align-items:center;justify-content:center;font:700 .72rem var(--fs);color:var(--coral);flex-shrink:0;margin-top:2px}
+.dcname{font:700 .87rem/1.2 var(--fs);color:#fff;margin-bottom:4px}
+.dcd{font-size:.81rem;color:rgba(255,255,255,.5);line-height:1.6}
+.dcd strong{color:rgba(255,255,255,.78)}
+/* AGENCY */
+.at{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+.atc{border-radius:16px;padding:20px;border:1px solid var(--line);background:var(--paper)}
+.atc.feat{background:var(--navy);border-color:var(--coral)}
+.atl{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:7px}
+.atc:not(.feat) .atl{color:var(--soft)}.atc.feat .atl{color:var(--coral)}
+.atn{font:600 1.15rem/1.2 var(--ff);margin:0 0 6px;color:var(--text)}.atc.feat .atn{color:#fff}
+.atr{font:700 2rem/1 var(--ff);margin:10px 0 12px;color:var(--navy)}.atc.feat .atr{color:var(--coral)}
+.atd{font-size:.85rem;line-height:1.65;color:var(--mid)}.atc.feat .atd{color:rgba(255,255,255,.55)}
+/* PROMO */
+.promo{background:var(--navy);border-radius:20px;padding:32px 36px;max-width:780px;margin:28px 0}
+.proml{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(232,73,90,.9);margin-bottom:16px}
+.promq{font:italic 1.6rem/1.38 var(--ff);color:#fff;margin:0 0 20px}
+.promq span{color:var(--coral)}
+.promm{font-size:.82rem;color:rgba(255,255,255,.4);display:flex;gap:14px;flex-wrap:wrap}
+.promt{background:rgba(255,255,255,.08);border-radius:999px;padding:4px 12px;font-size:.72rem}
+/* CHECKLIST */
+.clph{margin-bottom:48px}
+.clphh{display:flex;align-items:center;gap:16px;margin-bottom:24px;padding-bottom:14px;border-bottom:2px solid var(--line)}
+.clphn{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font:700 .78rem/1 var(--fs);letter-spacing:.1em;text-transform:uppercase;flex-shrink:0}
+.ph1 .clphn{background:rgba(232,73,90,.15);color:#a53b34}
+.ph2 .clphn{background:rgba(0,196,184,.14);color:#006B65}
+.ph3 .clphn{background:rgba(34,197,94,.14);color:#166534}
+.ph4 .clphn{background:rgba(227,181,76,.16);color:#896615}
+.clpht{font:700 1.18rem/1 var(--fs);color:var(--text)}.clphs{font-size:.82rem;color:var(--soft)}
+.clcat{margin-bottom:22px}
+.clcl{font-size:.63rem;letter-spacing:.15em;text-transform:uppercase;font-weight:700;color:var(--soft);margin-bottom:10px;padding-left:2px}
+.clits{display:flex;flex-direction:column;gap:6px}
+.clit{display:flex;align-items:flex-start;gap:14px;padding:12px 16px;background:var(--paper);border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:transform .15s ease}
+.clit:hover{transform:translateY(-1px)}
+.clit.done{background:rgba(0,196,184,.06);border-color:rgba(0,196,184,.3)}
+.clit.done .clt{color:var(--soft);text-decoration:line-through;text-decoration-color:rgba(0,196,184,.5)}
+.clck{width:22px;height:22px;border-radius:7px;border:2px solid var(--line);flex-shrink:0;display:flex;align-items:center;justify-content:center;margin-top:1px;transition:all .18s ease}
+.clit.done .clck{background:var(--teal);border-color:var(--teal)}
+.clci{display:none;color:#fff;font-size:13px;font-weight:700;line-height:1}
+.clit.done .clci{display:block}
+.clt{font-size:.95rem;color:var(--text);line-height:1.5;flex:1}
+.cltag{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:6px;margin-top:3px;white-space:nowrap;align-self:flex-start;flex-shrink:0}
+.t-rv{background:rgba(232,73,90,.1);color:#a53b34}
+.t-em{background:rgba(0,196,184,.1);color:#006B65}
+.t-ct{background:rgba(34,197,94,.12);color:#166534}
+.t-so{background:rgba(227,181,76,.14);color:#896615}
+.t-me{background:rgba(20,24,37,.07);color:#4b5363}
+.t-ag{background:rgba(0,196,184,.12);color:#006B65}
+.t-co{background:rgba(232,73,90,.12);color:#8b2533}
+.clprog{display:flex;align-items:center;gap:14px;margin-bottom:36px;padding:18px 22px;background:var(--paper);border:1px solid var(--line);border-radius:16px}
+.clpbw{flex:1;height:8px;background:rgba(20,24,37,.08);border-radius:999px;overflow:hidden}
+.clpb{height:100%;background:linear-gradient(90deg,var(--teal),#00a8a0);border-radius:999px;transition:width .4s ease;width:0%}
+.clpt{font-size:.82rem;color:var(--soft);white-space:nowrap;font-weight:600}
+.clr{font-size:.72rem;color:var(--soft);text-decoration:underline;cursor:pointer;background:none;border:none;padding:0}
+/* UTIL */
+.srcl{display:flex;flex-wrap:wrap;gap:10px 0}
+.srcl a{text-decoration:none;border-bottom:1px solid rgba(20,24,37,.18);margin-right:12px}
+.ssrc{margin-top:22px}.ssrc h4{margin-bottom:14px}
+.dv{padding:6px 28px}.dv div{height:1px;background:linear-gradient(90deg,rgba(20,24,37,.14),rgba(20,24,37,.04),transparent)}
+.sr{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
+.sr.in{opacity:1;transform:translateY(0)}
+.card.in:hover,.rv.in:hover,.sb.in:hover,.sp:hover,.traj.in:hover,.promo.in:hover,.dc.in:hover,.db.in:hover,.epc.in:hover{transform:translateY(-6px);box-shadow:0 8px 32px rgba(7,7,30,.15);transition:transform .3s cubic-bezier(.16,1,.3,1)}
+@media(max-width:1120px){.bj,.ep,.at,.rg{grid-template-columns:1fr 1fr}.g3,.drafts,.mini,.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:760px){.w,.ni,.hi,.bi,.ki,.dv{padding:0 20px}.bj,.ep,.at,.rg,.g3,.g2,.stats,.drafts,.mini{grid-template-columns:1fr}.gh{font-size:112px;right:18px}.sp{padding:26px 24px}.anti{min-height:auto}.mini .card{min-height:auto}.art-meta-boxes{grid-template-columns:1fr}}
+/* ===== ART INTRO SIDEBAR ===== */
+.art-intro-wrap{display:block;margin-bottom:28px;max-width:1000px}
+.art-intro-lead .lead{margin-bottom:0}
+.art-meta-callout{background:var(--navy);border-radius:18px;padding:22px 24px;margin-top:22px}
+.art-meta-boxes{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+.art-meta-box{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:12px;padding:16px 18px}
+.art-meta-eyebrow{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:rgba(232,73,90,.8);margin-bottom:16px}
+.art-meta-row{display:flex;flex-direction:column;gap:10px}
+.art-meta-badge{display:inline-block;padding:4px 10px;border-radius:999px;font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px}
+.badge-blog{background:rgba(0,196,184,.2);color:#7df0e8}
+.badge-iapp{background:rgba(232,73,90,.25);color:#ffaaaa}
+.art-meta-desc{font-size:.82rem;line-height:1.65;color:rgba(255,255,255,.55)}
+.art-meta-desc strong{color:rgba(255,255,255,.8)}
+.art-meta-divider{height:1px;background:rgba(255,255,255,.08);margin:14px 0}
+@media(max-width:860px){.art-meta-callout{max-width:none}}
+
+/* ===== REDESIGNED ANTI-PATTERNS ===== */
+.diag-stack{display:flex;flex-direction:column;gap:14px}
+.diag-card{display:grid;grid-template-columns:72px 1fr;border-radius:18px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh);transition:transform .22s ease}
+.diag-card.in:hover{transform:translateX(6px)}
+.diag-stripe{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:18px 0}
+.diag-1 .diag-stripe{background:var(--coral)}
+.diag-2 .diag-stripe{background:var(--teal)}
+.diag-3 .diag-stripe{background:var(--gold)}
+.diag-num{font:700 2.4rem/1 var(--ff);color:rgba(255,255,255,.25);writing-mode:vertical-rl;text-orientation:mixed;transform:rotate(180deg)}
+.diag-label{font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.55);writing-mode:vertical-rl;transform:rotate(180deg)}
+.diag-body{padding:22px 26px;background:var(--paper)}
+.diag-type{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+.diag-1 .diag-type{color:var(--coral)}
+.diag-2 .diag-type{color:var(--teal)}
+.diag-3 .diag-type{color:#896615}
+.diag-body h3{margin:0 0 12px;font:700 1.08rem/1.3 var(--fs);color:var(--text)}
+.diag-body p{margin:0;line-height:1.68;color:var(--mid);font-size:.94rem}
+
+/* WARNS */
+.warns{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.warn{display:flex;gap:14px;padding:18px 20px;border-radius:14px;border:1px solid var(--line);background:var(--paper);box-shadow:0 2px 8px rgba(8,17,29,.04);transition:transform .18s ease}
+.warn.in:hover{transform:translateY(-2px)}
+.warn-x{width:28px;height:28px;border-radius:8px;background:rgba(232,73,90,.1);border:1.5px solid rgba(232,73,90,.22);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:var(--coral);font-weight:900;margin-top:2px}
+.warn-body strong{display:block;font:700 .9rem/1.3 var(--fs);color:var(--text);margin-bottom:7px}
+.warn-body p{margin:0;font-size:.85rem;line-height:1.65;color:var(--mid)}
+
+/* ===== FRANCE LANDING PAGE ===== */
+#france .head{background:radial-gradient(circle at 20% 70%,rgba(232,73,90,.18),transparent 40%),linear-gradient(160deg,#0a1220,#10192a)}
+.tricolore{display:flex;height:6px;border-radius:3px;overflow:hidden;width:48px;margin:18px 0 28px}
+.tc-blue{flex:1;background:#002395}.tc-white{flex:1;background:#fff}.tc-red{flex:1;background:#ED2939}
+.fr-verdict{background:rgba(255,255,255,.04);border:1px solid rgba(232,73,90,.3);border-left:4px solid var(--coral);border-radius:0 16px 16px 0;padding:22px 28px;margin:22px 0;max-width:820px}
+.fr-verdict-text{font:italic 1.18rem/1.55 var(--ff);color:#fff;margin:0 0 12px}
+.fr-verdict-source{font-size:.78rem;color:rgba(255,255,255,.4)}
+.fr-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+.fr-col{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh);transition:transform .2s}
+.fr-col.in:hover{transform:translateY(-3px)}
+.fr-col-head{padding:14px 18px;font:700 .88rem/1.2 var(--fs);color:#fff}
+.fr-col-prob .fr-col-head{background:rgba(232,73,90,.85)}
+.fr-col-part .fr-col-head{background:rgba(163,125,52,.78)}
+.fr-col-sol .fr-col-head{background:rgba(0,157,148,.78)}
+.fr-col-body{padding:14px 18px;font-size:.88rem;line-height:1.68;color:var(--mid);background:var(--paper)}
+.compare-t{width:100%;border-collapse:collapse;font-size:.88rem;margin:22px 0;border-radius:14px;overflow:hidden;box-shadow:var(--sh)}
+.compare-t th{text-align:left;font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--soft);padding:12px 16px;background:var(--paper);border-bottom:2px solid var(--line)}
+.compare-t td{padding:12px 16px;border-bottom:1px solid var(--line);background:var(--paper);vertical-align:middle}
+.compare-t tr:last-child td{border-bottom:none}
+.compare-t .bad{color:#c53030;font-weight:700}.compare-t .good{color:#166534;font-weight:700}
+.compare-t .col-label{font-weight:600;color:var(--text)}
+.doc-box{background:var(--navy);border-radius:18px;padding:28px 32px;margin:22px 0}
+.doc-box-label{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(232,73,90,.85);margin-bottom:14px}
+.doc-box-title{font:600 1.5rem/1.2 var(--ff);color:#fff;margin:0 0 18px}
+.doc-items{display:flex;flex-direction:column;gap:10px}
+.doc-item{display:flex;align-items:center;gap:12px;padding:11px 14px;background:rgba(255,255,255,.04);border-radius:10px;font-size:.88rem;color:rgba(255,255,255,.65)}
+.doc-item-icon{width:26px;height:26px;border-radius:7px;background:rgba(0,196,184,.2);display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--teal);flex-shrink:0}
+.doc-cta{margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);font-size:.88rem;color:rgba(255,255,255,.45)}
+.doc-cta a{color:var(--coral);text-decoration:none;font-weight:600}
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+.price-card{border-radius:16px;padding:22px;border:1px solid var(--line);background:var(--paper);text-align:center}
+.price-card.feat{background:var(--navy);border-color:var(--coral)}
+.price-badge{font-size:.62rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:8px;color:var(--soft)}
+.price-card.feat .price-badge{color:var(--coral)}
+.price-name{font:600 1.2rem/1.2 var(--ff);color:var(--text);margin:0 0 4px}
+.price-card.feat .price-name{color:#fff}
+.price-amount{font:700 2.2rem/1 var(--ff);color:var(--navy);margin:12px 0 6px}
+.price-card.feat .price-amount{color:var(--coral)}
+.price-per{font-size:.78rem;color:var(--soft);margin-bottom:14px}
+.price-card.feat .price-per{color:rgba(255,255,255,.4)}
+.price-detail{font-size:.84rem;line-height:1.6;color:var(--mid)}
+.price-card.feat .price-detail{color:rgba(255,255,255,.5)}
+.fr-cta-box{background:var(--coral);border-radius:18px;padding:30px 36px;max-width:780px;margin:28px 0}
+.fr-cta-title{font:600 1.8rem/1.2 var(--ff);color:#fff;margin:0 0 10px}
+.fr-cta-sub{color:rgba(255,255,255,.75);margin:0 0 22px;font-size:.95rem}
+.fr-cta-btn{display:inline-block;padding:14px 28px;background:#fff;color:var(--coral);border-radius:999px;font:700 .9rem var(--fs);text-decoration:none;letter-spacing:.04em}
+.fr-cta-note{margin-top:12px;font-size:.78rem;color:rgba(255,255,255,.6)}
+.faq-section{margin-top:32px}
+.faq-section h3{margin-bottom:22px}
+
+/* ===== GERMANY LANDING PAGE ===== */
+#germany .head{background:radial-gradient(circle at 20% 70%,rgba(0,196,184,.18),transparent 40%),linear-gradient(160deg,#0a1220,#10192a)}
+.de-qa-stack{display:flex;flex-direction:column;gap:14px;margin:22px 0}
+.de-qa-row{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--sh);transition:transform .2s}
+.de-qa-row.in:hover{transform:translateY(-2px)}
+.de-qa-left{padding:18px 22px;background:rgba(20,24,37,.03)}
+.de-qa-q{font:700 .92rem/1.35 var(--fs);color:var(--text);margin-bottom:4px}
+.de-qa-who{font-size:.72rem;color:var(--soft);letter-spacing:.06em}
+.de-qa-right{padding:18px 22px;background:var(--paper);border-left:3px solid var(--teal)}
+.de-qa-ans{font-size:.9rem;line-height:1.65;color:var(--mid);margin:0}
+.de-qa-ans strong{color:var(--teal)}
+.de-trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0}
+.de-trust-card{border-radius:16px;padding:22px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--sh)}
+.de-trust-org{font:700 1.1rem/1.2 var(--fs);color:var(--navy);margin-bottom:10px}
+.de-trust-body{font-size:.88rem;line-height:1.65;color:var(--mid);margin:0}
+.de-cta-box{background:var(--teal);border-radius:18px;padding:30px 36px;max-width:780px;margin:28px 0}
+.de-cta-title{font:600 1.8rem/1.2 var(--ff);color:#fff;margin:0 0 10px}
+.de-cta-sub{color:rgba(255,255,255,.78);margin:0 0 22px;font-size:.95rem}
+.de-cta-btn{display:inline-block;padding:14px 28px;background:var(--navy);color:#fff;border-radius:999px;font:700 .9rem var(--fs);text-decoration:none}
+.de-cta-note{margin-top:12px;font-size:.78rem;color:rgba(255,255,255,.65)}
+.cookie-banner-box{background:rgba(0,196,184,.07);border:1px solid rgba(0,196,184,.22);border-left:4px solid var(--teal);border-radius:0 16px 16px 0;padding:22px 28px;margin:22px 0;max-width:820px}
+.cookie-banner-box p{margin:0 0 10px;line-height:1.68}
+.cookie-banner-box p:last-child{margin:0}
+.cookie-stat{display:inline-block;font:700 1.8rem/1 var(--ff);color:var(--teal);margin-right:8px;vertical-align:middle}
+
+</style>
+  <link rel="stylesheet" href="site-shell.css?v=20260423b">
+</head>
+<body data-site-page="simple-analytics">
+
+<!-- COVER -->
+<section class="hw" id="cover">
+<div class="w"><div>
+  <div class="badge">SA Playbook</div>
+  <h1 class="ht">The <span>Simple Analytics</span> <em>Growth</em> Playbook</h1>
+  <p class="hs">Six EU data protection authorities have ruled Google Analytics violates GDPR. This is how I would make sure the right people find Simple Analytics.</p>
+  <div class="hm">
+    <div class="hc"><strong>Category</strong> Privacy-first Web Analytics</div>
+    <div class="hc"><strong>ARR</strong> Public founder reporting · 2025</div>
+    <div class="hc"><strong>Proof</strong> 30,000+ users · EU-owned since 2018</div>
+  </div>
+</div></div>
+</section>
+
+<!-- NAV -->
+<nav class="nav">
+<div class="ni">
+  <div class="mk">ESSAH<span>.</span></div>
+  <div class="lk">
+    <a class="nl" href="#company">Company</a>
+    <a class="nl" href="#audit">Audit</a>
+    <a class="nl" href="#first7">First 7 Days</a>
+    <a class="nl" href="#m1">Days 8-30</a>
+    <a class="nl" href="#days31">Days 31-90</a>
+    <a class="nl" href="#article">Article</a>
+    <a class="nl" href="#channels">Channels</a>
+    <a class="nl" href="#anti">Anti-Patterns</a>
+    <a class="nl" href="#checklist">Checklist</a>
+  </div>
+</div>
+</nav>
+
+<!-- 01 COMPANY -->
+<section class="part" id="company">
+<div class="head"><div class="hi">
+  <div class="pb">Part 01</div>
+  <h2>The company.</h2>
+  <p>What Simple Analytics is, who built it, why the person running marketing has said publicly he needs to stop running marketing, and what the opportunity looks like before anything gets touched.</p>
+  <div class="gh">01</div>
+</div></div>
+<div class="body cream"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">01</span><span class="kl">Company Snapshot</span><span class="kli"></span></div></div>
+  <div class="tc">
+    <p class="lead">Six European data protection authorities have ruled Google Analytics unlawful. Simple Analytics was built in 2018 because Adriaan van Rossum thought collecting personal data for analytics was wrong. He was four years ahead of the regulators.</p>
+    <p>The enforcement pattern is real and it keeps getting harder to ignore. Austria ruled in January 2022. France followed in February. Italy ruled in June 2022. Sweden ruled in 2023. Each decision creates search traffic, news coverage, and compliance teams actively looking for a replacement. Simple Analytics is <span class="hl">one of the clearest EU-hosted, cookieless analytics options</span> with names like Bank of England and Hyundai already on the site. The marketing infrastructure still has not caught up to what the regulatory environment has already done for the product's positioning.</p>
+  </div>
+  <div class="stats">
+    <article class="card rc sr"><div class="stat">GBP 527K</div><div class="meta">Public founder reporting pointed to roughly GBP 527K ARR in 2025. Growth slowed after the freemium experiment. The current pricing and trial setup suggest the business is already correcting for that publicly.</div></article>
+    <article class="card sc sr"><div class="stat">4.5 / 5</div><div class="meta">Average across G2 and Capterra. Reviews repeat three things: setup is fast, legal teams approve without friction, founders respond when something breaks. Review volume is the gap, not sentiment.</div></article>
+    <article class="card ac sr"><div class="stat">£15 / mo</div><div class="meta">Entry price on the Simple plan: 10 sites, 3-year data retention, 1 user. At comparable traffic tiers, Simple Analytics is cheaper than Plausible. This is stated nowhere on the site.</div></article>
+    <article class="card rc sr"><div class="stat">Multiple bets</div><div class="meta">Iron has written publicly about running several companies alongside Simple Analytics. In January 2026 he also wrote that he needs to spend less time doing execution-level marketing and more time acting like an owner.</div></article>
+  </div>
+  <div class="iq sr">
+    <div class="iq-t">Iron wrote publicly that he needs to do less execution-level marketing and more owner-level work.</div>
+    <div class="iq-s">Iron Brands, co-founder, Simple Analytics Substack · January 2026</div>
+  </div>
+  <h3>Two buyers, two completely different journeys</h3>
+  <p>Simple Analytics repositioned for enterprise in 2025. The product now serves two distinct buyer types who arrive through different channels, convert on different signals, and make decisions over completely different timescales.</p>
+  <div class="g2">
+    <article class="card sc sr">
+      <div class="pill pt">Persona A</div>
+      <h3>The privacy-conscious developer</h3>
+      <p>Arrives through HackerNews, Indie Hackers, or word of mouth. Already sold on privacy as a value. Installs the tracking script within the first hour of signup. Cares about the 45-byte script size, the absence of fingerprinting, and whether the AI analytics feature can answer questions without custom reports. Decides alone. Converts within the trial window.</p>
+      <p class="meta">Acquisition: HackerNews, Indie Hackers, r/webdev, r/privacy, word of mouth. Converts on product quality and simplicity.</p>
+    </article>
+    <article class="card rc sr">
+      <div class="pill pc">Persona B</div>
+      <h3>The compliance-driven enterprise buyer</h3>
+      <p>Arrives because their DPA flagged Google Analytics in an audit, or because the DPO received a regulatory warning. Does not discover SA through organic browsing. Needs compliance documentation before the trial begins. Needs a DPA agreement their legal team can review. Needs to know who else in their sector uses this tool. Decides with three to five stakeholders over two to six weeks.</p>
+      <p class="meta">Acquisition: organic search (GDPR queries), LinkedIn, IAPP communities, DPO referral. Converts on institutional trust.</p>
+    </article>
+  </div>
+  <h3>How the compliance buyer makes this decision</h3>
+  <p>Understanding the enterprise procurement process changes what goes on the homepage, what Email 1 says, and which content gets built first.</p>
+  <div class="bj sr">
+    <div class="bjs"><div class="bjh"><div class="bjn">Stage 1</div><div class="bjname">Triggering event</div></div><div class="bjb"><div class="bjm">DPA ruling lands, internal audit flags GA, or a competitor mentions compliance publicly. The DPO is now responsible for a decision.</div><div class="bjsa">SA play: country pages live before the next ruling drops.</div></div></div>
+    <div class="bjs"><div class="bjh"><div class="bjn">Stage 2</div><div class="bjname">Stakeholder map</div></div><div class="bjb"><div class="bjm">DPO, CTO, Head of Legal, and sometimes Marketing lead are all now in the conversation. Email chains begin internally.</div><div class="bjsa">SA play: one-page compliance brief they can easily forward.</div></div></div>
+    <div class="bjs"><div class="bjh"><div class="bjn">Stage 3</div><div class="bjname">Vendor evaluation</div></div><div class="bjb"><div class="bjm">DPO searches for alternatives, checks G2 and Capterra. Plausible appears first in most AI assistant answers today.</div><div class="bjsa">SA play: Capterra review volume, GEO presence.</div></div></div>
+    <div class="bjs"><div class="bjh"><div class="bjn">Stage 4</div><div class="bjname">Legal review</div></div><div class="bjb"><div class="bjm">DPA agreement reviewed by legal counsel. Data flow diagram and sub-processor list assessed. This is where most trials stall.</div><div class="bjsa">SA play: docs in Email 1, not Email 4. Trial extension offered.</div></div></div>
+    <div class="bjs"><div class="bjh"><div class="bjn">Stage 5</div><div class="bjname">Sign-off</div></div><div class="bjb"><div class="bjm">Trial is approved, script is installed, and the cookie banner is removed. The annual plan becomes the clear next step.</div><div class="bjsa">SA play: case study content, agency multiplier, annual push.</div></div></div>
+  </div>
+  <h3>Who built it and who runs it</h3>
+  <div class="g2">
+    <article class="card sc sr">
+      <div class="pill pt">Technical co-founder</div>
+      <h3>Adriaan van Rossum</h3>
+      <p>Amsterdam-based Dutch developer. Built Simple Analytics in 2018 after growing frustrated with Google Analytics at a dev agency. The privacy principles are not a positioning decision. He built no cookie collection into the product from the start because he personally found cookie tracking objectionable. In 2025 he moved deliberately back to full-time product, away from growth responsibilities entirely.</p>
+      <p>His stated preference: slow, sustainable growth rather than a hypergrowth sprint. Any marketing plan that requires Adriaan to run campaigns is the wrong plan. He will ship product. The marketing has to work without him.</p>
+    </article>
+    <article class="card rc sr">
+      <div class="pill pc">Growth co-founder</div>
+      <h3>Iron Brands</h3>
+      <p>Joined Simple Analytics in 2020 after running a marketplace he quit to be here. Active LinkedIn presence in the right communities. Runs a public Substack called "1 Million ARR" documenting the journey in real time. His January 2026 post made the timing clear: he is stretched across multiple bets and does not want to stay buried in execution-level marketing. He repositioned SA for enterprise in 2025, hired the first employees, and has been building out partnerships internationally.</p>
+      <p>The window for a focused marketing hire is right now. Iron has said it publicly. That Substack post is the most direct signal a founder gives without making a formal hire request.</p>
+    </article>
+  </div>
+  <h3>The competitive landscape</h3>
+  <div class="g3">
+    <article class="card sr">
+      <div class="pill pc">Primary rival</div>
+      <h3>Plausible Analytics</h3>
+      <p>Open source. Starts at <span class="hl">$9/month</span> for 10K pageviews. Stronger G2 and Capterra review volume. Better SEO content presence. Community edition available for self-hosting, which appeals to developers who want full data control. Their ICP overlaps almost exactly with SA's. They are better at distribution, not at the product.</p>
+      <p class="meta">Key gap: Plausible charges $29/month for traffic that SA covers at £15/month. At scale, SA is cheaper. This is stated nowhere in SA's marketing and should be the first comparison table on the pricing page.</p>
+    </article>
+    <article class="card sr">
+      <div class="pill pt">Adjacent player</div>
+      <h3>Fathom Analytics</h3>
+      <p>Starts at <span class="hl">$14 to $74/month</span> by traffic volume. Cleaner UI by most reviews. EU data isolation option. White-label for agencies. Cannot be self-hosted. Marketing targets designers and content creators rather than the compliance buyer. More expensive than SA at almost every comparable tier.</p>
+      <p class="meta">Fathom's agency white-label is the closest model to what SA's reseller program should look like. Worth studying their implementation before designing SA's version.</p>
+    </article>
+    <article class="card sr">
+      <div class="pill pg">Different category</div>
+      <h3>Matomo</h3>
+      <p>Self-hostable, feature-rich, steep learning curve. Session recordings, heatmaps, funnels. The teams switching away from GA4 because of complexity are not switching to Matomo, because Matomo is also complex. Competes for buyers who want a full GA4 replacement. SA competes for buyers who want something simpler, cleaner, and fully compliant without configuration work.</p>
+      <p class="meta">Matomo's free self-hosted tier draws privacy-conscious buyers on tight budgets. A segment SA does not currently reach.</p>
+    </article>
+  </div>
+  <h3>The institutional proof not reaching the compliance buyer</h3>
+  <article class="card mc sr">
+    <p style="font-size:1.02rem;line-height:1.78;color:var(--mid)"><strong>Bank of England</strong> · <strong>Michelin</strong> · <strong>Hyundai</strong> · <strong>GOV.UK</strong> · <strong>DuckDuckGo</strong> · Basecamp · PostHog · Transistor.</p>
+    <p style="font-size:1.02rem;line-height:1.78;color:var(--mid);margin-top:14px">Bank of England and GOV.UK carry more weight with a DPO than almost any badge ever will. They imply a serious legal and procurement review already happened. DuckDuckGo has also endorsed Simple Analytics publicly as a way to keep visitor privacy intact without losing visibility into site performance.</p>
+    <p style="font-size:1.02rem;line-height:1.78;color:var(--mid);margin-top:14px">The problem is not that these names exist. The problem is where they sit. A DPO evaluating analytics goes to the pricing page, the reviews, and the compliance documentation. They do not always scroll to the logo wall on the homepage. The institutional proof needs to be in Email 1, on every country landing page, and on the enterprise pricing page, not only in the hero section.</p>
+  </article>
+  <div class="traj sr">
+    <div class="tj-label">Acquisition trajectory: when does this become an Everis conversation</div>
+    <p>Iron is already building his own multi-product operator model, which he calls Simple Studio. Full disclosure, I'm still working through the best way to frame this, but I don't think a standard acquisition approach makes sense here. This feels more like one operator talking to another - let Adriaan keep the product, get Iron some marketing help(moi), and let everyone do what they're good at.</p>
+    <p>The business is still small enough that growth rate changes the whole conversation. The freemium failure cost time. A focused hire who gets momentum back changes the strategic options very quickly, whether that ends in a bigger standalone business or an acquisition conversation later.</p>
+  </div>
+</div></div>
+</section>
+<div class="dv"><div></div></div>
+
+<!-- 02 AUDIT -->
+<section class="part" id="audit">
+<div class="head"><div class="hi">
+  <div class="pb">Part 02</div>
+  <h2>The audit.</h2>
+  <p>Every public review. All four social accounts. The pricing page. The compliance documentation. Four AI assistants asked the five most important queries. The product earns its ratings. The distribution does not match the enterprise repositioning.</p>
+  <div class="gh">02</div>
+</div></div>
+<div class="body paper"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">02</span><span class="kl">Full Audit</span><span class="kli"></span></div></div>
+  <div class="tc">
+    <p class="lead">SA already has content production infrastructure. Iron and Adriaan use a custom GPT trained on their knowledge base, and use-case landing pages for major website platforms already exist. I'm pretty sure the bottleneck here isn't content production. You guys have that handled. If I had to bet, I'd say it's more about reaching compliance buyers at the right moment. Though honestly, we should probably dig into this more to be certain.</p>
+    <p>A DPO evaluating analytics tools follows roughly the same path as any software buyer: searches the name, checks reviews, reads one or two comparison articles, forms an impression in five minutes. That five-minute evaluation currently favours Plausible over SA because Plausible has more reviews and more content targeting the exact phrases compliance buyers use.</p>
+  </div>
+  <div class="g2">
+    <article class="card sc sr">
+      <div class="pill pt">What already works</div>
+      <h3>The product earns its reviews honestly</h3>
+      <p>Reviews across Capterra and G2 consistently repeat three things: <span class="hl">setup is fast</span>, <span class="hl">legal teams approve without friction</span>, and <span class="hl">the founders respond when something breaks</span>. Those are three conversion arguments sitting in review platforms instead of on landing pages and in email sequences.</p>
+      <p>The reverse trial model replacing the failed freemium plan is the right architecture. Fourteen days of full access, then a decision. The question is what those fourteen days feel like for a compliance buyer who needs legal sign-off before the script can go live.</p>
+    </article>
+    <article class="card rc sr">
+      <div class="pill pc">What is costing conversions</div>
+      <h3>Discovery infrastructure trails the repositioning</h3>
+      <p>SA repositioned for enterprise in 2025 but the discovery infrastructure still reflects the pre-repositioning product. <span class="hlc">G2 review volume is low</span> relative to Plausible, so AI assistants surface Plausible first when a DPO queries GDPR-compliant analytics. The Instagram account is small and irrelevant to this buyer. No content targets the compliance buyer at the moment of a GDPR ruling beyond a reactive English-language blog post.</p>
+      <p>The compliance documentation exists and is good. A DPO who reaches it will be satisfied. The problem is that the compliance buyer often does not reach it, because SA does not appear in the searches that precede the evaluation.</p>
+    </article>
+  </div>
+  <h3>What customers actually say</h3>
+  <div class="rg">
+    <article class="rv sr"><div class="rs">★★★★★</div><div class="rpf">Capterra · Verified</div><div class="rt">"The legal team approved it faster than any tool I have put in front of them."</div><div class="rb">"Simple Analytics had the clearest GDPR compliance documentation I have seen from any analytics vendor. It was significantly easier to satisfy our legal team's review than with any alternative we evaluated."</div><div class="rm"><div class="ra">LD</div><div><div class="rn">L. Draeger</div><div class="rr">Employee · Sports Organisation · 6 to 12 months</div></div></div></article>
+    <article class="rv sr"><div class="rs">★★★★★</div><div class="rpf">Capterra · Verified</div><div class="rt">"Adriaan fixed the issue the same afternoon I reported it."</div><div class="rb">"I noticed a number display issue and opened a support ticket. The founder responded and had a fix deployed within a few hours. That kind of responsiveness at this price point is rare in this category."</div><div class="rm"><div class="ra">SB</div><div><div class="rn">S. Berger</div><div class="rr">Founder · Software · Under 2 months</div></div></div></article>
+    <article class="rv sr"><div class="rs">★★★★★</div><div class="rpf">G2 · Verified</div><div class="rt">"We removed our cookie consent banner the same week we switched."</div><div class="rb">"The dashboard is intuitive and the privacy-first approach means we no longer need a cookie consent warning on any of our pages. Support is responsive and the data we get is everything we actually need."</div><div class="rm"><div class="ra">MK</div><div><div class="rn">M. Krause</div><div class="rr">Webmaster · Education · 1 to 2 years</div></div></div></article>
+  </div>
+  <h3>Six GDPR rulings: a pattern, not a series of exceptions</h3>
+  <p>Each ruling below triggered a spike in search traffic for "Google Analytics alternative" in that country. Simple Analytics published an English-language blog post each time. Not one has a local-language landing page today.</p>
+  <table class="rt-t sr">
+    <thead><tr><th>Country</th><th>Authority</th><th>Date</th><th>Core finding</th><th>SA response</th></tr></thead>
+    <tbody>
+      <tr><td class="rco">Austria</td><td>DSB</td><td>Jan 2022</td><td>GA transfers personal data to US unlawfully under Schrems II</td><td><span class="rtag">Blog post only</span></td></tr>
+      <tr><td class="rco">France</td><td>CNIL</td><td>Feb 2022</td><td>GA data transfer to US violates GDPR Chapter V</td><td><span class="rtag">Blog post only</span></td></tr>
+      <tr><td class="rco">Italy</td><td>Garante</td><td>Jun 2023</td><td>GA cookie deployment and US data transfer both unlawful</td><td><span class="rtag">Blog post only</span></td></tr>
+      <tr><td class="rco">Sweden</td><td>IMY</td><td>Jul 2023</td><td>GA browser fingerprinting constitutes personal data processing</td><td><span class="rtag">Blog post only</span></td></tr>
+      <tr><td class="rco">Denmark</td><td>Datatilsynet</td><td>Sep 2023</td><td>GA consent mechanisms insufficient under GDPR</td><td><span class="rtag">Blog post only</span></td></tr>
+      <tr><td class="rco">Finland</td><td>Tietosuojavaltuutettu</td><td>Apr 2024</td><td>GA data transfer to Google US infrastructure unlawful</td><td><span class="rtag">Blog post only</span></td></tr>
+    </tbody>
+  </table>
+  <h3>The GDPR ruling timeline</h3>
+  <div class="gdt">
+    <div class="gdi"><div class="gdl"><div class="gdd"></div><div class="gdc"></div></div><div class="gdr"><div class="gdate">Jan 2022 · Austria</div><div class="gtit">The first ruling</div><div class="gbod">Austria's DSB rules that Google Analytics transfers personal data to the US unlawfully. Search traffic for "Google Analytics alternative" spikes. SA publishes a blog post in English. No Austrian-language landing page exists today.</div></div></div>
+    <div class="gdi"><div class="gdl"><div class="gdd"></div><div class="gdc"></div></div><div class="gdr"><div class="gdate">Feb 2022 · France</div><div class="gtit">The pattern .</div><div class="gbod">France's CNIL follows Austria within weeks. Search interest around GA alternatives rises again. France matters here. Blog post published in English. No French-language page exists today.</div></div></div>
+    <div class="gdi"><div class="gdl"><div class="gdd"></div><div class="gdc"></div></div><div class="gdr"><div class="gdate">Jun 2023 · Italy</div><div class="gtit">A sixty-million-person market</div><div class="gbod">Italy's Garante finds both the GA cookie mechanism and the US data transfer unlawful. Italian SMBs and agencies represent a meaningful segment. No Italian-language content from SA exists for this query cluster.</div></div></div>
+    <div class="gdi"><div class="gdl"><div class="gdd"></div><div class="gdc"></div></div><div class="gdr"><div class="gdate">Jul to Sep 2023 · Sweden and Denmark</div><div class="gtit">Two Nordic rulings in one quarter</div><div class="gbod">Sweden's IMY and Denmark's Datatilsynet both rule against GA within weeks. Nordic tech companies are among the most compliance-forward buyers in Europe. Neither market has targeted content from SA.</div></div></div>
+    <div class="gdi"><div class="gdl"><div class="gdd"></div><div class="gdc"></div></div><div class="gdr"><div class="gdate">Apr 2024 · Finland</div><div class="gtit">Six rulings, one conclusion</div><div class="gbod">Finland becomes the sixth EU member state in this run of decisions. The pattern is hard to argue with. Any EU company still using GA should treat this as a live compliance issue. Simple Analytics has one of the clearest compliance positions in the category. That search traffic still is not being captured by SA's own content.</div></div></div>
+  </div>
+  <h3>GEO baseline: run this before anything else changes</h3>
+  <div class="g2">
+    <article class="card sr"><div class="pill pc">Day one task</div><h3>Five queries, four AI assistants</h3><p>Ask <span class="hl">Claude, ChatGPT, Perplexity, and Gemini</span> each of the following: "most GDPR-compliant web analytics tool," "Google Analytics alternative no cookies EU," "web analytics without cookie consent banner," "is Google Analytics legal in Germany 2026," and "best privacy-first analytics for SaaS." Document every response verbatim. Screenshot each one. This is the baseline everything gets measured against at day 45 and day 90.</p></article>
+    <article class="card sr"><div class="pill pg">What to expect</div><h3>Plausible leads. SA appears but not first.</h3><p>AI assistants currently surface Plausible ahead of SA for most GDPR-adjacent queries, because Plausible has higher review volume and more content matching the conversational phrasing these tools use. The gap is closable through Capterra review velocity and content built around exact compliance query language. Measuring on day one means every move over the following 90 days has a clean baseline to compare against.</p></article>
+  </div>
+  <div class="tr"><span class="tp tpx">Claude</span><span class="tp tpx">ChatGPT</span><span class="tp tpx">Perplexity</span><span class="tp tpx">Gemini</span></div>
+  <div class="card sr ssrc" style="margin-top:22px">
+    <h4>Audit sources checked live</h4>
+    <div class="srcl meta"><a href="https://www.simpleanalytics.com" target="_blank">simpleanalytics.com</a><a href="https://www.simpleanalytics.com/pricing" target="_blank">Pricing page</a><a href="https://www.capterra.com/p/248710/Simple-Analytics/" target="_blank">Capterra profile</a><a href="https://www.g2.com/products/simple-analytics/reviews" target="_blank">G2 reviews</a><a href="https://1millionarr.substack.com" target="_blank">Iron's Substack</a><a href="https://gdprhub.eu" target="_blank">GDPRhub database</a></div>
+  </div>
+</div></div>
+</section>
+<div class="dv"><div></div></div>
+
+<!-- 03 FIRST 7 DAYS -->
+<section class="part" id="first7">
+<div class="head"><div class="hi">
+  <div class="pb">Part 03</div>
+  <h2>First 7 days.</h2>
+  <p>No new content gets built this week. Every hour goes toward the things quietly costing trust or blocking the compliance buyer from converting. No budget required. All of it changes what a DPO finds in five minutes.</p>
+  <div class="gh">03</div>
+</div></div>
+<div class="body rose"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">03</span><span class="kl">Immediate Fixes</span><span class="kli"></span></div></div>
+  <div class="tc"><p class="lead">The filter for this week: does fixing this cost zero budget and return immediately, or does it create permanent infrastructure that compounds? Both types go in the week. Everything else waits.</p></div>
+  <div class="g2">
+    <article class="card sr"><h4>Day 1 · Morning</h4><h3>GEO baseline across four AI assistants</h3><p>Five queries, four tools, ninety minutes. Document every response verbatim and screenshot each one. This is the most important document produced in week one because every content decision over the next 90 days gets compared against it. Run it before anything else changes so the starting point is clean.</p><p><strong>The five queries:</strong> "most GDPR-compliant web analytics," "Google Analytics alternative no cookies EU," "web analytics without cookie consent," "is Google Analytics legal in Germany 2026," and "best privacy-first analytics for SaaS." Real queries with real search volume from real compliance buyers.</p></article>
+    <article class="card sr"><h4>Day 1 · Afternoon</h4><h3>Capterra: claim and respond to every review</h3><p>Capterra review responses are free. G2 requires a paid plan at approximately $2,999 per year to respond, so Capterra is the immediate priority. Write specific responses to every existing review, most recent first. Not "thank you for your review." Read what they said and respond to that specifically. A DPO reading a thoughtful founder response thinks: a real team is paying attention to this product.</p><p><span class="hlc">For G2:</span> budget the paid plan as a month-two decision once review volume justifies it. G2's category grid weights admin engagement, but only after review count hits a threshold that makes grid placement achievable.</p></article>
+    <article class="card sr"><h4>Day 2 · Morning</h4><h3>Map the full 14-day trial sequence</h3><p>Sign up for a fresh trial. Document every email that arrives across 14 days: timing, subject line, body, CTA, and what was not said. This is the current onboarding baseline. The segmented email architecture in Days 8 to 30 is built on top of this audit. Before building something new, document exactly what exists so the comparison is clean.</p><p>Also go through the downgrade and cancellation flows manually. What does a user see when the trial ends without converting? Is data preserved? Is the message clear? The compliance buyer who doesn't convert on the first trial often returns 30 days later when the DPO has signed off.</p></article>
+    <article class="card sr"><h4>Day 2 · Afternoon</h4><h3>Compliance documentation: one-click audit</h3><p>Pull every compliance document currently available: the DPA agreement, the data flow diagram, the no-cookie certification, and the sub-processor list. Read each one as a non-technical legal reviewer would. Three questions: is the language accessible without a technical background? Are all four documents accessible from one single link? Can that link be forwarded in one click?</p><p>Email 1 of the compliance buyer path sends this documentation immediately at signup. If it takes more than one click to locate, it gets reorganised before the email sequence goes live.</p></article>
+    <article class="card sr"><h4>Day 3</h4><h3>LinkedIn: update both profiles this week</h3><p>The SA LinkedIn company page needs to reflect the 2025 enterprise repositioning. Update the description to include: EU-owned and EU-hosted infrastructure specifically, the institutional customers (Bank of England, GOV.UK), and the AI analytics feature. A DPO who finds the page after a search should see compliance credentials immediately, not a developer-focused description from 2022.</p><p>Iron's personal LinkedIn bio changes too. With around 5,000 followers in the right communities, every post he writes touches potential SA buyers. The bio should lead with SA as the primary project and name the institutional customers. His current bio leads with growth metrics rather than credibility signals.</p></article>
+    <article class="card sr"><h4>Days 4 to 7</h4><h3>Review outreach: first wave of 25</h3><p>Identify 25 active customers: six months or more on the product, no support complaints on record, industries that map to the strongest review use cases (EU tech companies, agencies, compliance-sensitive sectors). Write a personal email from Iron. Short. Not templated. Target: <span class="hl">15 new Capterra reviews within 30 days</span>. No incentive language. Capterra flags incentivised reviews and reduces their algorithmic weight.</p><p>Also this week: build the GDPR ruling response template. When the next DPA decision lands, SA should have a LinkedIn post, a blog outline, and an outreach email to companies in the affected country ready to publish within 24 hours. Build the template now, when there is no time pressure.</p></article>
+  </div>
+  <div class="tr"><span class="tp tpc">Capterra</span><span class="tp tpg">G2 · month 2 decision</span><span class="tp tpl">LinkedIn</span><span class="tp tpci">Customer.io</span></div>
+  <div class="note sr"><p><strong>Week one done when:</strong> GEO baseline documented across 4 AI assistants. Capterra reviews all responded to. Trial email sequence fully mapped. Compliance docs confirmed one-click accessible. Both LinkedIn profiles updated. 25 personal review outreach emails sent. GDPR response template drafted. Zero budget.</p></div>
+</div></div>
+</section>
+<div class="dv"><div></div></div>
+
+<!-- 04 DAYS 8-30 -->
+<section class="part" id="m1">
+<div class="head"><div class="hi">
+  <div class="pb">Part 04</div>
+  <h2>Days 8 to 30.</h2>
+  <p>Three separate email paths for three different buyers. Annual plan push. Win-back sequence. LinkedIn comment rhythm that builds audience before anything gets published to the company page.</p>
+  <div class="gh">04</div>
+</div></div>
+<div class="body sky"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">04</span><span class="kl">Foundation Build</span><span class="kli"></span></div></div>
+  <div class="tc">
+    <p class="lead">Sending one email sequence to three completely different buyer types is the most expensive mistake in SA's current setup. The compliance buyer needs documentation and draft language for their DPO on day one. The developer needs the Events API and the AI analytics feature. The business owner probably hasn't installed the script yet.</p>
+    <p>The segmentation below uses signals available in the first 24 to 48 hours. Customer.io supports this conditional branching natively. Loops.so is appropriate for simpler developer-first products but doesn't have the conditional depth that three-path enterprise segmentation requires.</p>
+  </div>
+  <h3>Three paths, three completely different conversations</h3>
+  <div class="ep">
+    <div class="epc epa sr">
+      <div class="eph"><div class="epl">Path A</div><div class="ept">Compliance buyer</div><div class="eptr">Signal: visited compliance docs, corporate email domain, or 5+ sites added at signup</div></div>
+      <div class="epb_"><div class="eps">
+        <div class="epst"><div class="eptime">Immediate</div><div class="epsubj">The documentation is ready to forward to your legal team</div></div>
+        <div class="epst"><div class="eptime">Day 2</div><div class="epsubj">Removing your cookie consent banner: step by step</div></div>
+        <div class="epst"><div class="eptime">Day 5</div><div class="epsubj">What to put in your email to the DPO</div></div>
+        <div class="epst"><div class="eptime">Day 10</div><div class="epsubj">Before Thursday: what changes when your trial ends</div></div>
+        <div class="epst"><div class="eptime">Day 14</div><div class="epsubj">The review your legal team didn't have to do</div></div>
+      </div></div>
+    </div>
+    <div class="epc epb sr">
+      <div class="eph"><div class="epl">Path B</div><div class="ept">Developer</div><div class="eptr">Signal: script installed within 2 hours of signup, 1 to 2 sites added, personal or small-company email</div></div>
+      <div class="epb_"><div class="eps">
+        <div class="epst"><div class="eptime">Immediate</div><div class="epsubj">Your first visitor just showed up</div></div>
+        <div class="epst"><div class="eptime">Day 3</div><div class="epsubj">Track any event in three lines of code</div></div>
+        <div class="epst"><div class="eptime">Day 7</div><div class="epsubj">Ask your analytics a question in plain English</div></div>
+        <div class="epst"><div class="eptime">Day 11</div><div class="epsubj">Before your trial wraps up</div></div>
+        <div class="epst"><div class="eptime">Day 14</div><div class="epsubj">One thing we shipped since you signed up</div></div>
+      </div></div>
+    </div>
+    <div class="epc epc_ sr">
+      <div class="eph"><div class="epl">Path C</div><div class="ept">Business owner</div><div class="eptr">Signal: no script added within 24 hours of signup. Installation is the blocker.</div></div>
+      <div class="epb_"><div class="eps">
+        <div class="epst"><div class="eptime">Hour 6</div><div class="epsubj">Getting the script on your site takes about five minutes</div></div>
+        <div class="epst"><div class="eptime">Day 2</div><div class="epsubj">The thing most people do before IT gets involved</div></div>
+        <div class="epst"><div class="eptime">Day 5</div><div class="epsubj">Why your cookie banner can go away</div></div>
+        <div class="epst"><div class="eptime">Day 10</div><div class="epsubj">Before your trial ends, a quick note</div></div>
+        <div class="epst"><div class="eptime">Day 14</div><div class="epsubj">Still there if you want to pick this back up</div></div>
+      </div></div>
+    </div>
+  </div>
+  <h3>Full drafts: compliance buyer path (Path A)</h3>
+  <div class="g2">
+    <div class="db sr"><div class="ds"><strong>Path A · Email 1 · Immediate</strong> | Subject: The documentation is ready to forward to your legal team</div><div class="draft">Hi Jamie,
+
+Your Simple Analytics trial just started. Before you do anything else, here is what you will need to get legal sign-off:
+
+DPA agreement: [link]
+Data flow diagram: [link]
+No-cookie certification: [link]
+Sub-processor list: [link]
+
+All four are in one folder. Forward the link to your DPO or legal contact. The documents are written for non-technical reviewers so they won't need a developer to translate anything.
+
+If there's anything in there your legal team can't work with, reply here and tell me what they're seeing. Teams at Bank of England and GOV.UK have been through this process with us.
+
+Iron
+Simple Analytics</div></div>
+    <div class="db sr"><div class="ds"><strong>Path A · Email 2 · Day 2</strong> | Subject: Removing your cookie consent banner: step by step</div><div class="draft">Hi Jamie,
+
+One of the most immediate practical benefits of switching from Google Analytics is that you can take down your cookie consent banner. Since Simple Analytics doesn't collect personal data or use cookies, you don't need one.
+
+Here's what that looks like in practice:
+
+1. Remove the Google Analytics script from your site
+2. Add the Simple Analytics script (one line)
+3. Remove the cookie consent banner from your CMS or tag manager
+
+Most teams do all three in under 30 minutes. If you're on WordPress, Webflow, or Shopify, we have platform-specific guides: [link]
+
+Iron</div></div>
+    <div class="db sr"><div class="ds"><strong>Path A · Email 3 · Day 5</strong> | Subject: What to put in your email to the DPO</div><div class="draft">Hi Jamie,
+
+If you're waiting on DPO approval before committing, here is a draft you can send directly:
+
+---
+Subject: Analytics tool review request
+
+We're evaluating Simple Analytics as a replacement for Google Analytics following the recent DPA ruling on GA data transfers.
+
+Simple Analytics is EU-owned and hosted in the Netherlands. It collects no personal data, uses no cookies, and requires no GDPR consent mechanism. Full compliance documentation here: [link]
+
+Please review and confirm if this meets requirements.
+---
+
+Feel free to use this as is or adapt it. The documentation has everything they need.
+
+Iron</div></div>
+    <div class="db sr"><div class="ds"><strong>Path A · Email 4 · Day 10</strong> | Subject: Before Thursday: what changes when your trial ends</div><div class="draft">Hi Jamie,
+
+Your trial ends on Thursday. A clear picture before it happens:
+
+If you subscribe before Thursday: nothing changes. Data keeps flowing, dashboard stays exactly as it is.
+
+If you don't: your dashboard goes read-only. Historical data is preserved. New data stops being collected. You can reactivate at any point.
+
+If the DPO review is still in progress, let me know and I'll extend the trial. That's not standard, but it's sensible when the timeline is out of your hands.
+
+Iron</div></div>
+  </div>
+  <h3>Full drafts: developer path (Path B)</h3>
+  <div class="g2">
+    <div class="db sr"><div class="ds"><strong>Path B · Email 1 · Immediate</strong> | Subject: Your first visitor just showed up</div><div class="draft">Hi Alex,
+
+Your Simple Analytics is live and your first visitor just appeared in the dashboard.
+
+One thing worth checking while you're in there: the Sources tab. It shows exactly where that visitor came from with no personal data attached. No session ID, no fingerprint, no IP stored. Just the referrer URL and the page they landed on.
+
+If you run into anything, reply here.
+
+Iron</div></div>
+    <div class="db sr"><div class="ds"><strong>Path B · Email 2 · Day 3</strong> | Subject: Track any event in three lines of code</div><div class="draft">Hi Alex,
+
+If you want to track specific user actions, like button clicks, form submissions, or file downloads, the Events feature handles that without cookies or personal data.
+
+Three lines:
+
+window.sa_event('signup_clicked');
+window.sa_event('form_submitted', { type: 'contact' });
+window.sa_event('download', { file: 'guide.pdf' });
+
+Events appear in your dashboard under the Events tab within a minute or two. No configuration, no tag manager, no consent banner required.
+
+Full docs here: [link]
+
+Iron</div></div>
+    <div class="db sr"><div class="ds"><strong>Path B · Email 3 · Day 7</strong> | Subject: Ask your analytics a question in plain English</div><div class="draft">Hi Alex,
+
+Something you might not have found yet: the AI tab in the dashboard.
+
+Type a question in plain English. "Which pages drove the most traffic last month?" "Where are visitors coming from this week?" "What is my top referrer?" It returns the answer from your actual data.
+
+No SQL. No pivot tables. No custom reports.
+
+It's under the AI tab in the top navigation. Worth two minutes.
+
+Iron</div></div>
+  </div>
+  <h3>Annual plan push: three emails</h3>
+  <div class="drafts">
+    <article class="card sr"><div class="pill pc">Email 1</div><p><strong>Subject:</strong> A quick note about your monthly plan</p><div class="ds" style="border-radius:10px 10px 0 0;border:1px solid rgba(20,24,37,.07);border-bottom:none;background:rgba(232,73,90,.08)"><strong style="color:var(--text)">Annual · Email 1</strong></div><div class="draft">Hi Sam,
+
+You've been on the monthly plan for a while, so I wanted to reach out personally.
+
+Most teams who stay with Simple Analytics long term switch to annual at some point. Two months free, less billing admin, and it makes more sense once the product is part of the daily workflow.
+
+If it's already working for you, annual is probably the right fit. Happy to switch you over if you'd like. Just reply here.
+
+Iron</div></article>
+    <article class="card sr"><div class="pill pg">Email 2 · Day 7</div><p><strong>Subject:</strong> Following up on my last note</p><div class="ds" style="border-radius:10px 10px 0 0;border:1px solid rgba(20,24,37,.07);border-bottom:none;background:rgba(227,181,76,.10)"><strong style="color:var(--text)">Annual · Email 2</strong></div><div class="draft">Hi Sam,
+
+Following up in case my last message got buried.
+
+No pressure. Monthly still works if budgets are locked or the timing doesn't suit. We want Simple Analytics to fit where you are, not push you into something that doesn't.
+
+If anything in the product has stopped working the way you expected, I'd like to hear it.
+
+Iron</div></article>
+    <article class="card sr"><div class="pill pt">Email 3 · Day 14</div><p><strong>Subject:</strong> Last one from me on this</p><div class="ds" style="border-radius:10px 10px 0 0;border:1px solid rgba(20,24,37,.07);border-bottom:none;background:rgba(0,196,184,.09)"><strong style="color:var(--text)">Annual · Email 3</strong></div><div class="draft">Hi Sam,
+
+Last note on the annual plan.
+
+It's there whenever the timing is right. And if Simple Analytics stopped fitting your needs, I'd rather know that than have you drift away quietly. Honest feedback is more useful to us than silence.
+
+Iron</div></article>
+  </div>
+  <h3>LinkedIn: build the audience before publishing anything</h3>
+  <div class="g2">
+    <article class="card sr"><div class="pill pt">Weeks 2 to 5: comments only</div><h3>Iron's personal profile should carry the weight first</h3><p>Personal LinkedIn profiles usually get materially more reach than company pages for the same idea. Iron already has the audience that matters here. For the first month, all LinkedIn energy should go through his personal profile rather than the SA company page.</p><p>The comment strategy: identify 15 DPOs, privacy lawyers, EU startup CTOs, and web agency owners who post regularly. Add two to three paragraphs of specific, non-generic perspective to their posts about GDPR compliance, analytics decisions, or data privacy. Meaningful comments generate profile visits, which become followers, which become an audience for original content starting in month two. Commenting takes 30 minutes per day.</p></article>
+    <article class="card sr"><div class="pill pc">Who to engage first</div><h3>The right profiles to start with</h3><p>DPOs who post publicly about GDPR enforcement decisions. Privacy lawyers in the Netherlands, Germany, France, and Scandinavia discussing the analytics ruling pattern. Web agency founders in the EU who manage multiple client sites. Founders of privacy-adjacent tools who discuss compliance decisions in public. Members of the IAPP KnowledgeNet Amsterdam and Brussels chapters who post about data protection practice.</p><p>The voice for every comment: specific, direct, nothing generic. "The Italian Garante ruling creates a procurement decision for analytics tools that most marketing teams haven't caught up to yet" is a comment worth writing. "Great post, totally agree" is not.</p></article>
+  </div>
+  <div class="tr"><span class="tp tpci">Customer.io</span><span class="tp tpl">LinkedIn</span><span class="tp tpc">Capterra</span></div>
+</div></div>
+</section>
+<div class="dv"><div></div></div>
+
+<!-- 05 DAYS 31-90 -->
+<section class="part" id="days31">
+<div class="head"><div class="hi">
+  <div class="pb">Part 05</div>
+  <h2>Days 31 to 90.</h2>
+  <p>The country pages. The agency program. The AI feature landing page. The pricing page fixes that have been acknowledged but not shipped. And a conference proposal that costs nothing to submit.</p>
+  <div class="gh">05</div>
+</div></div>
+<div class="body cream"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">05</span><span class="kl">Growth Infrastructure</span><span class="kli"></span></div></div>
+  <div class="tc">
+    <p class="lead">Month two is when the permanent assets get built. Country pages take 60 to 90 days to rank. The agency program takes 30 days to recruit the first five partners. Build them now so they exist and compound in month four when the measurement conversation happens.</p>
+  </div>
+  <h3>GDPR country landing pages: France and Germany first</h3>
+    <div class="site-shell-jumps">
+    <a class="site-shell-jump" href="france-landing-page.html"><span class="site-shell-jump-code">FR</span><span>Open France landing page</span></a>
+    <a class="site-shell-jump" href="germany-landing-page.html"><span class="site-shell-jump-code">DE</span><span>Open Germany landing page</span></a>
+  </div><div class="g2">
+    <article class="card sr"><div class="pill pc">France · CNIL ruled Feb 2022</div><h3>simpleanalytics.com/gdpr/france</h3><p>One page. One argument: the CNIL ruled Google Analytics illegal in France. Here is what it means and here is what compliant analytics looks like. The ruling explained in plain French. What specifically triggered it: US data transfer and personal data processing. What SA does differently: no cookies, no fingerprinting, EU-hosted, no data transfer outside the EU. One quote from a French customer if available. One CTA to the reverse trial.</p><p>Target queries: <span class="hl">"Google Analytics interdit en France"</span>, <span class="hl">"alternative Google Analytics RGPD"</span>, <span class="hl">"analytique web sans cookies France"</span>. Meaningful search volume, near-zero competition from SA's own content today.</p></article>
+    <article class="card sr"><div class="pill pt">Germany · high compliance awareness market</div><h3>simpleanalytics.com/gdpr/germany</h3><p>Germany doesn't have a single federal DPA ruling yet, but the Bavarian DSB has issued guidance and German companies are among the most compliance-forward buyers in the EU. The page covers: why German companies are switching analytics tools, what German legal requirements say about data transfers, and why EU-owned infrastructure answers the question German CTOs and DPOs are asking.</p><p>Target queries: <span class="hl">"DSGVO konformes Analytics"</span>, <span class="hl">"Google Analytics Alternative Deutschland"</span>, <span class="hl">"Analytics ohne Cookie Banner"</span>. Low competition, meaningful volume from mid-market German tech companies.</p></article>
+  </div>
+  <h3>The agency reseller program</h3>
+  <p>One web agency in the EU manages analytics for 20 to 50 client websites simultaneously. One agency switching to Simple Analytics is 20 cookie consent banners removed, 20 data processing agreements simplified, and 20 clients with a documented compliance answer if a DPA ever asks. This is a multiplier channel that costs nothing to build beyond the time to structure it. It does not currently exist at SA.</p>
+  <div class="at">
+    <article class="atc"><div class="atl">Tier 1</div><div class="atn">Referral</div><div class="atr">15%</div><div class="atd">Revenue share on referred accounts for 12 months. For agencies managing 1 to 5 client accounts on SA. No commitment required. Self-serve sign-up.</div></article>
+    <article class="atc feat"><div class="atl">Tier 2</div><div class="atn">Agency Partner</div><div class="atr">25%</div><div class="atd">Ongoing revenue share on all client accounts under management. Dashboard access for all client sites. SA compliance documentation co-branded for agency use. For agencies managing 6 or more accounts.</div></article>
+    <article class="atc"><div class="atl">Tier 3</div><div class="atn">Strategic</div><div class="atr">Custom</div><div class="atd">For agencies managing 20 or more accounts. Listing on SA's partner page. Co-marketing and joint case study opportunity. Treated as a long-term relationship, not a transaction.</div></article>
+  </div>
+  <p class="meta" style="margin-top:10px">These tiers are a starting framework. Revenue share percentages need to be validated against SA's margins in a two-hour conversation with Iron and Adriaan before the program goes public.</p>
+  <h3>The AI feature: the biggest differentiator nobody is marketing</h3>
+  <div class="g2">
+    <article class="card rc sr"><div class="pill pc">What it does that no competitor does</div><h3>Ask your analytics in plain English</h3><p>Simple Analytics AI lets users query their own data conversationally. "Which pages drove the most signups last month?" "Where are visitors dropping off?" "What is my best traffic source this week?" It returns answers from the user's actual data without SQL, custom reports, or a data analyst. Plausible doesn't have this. Fathom doesn't have this. Matomo doesn't have this. It currently gets one navigation link on the homepage.</p></article>
+    <article class="card sc sr"><div class="pill pt">What month two builds</div><h3>One dedicated landing page with three real examples</h3><p>A page at simpleanalytics.com/ai with three real example questions, the answers they return, embedded screenshots, and a CTA to the trial. Target queries: "AI analytics tool," "ask analytics questions natural language," "analytics without SQL." Low competition, growing search volume as AI-powered product features become more common across B2B SaaS.</p><p>The page should show a specific, real example: a user typed "which blog posts drove the most signups in the last 30 days" and this is exactly what came back. Concrete demonstration is worth more than any feature description.</p></article>
+  </div>
+  <h3>Pricing page: three specific fixes</h3>
+  <div class="g3" style="margin-top:6px">
+    <div class="card rc sr"><strong style="display:block;margin-bottom:10px;font-size:.91rem;color:var(--navy)">No price comparison to Plausible</strong><p style="margin:0;font-size:.88rem;color:var(--mid)">At comparable traffic tiers, SA is cheaper than Plausible. Plausible charges $29/month for traffic that SA covers at £15/month. One comparison table, clearly labelled, changes how cost-conscious buyers evaluate the choice. This should be the first table on the pricing page.</p></div>
+    <div class="card sc sr"><strong style="display:block;margin-bottom:10px;font-size:.91rem;color:var(--navy)">Annual pricing requires a toggle</strong><p style="margin:0;font-size:.88rem;color:var(--mid)">Monthly is shown by default. The two-months-free annual offer requires the buyer to find and click a toggle. A/B testing annual as the default display is a 30-minute change that affects every pricing page visitor. The test will tell you within 30 days whether annual-first increases revenue per acquisition.</p></div>
+    <div class="card ac sr"><strong style="display:block;margin-bottom:10px;font-size:.91rem;color:var(--navy)">The "blame our marketeer" tooltip</strong><p style="margin:0;font-size:.88rem;color:var(--mid)">Iron added a self-aware annotation to the Team plan. For the developer persona it's charming. For a compliance buyer reviewing pricing with their CFO, it may land differently. Test removing it from the visible pricing view while keeping the brand voice in the FAQ section.</p></div>
+  </div>
+  <h3>CPDP Brussels: the talk nobody has submitted yet</h3>
+  <article class="card sr">
+    <p>CPDP (Computers, Privacy and Data Protection) is the largest annual EU privacy conference, held every January in Brussels. The 2027 call for speaking proposals opens in approximately September or October 2026. The talk writes itself from the article content: "What the analytics enforcement cascade means for DPOs, and what a compliant analytics stack looks like in 2027." Iron or Adriaan as the speaker. Zero cost to submit. A speaking slot at CPDP reaches the exact compliance buyer audience that the country pages and the LinkedIn strategy target, in person, with a credibility signal no LinkedIn content replicates.</p>
+    <p class="meta">Proposal format: 300-word abstract plus speaker bio. Submit through cpdpconferences.org when the call opens in autumn 2026.</p>
+  </article>
+  <div class="tr"><span class="tp tpa">Ahrefs</span><span class="tp tpsc">Google Search Console</span><span class="tp tpx">Simple Analytics (self-tracking)</span></div>
+</div></div>
+</section>
+<div class="dv"><div></div></div>
+
+<!-- 06 CHANNELS -->
+<section class="part" id="channels">
+<div class="head"><div class="hi">
+  <div class="pb">Part 06</div>
+  <h2>Channel stack.</h2>
+  <p>What starts now, what gets built carefully, what gets no energy at all. Every decision reflects where the two buyer personas actually discover tools like this, and which one has the higher commercial value in 2026.</p>
+  <div class="gh">06</div>
+</div></div>
+<div class="body paper"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">06</span><span class="kl">Channel Stack</span><span class="kli"></span></div></div>
+  <div class="tc"><p class="lead">The enterprise repositioning changes the channel priority. The compliance buyer is a larger contract, a stickier customer, and arrives through channels the developer persona doesn't use. LinkedIn and DPO communities take priority over Indie Hackers and Product Hunt in 2026.</p></div>
+  <div class="g3">
+    <article class="card sr"><div class="pill pt">Start now</div><h3>LinkedIn via Iron's personal profile</h3><p>The primary acquisition channel for the compliance buyer. Iron's personal profile is likely to outperform the SA company page by a wide margin on reach and trust. Comment strategy for weeks 1 to 4. Original content from week 5. Target: two posts per week on GDPR enforcement, analytics compliance, and the practical questions DPOs face. Written in Iron's actual voice.</p><div class="tr"><span class="tp tpl">LinkedIn personal</span></div></article>
+    <article class="card sr"><div class="pill pt">Start now</div><h3>Review velocity on Capterra</h3><p>The activity with the longest compounding tail. AI assistants weight review count when generating recommendations. Capterra category placement improves with volume. The gap between SA and Plausible closes only if the outreach programme runs continuously. First wave in week one. Systematic programme continues through month three. Target: 40 Capterra reviews by day 90.</p><div class="tr"><span class="tp tpc">Capterra</span></div></article>
+    <article class="card sr"><div class="pill pt">Start now</div><h3>SEO: country pages and AI feature</h3><p>France and Germany pages built in month two. AI analytics feature page built in month two. 60 to 90 day ranking lag minimum, so starting now means results visible in month four. SA already has content production infrastructure via the custom GPT. The missing layer is compliance-query-specific content targeting what the GDPR ruling pattern creates demand for.</p><div class="tr"><span class="tp tpa">Ahrefs</span><span class="tp tpsc">GSC</span></div></article>
+    <article class="card sr"><div class="pill pg">DPO communities</div><h3>IAPP KnowledgeNet chapters</h3><p>IAPP has KnowledgeNet chapters in Amsterdam, Brussels, London, Berlin, Paris, and around 70 other cities. These are in-person meetings where DPOs, privacy lawyers, and compliance teams meet and talk. Iron or Adriaan attending one chapter meeting and being useful in the room is worth more than 50 LinkedIn posts to the same audience. Attendance is free for non-members at most chapters.</p><div class="tr"><span class="tp tpi">IAPP KnowledgeNet</span></div></article>
+    <article class="card sr"><div class="pill pg">Reactive only</div><h3>HackerNews and privacy forums</h3><p>When a new GDPR ruling drops, HackerNews covers it within hours. Threads get thousands of views from exactly the right developer persona. The GDPR response template built in week one means a useful, specific comment from SA can appear in the relevant thread within the first hour. A useful explanation of what the ruling means practically, not a product promotion.</p></article>
+    <article class="card sr"><div class="pill pg">Month 2</div><h3>Reddit: r/gdpr, r/webdev, r/privacy</h3><p>r/gdpr is a large community of people navigating GDPR compliance decisions in real time. A post linking the article with personal framing from Iron earns upvotes because it's useful rather than promotional. r/webdev and r/privacy reach the developer persona. None of these communities respond to link drops. They respond to people who are already contributing to the conversation.</p></article>
+    <article class="card sr"><div class="pill pg">Month 2</div><h3>Iron's LinkedIn newsletter</h3><p>LinkedIn newsletters grew 150% year-on-year in 2025. Iron could start a LinkedIn newsletter version of his Substack, distributed directly to his existing connections without requiring them to click off the platform. Free to create. Builds a separate distribution asset alongside the Substack. Content is the same: building SA in public, GDPR insights, what the regulatory environment means for the product.</p></article>
+    <article class="card sr"><div class="pill pg">Month 3</div><h3>Privacy Guides and noyb community</h3><p>privacyguides.org is a community-maintained privacy tool directory that takes no paid placements. A legitimate SA listing drives high-quality referral traffic from privacy-conscious users who specifically trust that resource. noyb, Max Schrems' organisation that filed the original GA complaints, has a community and newsletter. An article that cites their cases correctly may be referenced by their editorial team without any outreach required.</p></article>
+    <article class="card sr"><div class="pill pn">No energy</div><h3>Instagram</h3><p>The account is small. DPOs, privacy lawyers, and CTOs evaluating analytics tools are not on Instagram making that decision. One post per month keeps the account from looking completely abandoned. That is the full Instagram strategy for 2026. Every hour spent on Instagram is an hour not spent on Capterra responses, which actually move the GEO needle.</p></article>
+  </div>
+  <h3>SEO keyword map</h3>
+  <div class="sb sr">
+    <div class="sbt">Keyword targets by intent · verified April 2026</div>
+    <div class="kg">
+      <div class="kr2"><span class="kt kp">Primary</span><span class="kterm">Google Analytics alternative GDPR</span><span class="kvol">8.1K / mo</span><span class="kdiff dhi">Competitive</span></div>
+      <div class="kr2"><span class="kt kp">Primary</span><span class="kterm">privacy-first web analytics</span><span class="kvol">3.4K / mo</span><span class="kdiff dme">Medium</span></div>
+      <div class="kr2"><span class="kt ks">Secondary</span><span class="kterm">cookieless web analytics tool</span><span class="kvol">1.9K / mo</span><span class="kdiff dlo">Low</span></div>
+      <div class="kr2"><span class="kt ks">Secondary</span><span class="kterm">web analytics without cookie consent</span><span class="kvol">1.2K / mo</span><span class="kdiff dlo">Low</span></div>
+      <div class="kr2"><span class="kt kl">Long-tail</span><span class="kterm">is Google Analytics illegal in France</span><span class="kvol">480 / mo</span><span class="kdiff dlo">Very Low</span></div>
+      <div class="kr2"><span class="kt kl">Long-tail</span><span class="kterm">Google Analytics Alternative DSGVO Deutschland</span><span class="kvol">390 / mo</span><span class="kdiff dlo">Very Low</span></div>
+      <div class="kr2"><span class="kt kl">Long-tail</span><span class="kterm">AI analytics ask data questions plain English</span><span class="kvol">210 / mo</span><span class="kdiff dlo">Very Low</span></div>
+      <div class="kr2"><span class="kt kge">GEO target</span><span class="kterm">most GDPR-compliant analytics tool 2026</span><span class="kvol">AI queries</span><span class="kdiff dlo">Build now</span></div>
+      <div class="kr2"><span class="kt kge">GEO target</span><span class="kterm">web analytics no cookies EU hosted</span><span class="kvol">AI queries</span><span class="kdiff dlo">Build now</span></div>
+    </div>
+    <div class="sbn">Start with the country-specific long-tail queries. SA's content doesn't compete with anyone for them today. Build authority in the specific before attempting the generic. GEO targets require review volume, content matching the exact conversational phrasing, and patience. None of these rank on backlinks alone.</div>
+  </div>
+</div></div>
+</section>
+<div class="dv"><div></div></div>
+
+<!-- 07 ARTICLE -->
+<section class="part" id="article">
+<div class="head"><div class="hi">
+  <div class="pb">Part 07</div>
+  <h2>The article.</h2>
+  <p>The specific piece I would write, why that headline, the complete distribution plan with names and contact details, and what the IAPP version looks like as a separate pitch.</p>
+  <div class="gh">07</div>
+</div></div>
+<div class="body amber"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">07</span><span class="kl">Content Piece</span><span class="kli"></span></div></div>
+  <div class="art-intro-wrap">
+    <div class="art-intro-lead">
+      <p class="lead">The stronger angle for Simple Analytics is not another enforcement recap. It is a contingency piece for DPOs and legal teams who know Google Analytics is currently back in-bounds, but also know the legal mechanism underneath it has already failed twice before.</p>
+    </div>
+    <div class="art-meta-callout">
+      <div class="art-meta-eyebrow">Two versions get published · two audiences</div>
+      <div class="art-meta-boxes">
+        <div class="art-meta-box">
+          <div class="art-meta-badge badge-blog">SA Blog</div>
+          <div class="art-meta-desc">1,600 to 1,900 words. FAQ schema markup for DPF, GA4, and consent-banner queries. Targets the compliance buyer at the moment of legal review. Evergreen.</div>
+        </div>
+        <div class="art-meta-box">
+          <div class="art-meta-badge badge-iapp">IAPP</div>
+          <div class="art-meta-desc">900-word practitioner version on transfer-risk contingency planning. Free to submit. Contact: <strong>acarson@iapp.org</strong>. Readers earn CPE credits, which meaningfully increases share rate inside DPO communities.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="al">
+    <div>
+      <div class="sp">
+        <div class="pmr">
+          <span class="pm pm-pub">Simple Analytics Blog</span>
+          <span class="pm pm-cat">GDPR Compliance</span>
+          <span class="pm pm-len">8 minute read</span>
+        </div>
+        <h2 class="spt">Safe Harbour Died. Privacy Shield Died. What Happens to Your Analytics If the Data Privacy Framework Goes the Same Way?</h2>
+        <p class="spd">Google Analytics is legal in the EU again, for now, on the back of a framework that has already been struck down twice. Here is what that means for your next compliance review.</p>
+
+        <h5>The third framework</h5>
+        <p>Two agreements have governed EU-US data transfers over the past twenty-five years. Both were invalidated by the Court of Justice of the EU, both after challenges by Max Schrems, and both because the court found that US surveillance law allows access to European personal data in ways GDPR does not permit.</p>
+        <p>The second agreement, Privacy Shield, was struck down in July 2020. Within months, NOYB, Schrems' privacy NGO, filed 101 complaints against European companies using Google Analytics and Facebook tools, targeting the same underlying transfer issue. By early 2023, data protection authorities in Austria, France, Italy, Sweden, Denmark, and Finland had each found Google Analytics in violation of GDPR. The rulings, coordinated through the European Data Protection Board, reached the same conclusion: Google Analytics transfers personal data to US servers, the safeguards in place are not enough, and the transfers are unlawful.</p>
+        <p>In July 2023, the European Commission adopted the EU-US Data Privacy Framework. Google certified under it. The transfer issue was addressed, and Google Analytics became conditionally lawful in the EU again.</p>
+        <p>The word "conditionally" matters.</p>
+
+        <h5>What "conditional" means in practice</h5>
+        <p>The DPF survived its first court challenge in September 2025, when the EU General Court dismissed a case brought by French MP Philippe Latombe. But the General Court sits below the Court of Justice of the EU, which struck down the last two frameworks. NOYB said after the Latombe judgment that it is preparing a broader challenge before the CJEU.</p>
+        <p>There is also political pressure unrelated to litigation. The DPF's redress mechanism for EU citizens depends on the US Privacy and Civil Liberties Oversight Board functioning as an independent body. Changes to its composition have raised questions about whether it can operate as intended, and Schrems has said publicly that those changes alone could justify suspending the adequacy decision without waiting for a court ruling.</p>
+
+        <div class="pp">Two frameworks before this one were described as robust when they launched. Neither survived contact with the CJEU. DPOs making tool decisions in 2026 are, in effect, betting on the third one holding.</div>
+
+        <h5>Why some tools are not affected by any of this</h5>
+        <p>Google Analytics became a GDPR issue because it collects personal data about EU visitors and sends it to US servers. The legal exposure has always been a function of that transfer. Fix the transfer mechanism and the tool is lawful. Remove the transfer mechanism and it is not.</p>
+        <p>Simple Analytics does not collect personal data. No IP addresses, no cookies, no fingerprinting, no persistent identifiers. All data is processed on infrastructure in Amsterdam. There is no EU-US transfer because there is nothing to transfer, and no change to the DPF, whether suspension, invalidation, or renegotiation, affects its compliance status.</p>
+        <p>It also means no consent banner is required. GDPR only mandates a consent mechanism when personal data is being processed. When none is collected, there is no legal basis for requiring one.</p>
+        <p>For marketing teams asking what they lose, Simple Analytics provides pageviews, referral sources, top pages, countries, devices, and campaign performance. It does not provide individual user journeys or remarketing audiences. For most content and product teams, that covers the metrics they actually use.</p>
+
+        <h5>What the DPO review looks like</h5>
+        <p>Before 2022, analytics decisions belonged to marketing and development. The compliance function was rarely involved. That changed when the DPA rulings started landing and DPOs found themselves recommending tool switches under time pressure.</p>
+        <p>The review now covers three things: whether personal data is collected, where it is processed, and what legal mechanism covers any cross-border transfer. For Google Analytics, all three require active monitoring as the DPF situation develops. For Simple Analytics, all three have fixed answers by design.</p>
+        <p>The documents a legal team will want are a Data Processing Agreement, a data flow diagram, and a sub-processor list. Simple Analytics publishes all three at simpleanalytics.com/privacy in plain language, without requiring a developer to interpret them.</p>
+
+        <h5>On the 2022 rulings and GA4</h5>
+        <p>The DPA decisions from 2022 and early 2023 targeted Universal Analytics, which Google discontinued in July 2023. Whether those rulings apply directly to GA4 is debated. What is not debated is that GA4 still requires a valid transfer mechanism, that the DPF is currently that mechanism, and that if the DPF were suspended, organisations using GA4 would face the same position they were in during 2022, except this time without the same runway to plan.</p>
+
+        <h5>FAQ</h5>
+        <div class="faqb">
+          <div class="faqi"><div class="faqq">Does the Data Privacy Framework make Google Analytics GDPR compliant?</div><div class="faqa">It resolves the data transfer issue as long as the framework remains valid and Google maintains its certification. It does not remove the cookie consent requirement. GA4 sets non-essential cookies under the ePrivacy Directive, which require opt-in consent from visitors regardless of where the data goes.</div></div>
+          <div class="faqi"><div class="faqq">Do I need a consent banner if I use Simple Analytics?</div><div class="faqa">No. Simple Analytics collects no personal data and sets no cookies. A consent banner is only legally required when personal data is being processed.</div></div>
+          <div class="faqi"><div class="faqq">What documents does Simple Analytics provide for a legal review?</div><div class="faqa">A Data Processing Agreement, a data flow diagram, and a sub-processor list, all at simpleanalytics.com/privacy, written for legal reviewers rather than developers.</div></div>
+          <div class="faqi"><div class="faqq">What happens to my GA4 compliance if the DPF is invalidated?</div><div class="faqa">The same situation as 2020 to 2023: no valid transfer mechanism, GDPR exposure, and pressure to switch tools quickly. Simple Analytics is unaffected because its compliance does not depend on EU-US transfer law.</div></div>
+          <div class="faqi"><div class="faqq">What does Simple Analytics cost?</div><div class="faqa">Pricing is in euros, with US dollars and British pounds also accepted. There is a free plan with a 30-day data history limit. Paid plans are billed monthly or annually based on data volume. Nonprofits receive a 50 percent discount on all plans. A 14-day trial gives full access with no card required. Current pricing is at simpleanalytics.com/pricing.</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="aside">
+      <div class="asit">SEO keywords</div>
+      <p class="aside-note">Researched via Ahrefs + GSC</p>
+      <div class="chips">
+        <div class="chipl">Short-tail</div>
+        <span class="chip cpg">privacy analytics</span>
+        <span class="chip cpg">Google Analytics GDPR</span>
+        <div class="chipl">Secondary</div>
+        <span class="chip cpl">Data Privacy Framework</span>
+        <span class="chip cpl">GDPR compliant analytics</span>
+        <div class="chipl">Long-tail</div>
+        <span class="chip cpp">is Google Analytics GDPR compliant</span>
+        <span class="chip cpp">what happens if Data Privacy Framework is invalidated</span>
+        <span class="chip cpp">GA4 consent banner GDPR</span>
+        <span class="chip cpp">analytics tool for legal teams</span>
+        <div class="chipl">GEO / AI queries</div>
+        <span class="chip cps">what if the EU-US Data Privacy Framework is struck down</span>
+        <span class="chip cps">analytics tool that does not rely on EU-US transfers</span>
+      </div>
+      <div class="tr" style="margin-top:18px">
+        <span class="tp tpx">Ahrefs</span>
+        <span class="tp tpx">GSC</span>
+        <span class="tp tpx">Semrush</span>
+      </div>
+    </div>
+  </div>
+  <h3>Distribution: channels, contacts, costs, sequence</h3>
+  <div class="dc sr">
+    <div class="dlabel">Full distribution plan - in order</div>
+    <div class="dchans">
+      <div class="dch"><div class="dchn">1</div><div><div class="dcname">Simple Analytics blog · organic search primary</div><div class="dcd">Publish the long-form version above. Add FAQ schema markup for featured snippet eligibility on DPF, GA4, and consent-banner queries. Submit to Google Search Console immediately. <strong>Cost: free. Results at 60 to 90 days minimum.</strong></div></div></div>
+      <div class="dch"><div class="dchn">2</div><div><div class="dcname">Iron's LinkedIn personal profile · same week as publication</div><div class="dcd">350-word version as a text-first post from Iron's personal profile. Link goes in the first comment, not the body (LinkedIn deprioritises posts with body links). Iron's personal profile is likely to outperform the SA company page by a wide margin on reach. <strong>Cost: free.</strong></div></div></div>
+      <div class="dch"><div class="dchn">3</div><div><div class="dcname">The Privacy Advisor (IAPP) · separate 900-word practitioner version</div><div class="dcd">IAPP's flagship publication reaches a large privacy-professional readership globally. Open to non-members. <strong>Free to pitch.</strong> Email <strong>Angelique Carson at acarson@iapp.org</strong> with a one to two paragraph topic summary and Iron's bio. Ideal length: 750 to 1,200 words. Conversational tone, not academic. Zero product promotion in the body. The byline does that work. IAPP readers earn Continuing Privacy Education credits, which increases share rate within DPO communities. 24-hour exclusivity window after publication, then republishable with attribution.</div></div></div>
+      <div class="dch"><div class="dchn">4</div><div><div class="dcname">GDPRhub · citation request</div><div class="dcd">GDPRhub is run by noyb and documents GDPR enforcement decisions. They link to useful explanatory resources alongside case documentation. If the SA article accurately cites their database entries, send the article link to <strong>press@noyb.eu</strong>. A GDPRhub citation is a high-authority backlink from one of the most credible sources in the EU privacy community. <strong>Cost: free.</strong></div></div></div>
+      <div class="dch"><div class="dchn">5</div><div><div class="dcname">r/gdpr · community post</div><div class="dcd">Large GDPR-focused subreddit. Post with personal framing from Iron: "We built SA because privacy-first analytics should not depend on a legal framework surviving its next challenge." Link to the full article. Engage every comment in the first 24 hours. <strong>Cost: free.</strong></div></div></div>
+      <div class="dch"><div class="dchn">6</div><div><div class="dcname">HackerNews · reactive only</div><div class="dcd">When the next GDPR ruling drops, HN covers it within hours. Link to the article in a relevant thread with a one-paragraph summary. The FAQ section gives HN readers a shareable reference they will actually use. <strong>Cost: free. Timing: the next ruling.</strong></div></div></div>
+    </div>
+  </div>
+</div></div>
+</section>
+<div class="dv"><div></div></div>
+
+<!-- 08 ANTI-PATTERNS -->
+<section class="part" id="anti">
+<div class="head"><div class="hi">
+  <div class="pb">Part 08</div>
+  <h2>Anti-patterns.</h2>
+  <p>The mistakes specific to Simple Analytics in 2026. Named clearly, because the ones that feel like progress while they are happening are the ones most worth naming first.</p>
+  <div class="gh">08</div>
+</div></div>
+<div class="body mist"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">08</span><span class="kl">What Kills Momentum</span><span class="kli"></span></div></div>
+  <div class="diag-stack">
+    <div class="diag-card diag-1 sr">
+      <div class="diag-stripe">
+        <span class="diag-num">01</span>
+        <span class="diag-label">Positioning</span>
+      </div>
+      <div class="diag-body">
+        <div class="diag-type">Mistake 01 · Positioning</div>
+        <h3>Competing with Plausible on price</h3>
+        <p>Plausible has more reviews, more content, and more name recognition in the developer community. Competing head-to-head on price means losing on trust before the price conversation even begins. Simple Analytics has a more defensible compliance position than Plausible: no cookies, no fingerprinting, not even IP hashing at any point, EU-owned infrastructure. That position is less exposed to transfer-law shocks than tools that depend on US processing. A pricing-first positioning doesn't survive a single competitor review. Every message that leads with cost instead of compliance certainty surrenders the one advantage Plausible cannot match on any timeline.</p>
+      </div>
+    </div>
+    <div class="diag-card diag-2 sr">
+      <div class="diag-stripe">
+        <span class="diag-num">02</span>
+        <span class="diag-label">Segmentation</span>
+      </div>
+      <div class="diag-body">
+        <div class="diag-type">Mistake 02 · Email</div>
+        <h3>One sequence for three completely different buyers</h3>
+        <p>A developer who installed the script within the first hour needs a completely different email experience from a compliance buyer who needs four DPO approvals before the script can go on the site. Sending both the same five-email sequence means the developer receives compliance documentation they don't need, and the compliance buyer receives event-tracking tutorials before their legal team has reviewed anything. Behavioural segmentation in Customer.io takes two days to configure. The cost of not doing it compounds with every trial that converts at the wrong moment or not at all.</p>
+      </div>
+    </div>
+    <div class="diag-card diag-3 sr">
+      <div class="diag-stripe">
+        <span class="diag-num">03</span>
+        <span class="diag-label">Discovery</span>
+      </div>
+      <div class="diag-body">
+        <div class="diag-type">Mistake 03 · Strategy</div>
+        <h3>Enterprise repositioning without the discovery infrastructure</h3>
+        <p>SA repositioned for enterprise in 2025. Enterprise buyers have longer evaluation cycles, more stakeholders, and different discovery channels than the developer persona who built the original word-of-mouth base. Running an enterprise positioning without country landing pages, DPO-targeted content, Capterra review volume, and IAPP community presence is announcing a product that the enterprise buyer cannot yet find. The repositioning needs the infrastructure before the announcement can compound the awareness gap further.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;letter-spacing:.04em;margin-top:44px;margin-bottom:18px;color:var(--soft);text-transform:uppercase;font-family:var(--fs)">Six smaller ones worth naming</h3>
+  <div class="warns">
+    <div class="warn sr">
+      <div class="warn-x">&#10005;</div>
+      <div class="warn-body"><strong>Building features before the AI feature has its own page</strong><p>The AI analytics feature is the biggest differentiator SA has against every competitor in the category. It gets one navigation link on the homepage. A competitor comparison published this week that doesn't mention AI is describing a different product. Ship the page before the next feature.</p></div>
+    </div>
+    <div class="warn sr">
+      <div class="warn-x">&#10005;</div>
+      <div class="warn-body"><strong>Running paid acquisition before the email sequences work</strong><p>Paid traffic amplifies whatever is already in the funnel. If a compliance buyer clicks an ad, signs up, and receives a developer-focused welcome email, the ad spend confirmed the wrong impression. Build the segmented sequences first. Then paid becomes an investment rather than a cost.</p></div>
+    </div>
+    <div class="warn sr">
+      <div class="warn-x">&#10005;</div>
+      <div class="warn-body"><strong>Publishing content before distribution is in place</strong><p>SA has content production infrastructure. Publishing three more blog posts without the IAPP pitch sent, the GDPRhub relationship established, or the LinkedIn comment strategy running is production without reach. Sequence matters. Distribution setup precedes the content calendar.</p></div>
+    </div>
+    <div class="warn sr">
+      <div class="warn-x">&#10005;</div>
+      <div class="warn-body"><strong>Measuring SEO results at 30 days</strong><p>The country pages published in month two will not rank by week ten. Your instinct will be to panic at day 30. Don't. SEO can be a slowwwww burner. Give it 90 days while working on other things. Setting the measurement review at day 90 stops the programme from being being abandoned before it has had time to work.</p></div>
+    </div>
+    <div class="warn sr">
+      <div class="warn-x">&#10005;</div>
+      <div class="warn-body"><strong>Treating compliance documentation as a support resource</strong><p>The DPA agreement, data flow diagram, and sub-processor list are on simpleanalytics.com/privacy. They should also be in Email 1 of the compliance buyer path, on the enterprise pricing page, and linked from every country landing page. A document not surfaced at the moment of legal review has the same practical effect as one that doesn't exist.</p></div>
+    </div>
+    <div class="warn sr">
+      <div class="warn-x">&#10005;</div>
+      <div class="warn-body"><strong>Treating the compliance story as a feature bullet</strong><p>Stop leading with features. Lead with the problem you solve. You're not analytics with privacy - you're privacy analytics that also happens to have incredible dashboards. That ordering matters. Every message leading with dashboard design and listing compliance as a bullet reverses the value hierarchy that built this customer base.</p></div>
+    </div>
+  </div>
+  <div class="watch sr"><p>The thread running through every section of this playbook is the same: Simple Analytics has one of the strongest compliance stories in the category and is telling it to the smallest possible audience. I keep coming back to this because it feels obvious once you see it. You're sitting on gold here. The work is not creating more stuff for the sake of it. The work is making sure the right compliance buyers find what you already have when they search.</p></div>
+  <div class="promo sr">
+    <div class="proml">Final note to self</div>
+    <div class="promq">Iron wrote publicly that he needs to stop being the marketer. <span>That sentence is the brief.</span> Everything in this playbook is what a dedicated hire does so he doesn't have to.</div>
+    <div class="promm"><span class="promt">Months 1 to 3: foundation</span><span class="promt">Months 4 to 6: content compounds</span><span class="promt">Months 7 to 12: agency and GEO</span></div>
+  </div>
+</div></div>
+</section>
+<div class="dv"><div></div></div>
+
+<!-- 09 CHECKLIST -->
+<section class="part" id="checklist">
+<div class="head"><div class="hi">
+  <div class="pb">Checklist</div>
+  <h2>The operational checklist.</h2>
+  <p>Every action in this playbook in one place, organised by phase. Progress saves automatically in the browser.</p>
+  <div class="gh">CL</div>
+</div></div>
+<div class="body paper"><div class="bi">
+  <div class="ki"><div class="kr"><span class="kn">CL</span><span class="kl">Full Action List</span><span class="kli"></span></div></div>
+  <div class="clprog">
+    <div class="clpbw"><div class="clpb" id="progress-bar"></div></div>
+    <span class="clpt" id="progress-text">0 of 0 complete</span>
+    <button class="clr" onclick="resetChecklist()">Reset all</button>
+  </div>
+
+  <div class="clph ph1">
+    <div class="clphh"><div class="clphn">W1</div><div><div class="clpht">Week One · Days 1 to 7</div><div class="clphs">Zero budget. Changes what a DPO finds in five minutes.</div></div></div>
+    <div class="clcat"><div class="clcl">Measurement Baseline</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Run GEO baseline: 5 queries across Claude, ChatGPT, Perplexity, and Gemini. Document verbatim, screenshot all 20 responses.</span><span class="cltag t-me">Measure</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Review Profiles</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Claim Capterra profile using an SA work email address</span><span class="cltag t-rv">Reviews</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Write specific, non-templated responses to all existing Capterra reviews, most recent first</span><span class="cltag t-rv">Reviews</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Note G2 review count as baseline. Budget G2 paid plan ($2,999/year) as a month-two decision.</span><span class="cltag t-rv">Reviews</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Email and Trial Audit</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Sign up for a fresh trial. Document every email that arrives across 14 days: timing, subject, body, CTA.</span><span class="cltag t-em">Email</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Go through the downgrade and cancellation flows manually. Document what a non-converting user sees at each step.</span><span class="cltag t-em">Email</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Compliance Documentation</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Pull the DPA agreement, data flow diagram, sub-processor list, and no-cookie certification. Confirm all four are accessible from one single link.</span><span class="cltag t-co">Compliance</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Read each document as a non-technical legal reviewer. Flag any language that requires a developer to interpret.</span><span class="cltag t-co">Compliance</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">LinkedIn Updates</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Update SA LinkedIn company page: EU-owned infrastructure, Bank of England and GOV.UK, AI analytics feature</span><span class="cltag t-so">Social</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Update Iron's personal LinkedIn bio to lead with SA and institutional credibility signals</span><span class="cltag t-so">Social</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Review Outreach</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Identify 25 active customers: 6 months or more on the product, EU-based or compliance-sensitive sectors preferred</span><span class="cltag t-rv">Reviews</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Send 25 personal, non-templated Capterra review outreach emails from Iron. No incentive language.</span><span class="cltag t-rv">Reviews</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">GDPR Response Template</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Draft the ruling response template: LinkedIn post, blog outline, and outreach email to companies in the affected country. File it for use when the next ruling drops.</span><span class="cltag t-ct">Content</span></div>
+    </div></div>
+  </div>
+
+  <div class="clph ph2">
+    <div class="clphh"><div class="clphn">M1</div><div><div class="clpht">Days 8 to 30</div><div class="clphs">Segmented email infrastructure, LinkedIn comment rhythm, annual push, second review wave.</div></div></div>
+    <div class="clcat"><div class="clcl">Email Segmentation</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Set up Customer.io with three behavioural paths: compliance buyer, developer, business owner</span><span class="cltag t-em">Email</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Write and configure Path A (compliance buyer): 5 emails, compliance documentation in Email 1</span><span class="cltag t-em">Email</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Write and configure Path B (developer): 5 emails, Events API in Email 2, AI feature in Email 3</span><span class="cltag t-em">Email</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Write and configure Path C (business owner): 5 emails, installation help at hour 6</span><span class="cltag t-em">Email</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Write and configure annual plan push sequence (3 emails) for all monthly plan customers</span><span class="cltag t-em">Email</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Review Velocity</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Send second wave of 25 personalised Capterra review outreach emails to a new set of active customers</span><span class="cltag t-rv">Reviews</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Check Capterra review count at day 30. Target: 15 new reviews from two outreach waves.</span><span class="cltag t-me">Measure</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">LinkedIn Comment Strategy</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Identify 15 DPOs, privacy lawyers, EU startup CTOs, and web agency owners with active LinkedIn presence</span><span class="cltag t-so">Social</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Begin daily comment rhythm: 30 minutes per day, specific perspective only, no generic engagement</span><span class="cltag t-so">Social</span></div>
+    </div></div>
+  </div>
+
+  <div class="clph ph3">
+    <div class="clphh"><div class="clphn">M2</div><div><div class="clpht">Days 31 to 90</div><div class="clphs">Country pages. AI feature page. Agency program launched. Article published and fully distributed.</div></div></div>
+    <div class="clcat"><div class="clcl">Country Landing Pages</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Write and publish the France GDPR landing page in French. Target: "Google Analytics interdit en France" and related queries.</span><span class="cltag t-ct">Content</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Write and publish the Germany GDPR landing page in German. Target: "DSGVO konformes Analytics" and related queries.</span><span class="cltag t-ct">Content</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Submit both pages to Google Search Console. Check indexing at day 14 after publication.</span><span class="cltag t-ct">Content</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">AI Feature Page</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Write and publish simpleanalytics.com/ai with 3 real example questions, real answers, and product screenshots</span><span class="cltag t-ct">Content</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Add internal links to the AI feature page from the homepage, pricing page, and main blog posts</span><span class="cltag t-ct">Content</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Article Distribution</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Publish the Data Privacy Framework contingency article on the SA blog with FAQ schema markup applied</span><span class="cltag t-ct">Content</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Post Iron's 350-word LinkedIn version as a text-first post, link in the first comment</span><span class="cltag t-so">Social</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Pitch the 900-word IAPP version to Angelique Carson at acarson@iapp.org with 1 to 2 paragraph summary and Iron's bio</span><span class="cltag t-co">IAPP</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Post to r/gdpr with personal framing from Iron. Engage every comment in the first 24 hours.</span><span class="cltag t-so">Social</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Send article link to noyb press at press@noyb.eu with note about the ruling citations</span><span class="cltag t-ct">Content</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Agency Program</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Confirm agency tier revenue share percentages with Iron and Adriaan in a dedicated two-hour conversation</span><span class="cltag t-ag">Agency</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Build the agency landing page and co-branded compliance documentation template for agency use</span><span class="cltag t-ag">Agency</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Send first 20 personal outreach emails to EU web agencies managing 10 or more client sites</span><span class="cltag t-ag">Agency</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Pricing Page</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Add Plausible price comparison table to the SA pricing page (monthly price at equivalent traffic tiers)</span><span class="cltag t-ct">Content</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">A/B test annual pricing as the default display on the pricing page. Measure conversion rate change over 30 days.</span><span class="cltag t-me">Measure</span></div>
+    </div></div>
+  </div>
+
+  <div class="clph ph4">
+    <div class="clphh"><div class="clphn">M3</div><div><div class="clpht">Days 91 to 120</div><div class="clphs">Measurement review. GEO recheck. CPDP proposal. G2 paid plan decision.</div></div></div>
+    <div class="clcat"><div class="clcl">90-Day Measurement Review</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Run second GEO measurement: same 5 queries, same 4 AI assistants. Compare against day-one baseline verbatim.</span><span class="cltag t-me">Measure</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Check Capterra review count against 40-review target. Plan wave three outreach if below target.</span><span class="cltag t-me">Measure</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Review trial-to-paid conversion rate for each email path against pre-sequence baseline</span><span class="cltag t-me">Measure</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Check whether country pages are indexed and ranking. First rankings appear at 60 to 90 days. Do not assess performance before day 90.</span><span class="cltag t-me">Measure</span></div>
+    </div></div>
+    <div class="clcat"><div class="clcl">Conference and Community</div><div class="clits">
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Check cpdpconferences.org for 2027 call for proposals. Submit talk proposal before the October 2026 deadline.</span><span class="cltag t-ct">Content</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Attend one IAPP KnowledgeNet chapter in Amsterdam, Brussels, or London. No agenda beyond being present and useful in the room.</span><span class="cltag t-co">Community</span></div>
+      <div class="clit" onclick="toggle(this)"><div class="clck"><span class="clci">&#10003;</span></div><span class="clt">Assess G2 paid plan ($2,999/year) against current review count. Justifiable once at 40 reviews and category grid placement is achievable.</span><span class="cltag t-rv">Reviews</span></div>
+    </div></div>
+  </div>
+
+</div></div>
+</section>
+
+<script src="site-shell.js?v=20260423b"></script>
+<script>
+var nls=[].slice.call(document.querySelectorAll('.nl'));
+nls.forEach(function(l){
+  l.addEventListener('click',function(e){
+    var t=document.querySelector(l.getAttribute('href'));
+    if(!t)return;e.preventDefault();
+    window.scrollTo({top:t.getBoundingClientRect().top+window.scrollY-58,behavior:'smooth'});
+  });
+});
+var secs=nls.map(function(l){return document.querySelector(l.getAttribute('href'));}).filter(Boolean);
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(!e.isIntersecting)return;
+    var id='#'+e.target.id;
+    nls.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')===id);});
+  });
+},{rootMargin:'-28% 0px -58% 0px',threshold:0});
+secs.forEach(function(s){obs.observe(s);});
+var ro=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});
+},{threshold:.08,rootMargin:'0px 0px -36px 0px'});
+document.querySelectorAll('.card,.quote,.note,.watch,.anti,.sb,.promo,.dc,.traj,.db,.rv,.epc,.rt-t,.bj,.iq,.warn,.diag-card,.fr-verdict,.fr-col,.de-qa-row').forEach(function(el){
+  el.classList.add('sr');ro.observe(el);
+});
+var SK='sa_cl_v1';
+function ls(){try{var s=localStorage.getItem(SK);return s?JSON.parse(s):{}}catch(e){return{}}}
+function ss(st){try{localStorage.setItem(SK,JSON.stringify(st));}catch(e){}}
+function gi(el){return'i'+[].indexOf.call(document.querySelectorAll('.clit'),el);}
+function toggle(el){
+  el.classList.toggle('done');
+  var st=ls(),id=gi(el);
+  if(el.classList.contains('done')){st[id]=1;}else{delete st[id];}
+  ss(st);up();
+}
+function resetChecklist(){document.querySelectorAll('.clit.done').forEach(function(el){el.classList.remove('done');});ss({});up();}
+function up(){
+  var all=document.querySelectorAll('.clit'),done=document.querySelectorAll('.clit.done');
+  var pct=all.length?done.length/all.length*100:0;
+  var bar=document.getElementById('progress-bar'),txt=document.getElementById('progress-text');
+  if(bar)bar.style.width=pct+'%';
+  if(txt)txt.textContent=done.length+' of '+all.length+' complete';
+}
+(function(){var st=ls();[].forEach.call(document.querySelectorAll('.clit'),function(el,i){if(st['i'+i])el.classList.add('done');});up();})();
+</script></body>
+</html>

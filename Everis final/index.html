@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Acquisition Marketing Playbook | Everis</title>
+<link rel="icon" type="image/svg+xml" href="favicon-index.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --font-sans:"DM Sans",system-ui,sans-serif;
+  --font-serif:"Cormorant Garamond",Georgia,serif;
+  --text-base:16px;
+  --text-xs:0.6rem;
+  --text-sm:0.75rem;
+  --weight-light:300;
+  --weight-regular:400;
+  --weight-medium:500;
+  --weight-semibold:600;
+  --weight-bold:700;
+  --lh-tight:1.1;
+  --lh-relaxed:1.72;
+  --tracking-tight:-0.02em;
+  --tracking-wider:0.15em;
+  --container-wide:1200px;
+  --container:1080px;
+  --container-narrow:720px;
+  --gutter-desktop:32px;
+  --gutter-mobile:20px;
+
+  /* Refined palette — cooler pink, deeper teal */
+  --navy:#07071e;
+  --navy-soft:#0f0c2a;
+  --cream:#faf8ff;
+  --lavender:#f0ebff;
+  --mint:#edf9f6;
+  --white:#ffffff;
+  --teal:#0a9fc0;
+  --teal-light:#e2f7fc;
+  --teal-glow:rgba(10,159,192,.18);
+  --pink:#d4008e;           /* vibrant cool fuchsia */
+  --pink-light:#fdf0f8;
+  --purple:#5b16b8;
+  --purple-light:#f3eeff;
+  --text:#17142a;
+  --text-mid:#504870;
+  --text-soft:#8078a6;
+
+  --shadow-sm:0 1px 3px rgba(7,7,30,.04), 0 4px 14px rgba(7,7,30,.05);
+  --shadow-md:0 2px 6px rgba(7,7,30,.05), 0 10px 28px rgba(7,7,30,.08);
+  --shadow-hover:0 6px 14px rgba(7,7,30,.07), 0 18px 44px rgba(7,7,30,.10);
+  --radius:14px;
+
+  /* SVG grain data-URI — used on all light sections */
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)' opacity='0.032'/%3E%3C/svg%3E");
+}
+
+
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:var(--text-base);scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-sans);background:var(--cream);color:var(--text);line-height:var(--lh-relaxed);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+a{color:inherit}
+img,svg{display:block;max-width:100%}
+.page-shell{position:relative;overflow:visible;margin-top:14px}
+
+/* Hero — absolutely no motion on load */
+.hero *{transition:none!important;animation:none!important}
+.sr{opacity:0;transform:translateY(18px);transition:opacity .58s cubic-bezier(.16,1,.3,1),transform .58s cubic-bezier(.16,1,.3,1)}
+.sr.in{opacity:1;transform:none}
+.sr-d1{transition-delay:.07s}.sr-d2{transition-delay:.14s}.sr-d3{transition-delay:.21s}.sr-d4{transition-delay:.28s}
+
+/* ─── HERO ─────────────────────────────────────────────── */
+.hero{
+  position:relative;
+  min-height:100vh;
+  background:#060817;
+  color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  padding:60px 0 88px;
+  overflow:hidden;
+}
+
+/* Floating particles animation */
+.hero::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background-image:
+    radial-gradient(2px 2px at 20% 30%, rgba(10,159,192,0.4), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(91,22,184,0.4), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.3), transparent),
+    radial-gradient(1px 1px at 80% 20%, rgba(10,159,192,0.4), transparent),
+    radial-gradient(2px 2px at 90% 60%, rgba(91,22,184,0.4), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,0.2), transparent),
+    radial-gradient(1px 1px at 70% 10%, rgba(10,159,192,0.3), transparent);
+  background-size: 60% 60%, 40% 40%, 50% 50%, 70% 70%, 45% 45%, 55% 55%, 65% 65%;
+  background-position: 0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%, 10% 10%, 90% 90%;
+  animation: floatParticles 25s ease-in-out infinite;
+  pointer-events:none;
+  z-index:1;
+}
+
+@keyframes floatParticles{
+  0%, 100%{
+    background-position: 0% 0%, 20% 20%, 40% 40%, 60% 60%, 80% 80%, 10% 10%, 90% 90%;
+    transform: translate(0, 0) scale(1);
+  }
+  25%{
+    background-position: 15% 15%, 35% 35%, 55% 55%, 75% 75%, 95% 95%, 25% 25%, 85% 85%;
+    transform: translate(-8px, -12px) scale(1.05);
+  }
+  50%{
+    background-position: 30% 30%, 50% 50%, 70% 70%, 90% 90%, 10% 10%, 40% 40%, 80% 80%;
+    transform: translate(12px, -8px) scale(1.1);
+  }
+  75%{
+    background-position: 45% 45%, 65% 65%, 85% 85%, 5% 5%, 25% 25%, 55% 55%, 75% 75%;
+    transform: translate(-6px, 10px) scale(1.05);
+  }
+}
+
+.hero-inner{width:min(100%,1140px);margin:0 auto;padding:0 28px;text-align:center;position:relative;z-index:3}
+
+/* ─── BADGES ─────────────────────────────────────────── */
+.hero-badge,.part-badge{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:9px 16px;
+  border:1px solid rgba(10,159,192,.38);
+  box-shadow:0 0 0 1px rgba(10,159,192,.06),0 0 22px var(--teal-glow);
+  color:var(--teal);
+  text-transform:uppercase;letter-spacing:var(--tracking-wider);font-size:10px;font-weight:var(--weight-bold);
+  border-radius:999px;background:rgba(9,8,42,.3);backdrop-filter:blur(8px);
+}
+.hero-badge{margin-bottom:34px}
+.part-badge{margin-bottom:24px;font-size:9.5px;padding:8px 14px}
+.hero-badge::before,.part-badge::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 12px rgba(10,159,192,.8)}
+
+/* ─── HERO TITLE ─────────────────────────────────────── */
+.hero-title{
+  margin:0 auto 20px;max-width:900px;
+  font-family:var(--font-serif);
+  font-size:clamp(3.6rem,7.2vw,6rem);
+  font-weight:var(--weight-medium);
+  line-height:1.02;letter-spacing:-.04em;
+}
+.hero-title em{font-style:italic;color:#fff}
+.hero-sub{margin:0 auto 42px;max-width:720px;font-size:1.04rem;line-height:1.7;color:rgba(255,255,255,.68);font-weight:var(--weight-regular)}
+.hero-meta{display:flex;justify-content:center;flex-wrap:wrap;gap:12px}
+.hero-meta-chip{display:flex;align-items:center;gap:9px;padding:10px 16px;border:1px solid rgba(255,255,255,.08);border-radius:999px;color:rgba(255,255,255,.55);font-size:.82rem;background:rgba(255,255,255,.04);backdrop-filter:blur(6px)}
+.hero-meta-chip strong{color:rgba(255,255,255,.9);font-weight:var(--weight-medium)}
+.hero-scroll{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.2);text-transform:uppercase;letter-spacing:var(--tracking-wider);font-size:9.5px;white-space:nowrap}
+
+/* ─── NAV ─────────────────────────────────────────────── */
+.nav{position:sticky;top:0;z-index:120;height:58px;background:#080a1d;border-bottom:1px solid rgba(255,255,255,.07);box-shadow:0 1px 0 rgba(255,255,255,.04),0 16px 40px rgba(7,7,30,.24)}
+.nav-inner,.part-head-inner,.part-body-inner,.closing-inner,.section-kicker,.divider{width:min(100%,var(--container));margin:0 auto;padding:0 var(--gutter-desktop)}
+.nav-inner{width:min(100%,var(--container-wide));height:100%;display:flex;align-items:center;gap:20px}
+.nav-mark{color:rgba(255,255,255,.32);text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:9.5px;font-weight:var(--weight-bold);border-bottom:2px solid transparent;transition:color .18s,border-color .18s;white-space:nowrap}
+.nav-mark span{color:var(--teal)}
+.nav-links{display:flex;align-items:center;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1 1 auto}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-link{flex:0 0 auto;height:58px;display:flex;align-items:center;padding:0 13px;color:rgba(255,255,255,.32);text-decoration:none;text-transform:uppercase;letter-spacing:.12em;font-size:9.5px;font-weight:var(--weight-bold);border-bottom:2px solid transparent;transition:color .18s,border-color .18s}
+.nav-link:hover{color:rgba(255,255,255,.7);border-color:var(--teal)}
+.nav-link.active{color:var(--teal);border-color:var(--teal)}
+
+/* ─── SECTION KICKER ─────────────────────────────────── */
+.section-kicker{margin-bottom:36px;padding-bottom:18px;border-bottom:1px solid rgba(10,159,192,.16)}
+.section-kicker-row{display:flex;align-items:center;gap:14px}
+.section-kicker-num{color:var(--teal);font-size:10px;text-transform:uppercase;letter-spacing:var(--tracking-wider);font-weight:var(--weight-bold);background:var(--teal-light);border:1px solid rgba(10,159,192,.2);border-radius:6px;padding:3px 9px}
+.section-kicker-label{color:var(--text-soft);font-size:10px;text-transform:uppercase;letter-spacing:var(--tracking-wider);font-weight:var(--weight-bold)}
+.section-kicker-line{flex:1 1 auto;height:1px;background:linear-gradient(90deg,rgba(10,159,192,.18),transparent)}
+
+/* ─── PART STRUCTURE ─────────────────────────────────── */
+.part{position:relative;scroll-margin-top:74px}
+.part-head{
+  position:relative;padding:88px 0 78px;
+  background:#080a1d;
+  color:#fff;overflow:hidden;
+}
+
+/* Per-section coloured atmospheric glow in bottom-left */
+#p00 .part-head,#p01 .part-head,#p02 .part-head{background:radial-gradient(ellipse 55% 65% at 6% 82%,rgba(10,159,192,.07),transparent 52%),#080a1d}
+#p03 .part-head,#p04 .part-head,#p05 .part-head{background:radial-gradient(ellipse 55% 65% at 6% 82%,rgba(91,22,184,.08),transparent 52%),#080a1d}
+#p06 .part-head,#p07 .part-head{background:radial-gradient(ellipse 55% 65% at 6% 82%,rgba(10,159,192,.06),transparent 52%),#080a1d}
+#p08 .part-head,#p09 .part-head{background:radial-gradient(ellipse 55% 65% at 6% 82%,rgba(91,22,184,.07),transparent 52%),#080a1d}
+#p10 .part-head{background:radial-gradient(ellipse 55% 65% at 6% 82%,rgba(212,0,142,.06),transparent 52%),#080a1d}
+#p11 .part-head{background:radial-gradient(ellipse 55% 65% at 6% 82%,rgba(212,0,142,.08),transparent 52%),#080a1d}
+
+.part-head::before,.part-head::after{display:none}
+.part-text{max-width:var(--container-narrow);position:relative;z-index:2}
+.part-title{margin:0 0 18px;font-family:var(--font-serif);font-size:clamp(2.8rem,5.8vw,4.4rem);line-height:var(--lh-tight);font-weight:var(--weight-semibold);letter-spacing:-.03em}
+.part-desc{margin:0;max-width:620px;color:rgba(255,255,255,.54);font-size:1.04rem;line-height:1.68;font-weight:var(--weight-regular)}
+
+/* Ghost numbers — committed at higher opacity */
+.part-ghost{position:absolute;right:34px;bottom:-10px;font-family:var(--font-serif);font-size:180px;line-height:.95;font-style:italic;color:rgba(255,255,255,.055);user-select:none;pointer-events:none;letter-spacing:-.05em}
+#p08 .part-text{max-width:100%}
+#p08 .part-desc{max-width:none}
+
+/* ─── PART BODY — grain texture overlay ─────────────── */
+.part-body{padding:80px 0 96px;position:relative}
+.part-body::after{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;background-image:var(--grain);background-size:220px 220px}
+.bg-cream{background:var(--cream)}
+.bg-lavender{background:var(--lavender)}
+.bg-white{background:var(--white)}
+.bg-mint{background:var(--mint)}
+
+/* inner must sit above the grain overlay */
+.part-body-inner{position:relative;z-index:1}
+
+/* ─── TYPOGRAPHY ─────────────────────────────────────── */
+.text-col{max-width:var(--container-narrow)}
+
+/* Lead now in Cormorant — third typographic tier */
+.lead{
+  font-family:var(--font-serif);
+  font-size:1.65rem;
+  font-style:italic;
+  font-weight:var(--weight-regular);
+  line-height:1.52;
+  color:#2a2244;
+  margin:0 0 28px;
+}
+p{margin:0 0 18px;font-size:16px;line-height:1.72;color:var(--text)}
+/* Color-coded text accents */
+.accent-teal{color:var(--teal);font-weight:600}
+.accent-purple{color:var(--purple);font-weight:600}
+.accent-pink{color:var(--pink);font-weight:600}
+/* Micro-interactions for text */
+.accent-teal:hover,.accent-purple:hover,.accent-pink:hover{filter:brightness(1.2);cursor:default}
+h3{margin:48px 0 12px;font-family:var(--font-serif);font-size:2rem;line-height:1.16;font-weight:var(--weight-semibold);color:var(--text);letter-spacing:-.01em;transition:color .18s,background .18s;background:linear-gradient(90deg,var(--teal),var(--teal)) no-repeat;background-size:0 2px;background-position:0 100%;cursor:pointer}h3:hover{color:var(--teal);background-size:100% 2px}
+h4{margin:0 0 8px;font-size:10.5px;line-height:1.4;font-weight:var(--weight-bold);text-transform:uppercase;letter-spacing:.16em;color:var(--purple)}
+
+/* ─── DIVIDER ──────────────────────────────────────────/* SOPHISTICATED DIVIDER */
+.divider{padding:12px 0;position:relative}
+.divider-line{height:2px;background:linear-gradient(90deg,transparent, rgba(10,159,192,.15) 20%, rgba(91,22,184,.12) 50%, rgba(10,159,192,.15) 80%, transparent);border-radius:2px}
+.divider::before{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:8px;height:8px;background:var(--teal);border-radius:50%;box-shadow:0 0 12px rgba(10,159,192,.4)}
+
+/* ─── CARD GRID LAYOUTS ──────────────────────────────── */
+.entry-grid,.profile-grid,.anti-grid,.check-grid,.q-grid,.ops-grid,.short-grid,.stat-band,.flywheel{display:grid;gap:16px}
+.entry-grid,.anti-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.profile-grid,.check-grid,.q-grid,.ops-grid,.short-grid,.stat-band{grid-template-columns:1fr 1fr}
+
+/* ─── CARD BASE ──────────────────────────────────────── */
+.entry-card,.profile-card,.anti-card,.stat-card,.stat-lead,.q-card,.time-card,.mini-stat,.ops-card,.short-card{
+  display:flex;flex-direction:column;align-items:flex-start;text-align:left;padding:28px;background:linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,255,255,.92));border:1px solid rgba(23,20,42,.06);border-radius:var(--radius);box-shadow:0 4px 12px rgba(7,7,30,.08), 0 8px 24px rgba(7,7,30,.04);position:relative;overflow:hidden
+}
+/* Purple */
+.entry-card,.anti-card:nth-child(3n+1),.short-card:nth-child(3n+1),.profile-card:nth-child(3n+1){background:var(--purple-light);border-color:rgba(91,22,184,.1)}
+/* Teal */
+.stat-card,.stat-lead,.q-card,.time-card,.mini-stat,.anti-card:nth-child(3n+2),.short-card:nth-child(3n+2),.profile-card:nth-child(3n+2){background:var(--teal-light);border-color:rgba(10,159,192,.14)}
+/* Pink */
+.ops-card,.anti-card:nth-child(3n),.short-card:nth-child(3n),.profile-card:nth-child(3n){background:var(--pink-light);border-color:rgba(196,0,126,.1)}
+
+.entry-card:hover,.profile-card:hover,.stat-card:hover,.stat-lead:hover,.q-card:hover,.time-card:hover,.mini-stat:hover,.ops-card:hover,.short-card:hover{transform:translateY(-6px);box-shadow:0 8px 32px rgba(7,7,30,.15)}
+.entry-num,.profile-num,.q-index,.fly-label{color:var(--teal);font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:var(--weight-bold);margin-bottom:10px}
+.entry-card h3,.profile-card h3,.ops-card h3,.stat-lead h3{margin:0 0 12px;font-size:1.75rem;font-weight:700;line-height:1.2;text-align:left}
+
+/* Ghost numerals in entry cards via CSS counters */
+.entry-grid{counter-reset:entry}
+.text-col + .entry-grid{margin-top:24px}
+.entry-card{counter-increment:entry;overflow:hidden}
+.entry-card::after{content:"0"counter(entry);position:absolute;right:-6px;bottom:-22px;font-family:var(--font-serif);font-size:9rem;font-style:italic;font-weight:600;color:rgba(91,22,184,.055);line-height:1;pointer-events:none;user-select:none}
+
+/* Ghost numerals in Q cards */
+.q-grid{counter-reset:question}
+.q-card{counter-increment:question;overflow:hidden}
+.q-card::after{content:"0"counter(question);position:absolute;right:-6px;bottom:-20px;font-family:var(--font-serif);font-size:8rem;font-style:italic;font-weight:600;color:rgba(10,159,192,.07);line-height:1;pointer-events:none;user-select:none}
+
+/* Profile card left bar */
+.profile-card{padding-left:28px}
+.profile-card::before{content:"";position:absolute;inset:0 auto 0 0;width:3px;border-radius:var(--radius) 0 0 var(--radius);background:linear-gradient(180deg,var(--teal) 0%,rgba(10,159,192,.08) 100%)}
+
+/* ─── GLASS CALLOUT BLOCKS ───────────────────────────── */
+.note,.watch,.action{
+  margin:32px 0;
+  padding:22px 26px;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,.6);
+  border-left-width:3px;
+  line-height:1.7;
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.note{
+  background:rgba(243,238,255,.55);
+  border-color:rgba(255,255,255,.55);
+  border-left-color:var(--purple);
+  box-shadow:0 4px 24px rgba(91,22,184,.07),0 0 0 1px rgba(91,22,184,.06);
+}
+.watch{
+  background:rgba(253,240,248,.55);
+  border-color:rgba(255,255,255,.55);
+  border-left-color:var(--pink);
+  box-shadow:0 4px 24px rgba(196,0,126,.07),0 0 0 1px rgba(196,0,126,.06);
+}
+.action{
+  background:rgba(226,247,252,.55);
+  border-color:rgba(255,255,255,.55);
+  border-left-color:var(--teal);
+  box-shadow:0 4px 24px rgba(10,159,192,.07),0 0 0 1px rgba(10,159,192,.06);
+}
+/* Callout text in Cormorant italic for note; sans for others */
+.note p{margin:0;font-family:var(--font-serif);font-style:italic;font-size:1.2rem;color:#3a1070;line-height:1.58;font-weight:var(--weight-regular)}
+.watch p{margin:0;color:#8a1255;font-size:15.5px}
+.action p{margin:0;color:#086e8a;font-weight:var(--weight-medium);font-size:15.5px}
+
+/* CALLOUT BOXES for highlighting key content */
+.callout{margin:28px 0;padding:20px 24px;border-radius:12px;border:1px solid rgba(10,159,192,.2);background:linear-gradient(135deg, rgba(226,247,252,.8), rgba(226,247,252,.4));position:relative}
+.callout::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal);border-radius:12px 0 0 12px}
+.callout-teal{border-color:rgba(10,159,192,.2);background:linear-gradient(135deg, rgba(226,247,252,.8), rgba(226,247,252,.4))}
+.callout-purple{border-color:rgba(91,22,184,.2);background:linear-gradient(135deg, rgba(243,238,255,.8), rgba(243,238,255,.4))}
+.callout-pink{border-color:rgba(196,0,126,.2);background:linear-gradient(135deg, rgba(253,240,248,.8), rgba(253,240,248,.4))}
+.callout h4{margin:0 0 12px;font-size:14px;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.1em}
+.callout-purple h4{color:var(--purple)}
+.callout-pink h4{color:var(--pink)}
+
+/* ─── CHECKLIST ──────────────────────────────────────── */
+.check-grid{margin-top:48px}
+.check-item{
+  display:flex;gap:16px;padding:18px 20px;
+  background:rgba(255,255,255,.9);border:1px solid rgba(23,20,42,.07);
+  border-radius:12px;cursor:pointer;
+  transition:box-shadow .16s ease,border-color .16s ease,background .14s ease;
+  box-shadow:0 1px 3px rgba(7,7,30,.03);
+}
+/* Left-edge teal glow on hover instead of translateY */
+.check-item:hover{
+  box-shadow:inset 3px 0 0 var(--teal),var(--shadow-md);
+  border-color:rgba(10,159,192,.2);
+}
+.check-item.is-done{border-color:rgba(10,159,192,.3);background:var(--teal-light);box-shadow:inset 3px 0 0 var(--teal),0 1px 3px rgba(7,7,30,.03)}
+/* Squircle checkbox — more modern than circle */
+.check-mark{width:20px;height:20px;border-radius:5px;border:1.5px solid rgba(23,20,42,.16);flex:0 0 auto;margin-top:2px;position:relative;transition:all .14s ease}
+.check-item.is-done .check-mark{background:var(--teal);border-color:var(--teal);border-radius:5px;box-shadow:0 0 0 3px rgba(10,159,192,.15)}
+.check-item.is-done .check-mark::after{content:"";position:absolute;left:5px;top:4px;width:8px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+.check-copy strong{display:block;font-size:15px;line-height:1.5;margin-bottom:5px;color:var(--text)}
+.check-copy span{display:block;font-size:13px;color:var(--text-soft);line-height:1.65}
+
+/* ─── STAT BAND — monumental numbers ─────────────────── */
+.stat-stack{display:grid;gap:16px}
+.stat-num,.mini-stat .num{
+  font-family:var(--font-serif);line-height:.82;
+  color:var(--purple);margin-bottom:16px;letter-spacing:-.04em;display:block;
+  font-weight:700;position:relative;
+}
+.stat-num{font-size:6.2rem;text-shadow:0 2px 4px rgba(91,22,184,.1)}
+.stat-num.teal,.mini-stat .num.teal{color:var(--teal);text-shadow:0 2px 4px rgba(10,159,192,.1)}
+.stat-num.pink,.mini-stat .num.pink{color:var(--pink);text-shadow:0 2px 4px rgba(196,0,126,.1)}
+.mini-stat .num{font-size:5.5rem}
+.stat-card,.mini-stat{overflow:visible;position:relative}
+.stat-card::after,.mini-stat::after{content:"";position:absolute;top:-8px;right:-8px;width:24px;height:24px;background:linear-gradient(45deg,var(--teal),var(--purple));border-radius:50%;opacity:.3;filter:blur(12px)}
+
+/* ─── PULL QUOTE — enlarged with decorative mark ─────── */
+.quote{margin:48px 0;padding:0 0 0 32px;border-left:3px solid var(--pink);position:relative}
+.quote::before{
+  content:'\201C';
+  position:absolute;top:-28px;left:-10px;
+  font-family:var(--font-serif);font-size:8rem;
+  color:rgba(196,0,126,.1);line-height:1;
+  pointer-events:none;user-select:none;font-style:italic;
+}
+.quote p{
+  margin:0;font-family:var(--font-serif);
+  font-size:2.6rem;line-height:1.22;
+  color:#9e0065;font-style:italic;letter-spacing:-.01em;
+  font-weight:var(--weight-medium);
+  position:relative;z-index:1;
+}
+
+/* ─── BEFORE / AFTER — transformation panels ─────────── */
+.before-after{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:3px;background:rgba(23,20,42,.07);
+  border-radius:16px;overflow:hidden;
+  margin:36px 0 16px;box-shadow:var(--shadow-sm);
+}
+.ba-cell{padding:28px 26px}
+.ba-cell:first-child{background:#f6f5fc} /* cooler grey-violet for before */
+.ba-cell:last-child{background:#fff;box-shadow:inset 0 -3px 0 var(--teal)} /* teal underline on after */
+.ba-label{font-size:10px;text-transform:uppercase;letter-spacing:.16em;font-weight:var(--weight-bold);margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.ba-label.before{color:var(--text-soft)}
+.ba-label.after{color:var(--teal)}
+.ba-label.after::before{content:'→';font-size:13px}
+.ba-copy{font-family:var(--font-serif);font-size:26px;line-height:1.38;color:var(--text)}
+
+/* ─── MATRIX ─────────────────────────────────────────── */
+.matrix{margin:36px 0 16px;border-radius:16px;overflow:hidden;border:1px solid rgba(23,20,42,.08);box-shadow:var(--shadow-md)}
+.matrix-grid{display:grid;grid-template-columns:180px repeat(2,minmax(0,1fr))}
+.matrix-grid > div{min-height:60px;padding:1.1rem 1.4rem;border-right:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(23,20,42,.07)}
+.matrix-grid > div:nth-last-child(-n+3){border-bottom:none}
+.matrix-grid > div:nth-child(3n){border-right:none}
+.matrix-head{background:#4a10a0;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.16em;font-size:10px;font-weight:var(--weight-bold);display:flex;align-items:center;min-height:0;padding:.65rem 1.4rem}
+.matrix-axis{background:rgba(74,16,160,.88);color:rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;text-align:center;font-size:11px;text-transform:uppercase;letter-spacing:.14em;font-weight:var(--weight-bold)}
+.matrix-cell{background:var(--teal-light)}
+.matrix-cell strong{display:block;margin-bottom:.5rem;font-size:15.5px;color:var(--text)}
+.matrix-cell p{margin:0;color:var(--text-mid);font-size:14.5px;line-height:1.55}
+
+/* ─── TIMELINE ───────────────────────────────────────── */
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:36px 0 20px}
+.time-card strong{display:inline-flex;align-items:center;min-height:24px;padding:0 10px;border-radius:6px;border:1px solid rgba(91,22,184,.15);background:var(--purple-light);color:var(--purple);text-transform:uppercase;letter-spacing:.14em;font-size:9.5px;margin-bottom:14px}
+
+/* ─── MINI STATS ─────────────────────────────────────── */
+.mini-stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:32px 0 16px}
+
+/* ─── LIST ───────────────────────────────────────────── */
+.list{margin:24px 0 8px;padding:0;list-style:none}
+.list li{position:relative;padding-left:22px;margin:0 0 14px;color:var(--text-mid);line-height:1.7}
+.list li::before{content:"";position:absolute;left:0;top:.74em;width:7px;height:7px;border-radius:50%;background:var(--teal);box-shadow:0 0 10px rgba(10,159,192,.4)}
+
+/* ─── OPS CARDS ──────────────────────────────────────── */
+.ops-card ul{margin:0;padding:0;list-style:none}
+.ops-card li{padding-left:18px;position:relative;margin:0 0 10px;color:var(--text-mid)}
+.ops-card li::before{content:"";position:absolute;left:0;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--purple)}
+
+/* ─── COMPARE TABLE ──────────────────────────────────── */
+.compare{margin:0 0 16px;border-radius:16px;overflow:hidden;border:1px solid rgba(23,20,42,.08);box-shadow:var(--shadow-md)}
+.compare-row{display:grid;grid-template-columns:220px 1fr 1fr}
+.compare-row > div{padding:1.25rem 1.6rem;border-bottom:1px solid rgba(23,20,42,.07)}
+.compare-row:last-child > div{border-bottom:none}
+.compare-head{background:var(--navy-soft);color:rgba(255,255,255,.8);font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:var(--weight-bold);display:flex;align-items:center}
+.compare-label{background:var(--pink-light);color:var(--pink);font-size:11.5px;letter-spacing:.06em;font-weight:var(--weight-bold)}
+.compare-cell{background:var(--white);color:var(--text-mid);font-size:15px;line-height:1.58}
+.compare-cell.mobile{background:var(--teal-light)}
+
+/* ─── FLYWHEEL ───────────────────────────────────────── */
+.flywheel{align-items:start;margin:0 0 16px;grid-template-columns:1fr 360px;gap:32px}
+.flywheel-text{max-width:none}
+.flywheel-text h3{margin-top:0;font-size:1.75rem}
+.flywheel-text h3 ~ h3{margin-top:28px}
+.flywheel-text p{margin-bottom:14px}
+.flywheel-wrap{position:relative;background:transparent;border:1px solid rgba(10,159,192,.16);border-radius:16px;padding:16px;box-shadow:0 0 28px rgba(10,159,192,.07)}
+.flywheel-wrap::before{content:"";position:absolute;inset:20px;border-radius:16px;background:radial-gradient(circle at 50% 48%,rgba(10,159,192,.05),transparent 50%);pointer-events:none}
+.flywheel-wrap::after{display:none}
+
+/* ─── ANTI-PATTERN CARDS — full colour header band ───── */
+/* Reset nth-child backgrounds; class overrides take precedence */
+.anti-card,.anti-card:nth-child(3n+1),.anti-card:nth-child(3n+2),.anti-card:nth-child(3n){
+  position:relative;
+  padding:22px 24px 24px;
+  overflow:hidden;
+  border:1px solid rgba(23,20,42,.08);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.9), transparent 42%),
+    var(--white);
+}
+.anti-card::before{
+  content:"";
+  position:absolute;
+  top:18px;left:24px;
+  width:42px;height:3px;
+  border-radius:999px;
+  background:currentColor;
+  opacity:.42;
+}
+.anti-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:inherit;
+  background:linear-gradient(180deg, rgba(255,255,255,.26), transparent 38%);
+  pointer-events:none;
+}
+.anti-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.anti-card h3{
+  margin:20px 0 10px;
+  padding:0;
+  font-family:var(--font-sans);font-size:1.0rem;font-weight:var(--weight-semibold);
+  color:var(--navy);line-height:1.35;letter-spacing:.01em;
+}
+.anti-card p{
+  margin:0;
+  padding:0;
+  font-size:15.5px;
+  line-height:1.65;
+  color:rgba(23,20,42,.8);
+}
+.anti-card.pink{
+  color:var(--pink);
+  border-color:rgba(196,0,126,.14);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.9), transparent 44%),
+    linear-gradient(180deg, rgba(255,236,246,.88), rgba(255,255,255,.96));
+}
+.anti-card.teal{
+  color:var(--teal);
+  border-color:rgba(10,159,192,.18);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.92), transparent 44%),
+    linear-gradient(180deg, rgba(233,251,255,.92), rgba(255,255,255,.98));
+}
+.anti-card.purple{
+  color:var(--purple);
+  border-color:rgba(91,22,184,.14);
+  background:
+    radial-gradient(circle at top right, rgba(255,255,255,.9), transparent 44%),
+    linear-gradient(180deg, rgba(244,238,255,.9), rgba(255,255,255,.97));
+}
+
+/* ─── SHORT CARDS ────────────────────────────────────── */
+.short-card p,.ops-card li,.compare-cell,.time-card p,.mini-stat p{font-size:15px;line-height:1.62}
+.ops-grid,.anti-grid,.profile-grid,.entry-grid,.short-grid{align-items:stretch}
+.ops-grid,.short-grid{row-gap:14px}
+.anti-grid + .short-grid{margin-top:36px}
+.short-card:nth-child(3n+1){background:var(--purple-light);border-color:rgba(91,22,184,.11)}
+.short-card:nth-child(3n+2){background:var(--teal-light);border-color:rgba(10,159,192,.14)}
+.short-card:nth-child(3n){background:var(--pink-light);border-color:rgba(196,0,126,.11)}
+.short-card h4{display:inline-flex;align-items:center;min-height:24px;padding:2px 10px;margin:0 0 14px;border-radius:6px;border:1px solid rgba(91,22,184,.14);background:rgba(255,255,255,.7);color:#6025b8;font-size:10px;line-height:1;letter-spacing:.14em}
+.short-card:nth-child(3n+2) h4{border-color:rgba(10,159,192,.16);color:var(--teal)}
+.short-card:nth-child(3n) h4{border-color:rgba(196,0,126,.14);color:var(--pink)}
+.short-card p{font-size:14.5px;line-height:1.72;color:var(--text-mid)}
+.short-grid{align-items:stretch}
+.short-grid > .short-card{min-height:0}
+
+/* ─── MARGIN RESETS after section kicker ─────────────── */
+.section-kicker + .compare,.section-kicker + .ops-grid,.section-kicker + .anti-grid,
+.section-kicker + .profile-grid,.section-kicker + .check-grid,
+.section-kicker + .q-grid,.section-kicker + .stat-band,.section-kicker + .flywheel,
+.section-kicker + .matrix,.section-kicker + .timeline,.section-kicker + .before-after,
+.section-kicker + .mini-stat-row{margin-top:0}
+
+/* ─── CLOSING ────────────────────────────────────────── */
+.closing{
+  background:radial-gradient(ellipse 50% 60% at 6% 80%,rgba(10,159,192,.14),transparent 50%),
+            linear-gradient(160deg,#0b0928 0%,#07071e 100%);
+  color:#fff;padding:100px 0 120px;position:relative;overflow:hidden;
+}
+.closing::before{content:"";position:absolute;width:720px;height:720px;border:1px solid rgba(255,255,255,.04);border-radius:50%;right:-200px;top:-160px}
+.closing p{max-width:var(--container-narrow);color:rgba(255,255,255,.72);font-size:1.3rem;line-height:1.65}
+.footer-note{font-size:10.5px;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.28);margin-top:32px}
+
+/* ─── RESPONSIVE ─────────────────────────────────────── */
+@media(max-width:1080px){
+  .entry-grid,.anti-grid,.timeline,.mini-stat-row{grid-template-columns:1fr}
+  .profile-grid,.check-grid,.q-grid,.ops-grid,.short-grid,.stat-band,.flywheel{grid-template-columns:1fr}
+  .matrix-grid{grid-template-columns:140px repeat(2,minmax(0,1fr))}
+  .compare-row{grid-template-columns:180px 1fr 1fr}
+}
+@media(max-width:760px){
+  :root{--gutter-desktop:var(--gutter-mobile)}
+  .hero-title{font-size:clamp(2.4rem,11vw,3.4rem)}
+  .hero-sub,.lead,.closing p{font-size:17px}
+  .quote p{font-size:1.9rem}
+  .part-ghost{font-size:120px;right:16px}
+  .before-after,.compare-row{grid-template-columns:1fr}
+  .compare-label{display:none}
+  .matrix{overflow-x:auto}
+  .matrix-grid{width:680px}
+  .anti-grid + .short-grid{margin-top:20px}
+  .part-body{padding:60px 0 72px}
+  h3{margin-top:36px}
+  .stat-num{font-size:4rem}
+  .mini-stat .num{font-size:3.8rem}
+}
+</style>
+  <link rel="stylesheet" href="site-shell.css?v=20260423b">
+</head>
+<body data-site-page="everis">
+<div class="page-shell">
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-badge">Everis marketing</div>
+      <h1 class="hero-title">The First<br><span style="color:var(--teal)">90 Days</span> <em>Playbook</em></h1>
+      <p class="hero-sub">How I will approach marketing in the first months. Built for Everis. Part operating system, part showing strategy.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-chip"><strong>For</strong> Everis and its portfolio</div>
+        <div class="hero-meta-chip"><strong>Scope</strong> SaaS, apps, and the brand itself</div>
+        <div class="hero-meta-chip"><strong>Date</strong> April 2026</div>
+      </div>
+    </div>
+      </section>
+
+  <nav class="nav" aria-label="Playbook sections">
+    <div class="nav-inner">
+      <div class="nav-mark">ESSAH<span>.</span></div>
+      <div class="nav-links">
+        <a class="nav-link" href="#p00">Use It</a>
+        <a class="nav-link" href="#p01">Diagnose</a>
+        <a class="nav-link" href="#p02">Audit</a>
+        <a class="nav-link" href="#p03">Positioning</a>
+        <a class="nav-link" href="#p04">Channels</a>
+        <a class="nav-link" href="#p05">Experiment</a>
+        <a class="nav-link" href="#p06">First 30</a>
+        <a class="nav-link" href="#p07">Compounds</a>
+        <a class="nav-link" href="#p08">SaaS vs App</a>
+        <a class="nav-link" href="#p09">Portfolio</a>
+        <a class="nav-link" href="#p10">Everis Brand</a>
+        <a class="nav-link" href="#p11">Anti-Patterns</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="part" id="p00">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 00</div>
+          <h2 class="part-title">How to use this</h2>
+          <p class="part-desc">A working system for Everis itself and the products Everis acquires. Read it straight through once. After that, jump to the section the situation actually needs.</p>
+        </div>
+        <div class="part-ghost">00</div>
+      </div>
+    </div>
+    <div class="part-body bg-cream">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">00</span>
+            <span class="section-kicker-label">Entry points</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+        <div class="text-col" style="margin-bottom: 24px;">
+          <p class="lead">The product has 340 paying customers. The founder is already thinking about the next thing. The welcome email still says "explore the dashboard." The Zapier page has not been touched in years. The top review compares it to a competitor that no longer exists.</p>
+          <p>I have 90 days before anyone asks whether growth is happening. This is how I would spend them.</p>
+          <p>This playbook is built for Everis's actual shape of business. Small software products. Lean teams. B2B SaaS, workflow tools, and the occasional mobile app. Products with real utility, weak positioning, and more upside in distribution than in reinvention.</p>
+          <p>It does two jobs. First, it covers how I would audit, position, and grow the products Everis acquires. Second, it covers how I would help Everis market itself well enough to attract the right founders, the right operators, and the right reputation over time.</p>
+        </div>
+        <div style="height: 1px; background: rgba(23,20,42,.08); margin: 24px 0;"></div>
+        <div class="entry-grid">
+          <article class="entry-card">
+            <div class="entry-num">Entry 01</div>
+            <h3>You just closed a deal</h3>
+            <p>Start at Part 02. The audit window is short, and the founder will not be this available again.</p>
+          </article>
+          <article class="entry-card">
+            <div class="entry-num">Entry 02</div>
+            <h3>Month two feels flat</h3>
+            <p>Start at Part 04. The channel is probably wrong, or the positioning is too vague to make the channel work.</p>
+          </article>
+          <article class="entry-card">
+            <div class="entry-num">Entry 03</div>
+            <h3>Everis is running more than one product</h3>
+            <p>Start at Part 09. The model changes at product three, and the infrastructure decisions made there compound for years.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p01">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 01</div>
+          <h2 class="part-title">Diagnose before you treat</h2>
+          <p class="part-desc">The first ten minutes matter. I need to understand the product's actual condition before developing any acquisition theory.</p>
+        </div>
+        <div class="part-ghost">01</div>
+      </div>
+    </div>
+    <div class="part-body bg-lavender">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">01</span>
+            <span class="section-kicker-label">First read</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+        <div class="text-col">
+          <p class="lead">The first thing I would check is the support inbox. That tells you more in ten minutes than a handover deck ever will.</p>
+          <p>If the inbox is full, if customers are following up on old tickets, if long-tenure users are sending careful, worried emails, don't touch the growth levers yet. First, prioritise how to stop the bleeding. Stability. The product may still be good. But it was being held together by one person's daily attention, and that attention is gone.</p>
+          <p>If the inbox is clean and the founder is helpful, clear, and already excited about what comes next, that is different. The product is usually intact. What ran out was energy, not viability.</p>
+          <p>That distinction matters because it tells me whether month one is defensive or offensive.</p>
+        </div>
+        <div class="profile-grid">
+          <article class="profile-card">
+            <div class="profile-num">Burnout</div>
+            <h3>Stabilise first</h3>
+            <p>Support backlog. Stale docs. Quiet churn. Before campaigns. First move: clear the inbox, build/restore trust, find out who's halfway out the door. Everything else comes after.</p>
+          </article>
+          <article class="profile-card">
+            <div class="profile-num">New venture</div>
+            <h3>Extract everything</h3>
+            <p>The founder is useful now and far less useful in three weeks. This is the profile where market memory disappears fastest if nobody captures it.</p>
+          </article>
+          <article class="profile-card">
+            <div class="profile-num">Bored or pivoting</div>
+            <h3>Find the old growth engine</h3>
+            <p>The product usually still works. Distribution lost momentum first. The real question is whether the channel belonged to the product or the founder.</p>
+          </article>
+          <article class="profile-card">
+            <div class="profile-num">Clean exit</div>
+            <h3>Audit, then move</h3>
+            <p>Healthiest handover. Best chance of getting through the audit quickly and moving into actual growth posture without spending month one in recovery mode.</p>
+          </article>
+        </div>
+        <div class="note">
+          <p>I've seen people misread the healthy-looking product most often. The UI is tidy, the founder sounds organised, and the numbers look stable enough. Then month two arrives and nothing moves because the only real channel was the founder's personal audience.</p>
+        </div>
+        <div class="watch">
+          <p>Founders describe exits kindly. Products do not. I would trust the inbox, the billing data, the reviews, and the cohort curve before I trust the seller's summary of what happened.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p02">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 02</div>
+          <h2 class="part-title">The audit</h2>
+          <p class="part-desc">Week one to two. No campaigns. No redesign. No channel bets. I want the truth before I want the plan.</p>
+        </div>
+        <div class="part-ghost">02</div>
+      </div>
+    </div>
+    <div class="part-body bg-white">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">02</span>
+            <span class="section-kicker-label">Checklist</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+        <div class="text-col">
+          <p class="lead">The audit has one job. Separate what is true about the product now from what the founder believed was true six months ago.</p>
+        </div>
+        <div class="check-grid" id="audit-list">
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Run the AI visibility audit</strong><span>Claude, ChatGPT, Gemini, Perplexity. Do we exist in modern discovery or not?</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Export all active subscriptions</strong><span>What Stripe says matters more than what the pricing page says.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Pull cohort retention curves</strong><span>I want to know whether the product is improving or deteriorating before I touch acquisition.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Audit email deliverability</strong><span>SPF, DKIM, DMARC. At least one is usually broken.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Find the welcome email</strong><span>The most-read email in the product is often the weakest-written one.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Pull every customer with two or more years of tenure</strong><span>Highest trust asset. Highest quiet churn risk.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Search support tickets for competitor names</strong><span>This is where lost deals and recurring objections leave fingerprints.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Plot MRR by month for two years</strong><span>I want the seasonality curve before I interpret anything as a marketing problem.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Check customer geography</strong><span>Timezone, pricing sensitivity, and send timing all start here.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Check the Zapier or marketplace listing</strong><span>Often stale. Often still sending the wrong signal.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Search the public web for reviews and alternatives</strong><span>What the world believes can be wrong and still affect conversion.</span></div></div>
+          <div class="check-item"><div class="check-mark"></div><div class="check-copy"><strong>Run a fresh-eyes onboarding test</strong><span>New email. Fresh browser. Then do it again on mobile.</span></div></div>
+        </div>
+        <div style="height: 1px; background: rgba(23,20,42,.08); margin: 24px 0;"></div>
+
+        <div class="stat-band">
+          <article class="stat-lead">
+            <h3>Pull every review and copy the exact language</h3>
+            <p>G2. Capterra. Trustpilot. App Store. Anywhere the product is discussed in public. I want the sentences where customers describe the product in their own words. Not the polished version. Their version.</p>
+            <p>That becomes the raw material for positioning, lifecycle copy, onboarding fixes, homepage edits, and future campaigns. I read early reviews separately from recent ones. Early reviews usually hold the original reason the product won. Recent reviews often show loyalty without precision.</p>
+          </article>
+          <div class="stat-stack">
+            <article class="stat-card">
+              <div class="stat-num">6</div>
+              <p>Things to reconcile in Stripe before touching pricing: current plan mix, grandfathered plans, manual discounts, old promotions, lifetime deals, and effective ARPU.</p>
+            </article>
+            <article class="stat-card">
+              <div class="stat-num teal">2+</div>
+              <p>Years of tenure is the point where personal outreach starts to matter more than automation.</p>
+            </article>
+            <article class="stat-card">
+              <div class="stat-num">20</div>
+              <p>Minutes is enough to learn whether the product exists in AI-led discovery or has disappeared completely.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <h3>Find out where paying customers actually came from</h3>
+          <p>Not traffic. Paid customers. I want the source of trial signups, the source of paid conversions, and the specific content or moment that produced them. In most acquired products, the highest-traffic channel is not the highest-quality one.</p>
+          <p>I also want to know how much of that channel belonged to the founder personally. Newsletter. Personal brand. Community standing. Podcast appearances. If the channel was the founder, the channel did not transfer.</p>
+        </div>
+
+        <div class="note">
+          <p>Check timezone distribution before scheduling anything. I have done the stupid version of this. A campaign that looked fine in one timezone landed in half the inboxes while people were asleep.</p>
+        </div>
+
+        <div class="text-col">
+          <h3>Six questions to ask before the founder's mentally gone</h3>
+          <p>I always regret skipping one of these.</p>
+        </div>
+        <div class="q-grid">
+          <article class="q-card"><div class="q-index">01</div><p>Which five customers would refer someone if you asked them personally?</p></article>
+          <article class="q-card"><div class="q-index">02</div><p>Where has this product been mentioned unprompted in the last year?</p></article>
+          <article class="q-card"><div class="q-index">03</div><p>What is the single best-performing email subject line you ever sent?</p></article>
+          <article class="q-card"><div class="q-index">04</div><p>What did you always think would work, but never had time to test?</p></article>
+          <article class="q-card"><div class="q-index">05</div><p>Which competitor stole the most deals, and why?</p></article>
+          <article class="q-card"><div class="q-index">06</div><p>What do the best customers use the product for that you did not expect? This one usually rewrites the positioning.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p03">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 03</div>
+          <h2 class="part-title">Positioning</h2>
+          <p class="part-desc">The website is not the positioning. The tagline is not the positioning. The positioning is the claim that makes the right person slow down.</p>
+        </div>
+        <div class="part-ghost">03</div>
+      </div>
+    </div>
+    <div class="part-body bg-cream">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">03</span>
+            <span class="section-kicker-label">Value proposition</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+        <div class="text-col">
+          <p class="lead">Most founders can tell you what the product does. That is not the same as telling you why the best customers chose it.</p>
+          <p>The real value prop lives in the switch. What did the customer stop doing when they adopted this? What did it replace? What headache disappeared? What old process became unnecessary? That is the useful question.</p>
+        </div>
+
+        <div class="quote">
+          <p>The real value prop lives in the switch, not the feature list.</p>
+        </div>
+
+        <div class="text-col">
+          <h3>The word-bank method</h3>
+          <p>I build a word-bank from reviews, support praise, customer emails, and handover notes. I look for repeated phrases that customers arrived at on their own.</p>
+          <p>"The first one that did not take a week to set up." "Built for a team our size." "Finally replaced the spreadsheet." That language carries weight because nobody coached it.</p>
+
+          <div class="note">
+            <p>The first time I did this properly it took two hours. The second time it took less. The output barely changed. The value is in reading carefully, not in making the method look sophisticated.</p>
+          </div>
+
+          <h3>The replacement framing</h3>
+          <p>Feature-based positioning is usually too abstract. Replacement-based positioning is usually closer to the buying decision. A product that replaces a spreadsheet should not sound like a giant platform. A product that replaces three stitched-together tools should say so plainly.</p>
+
+          <h3>The compass sentence</h3>
+          <p>Once the word-bank is clear, I want one internal sentence. For this specific customer, in this specific situation, this product is the fastest or simplest or clearest way to get this outcome instead of the messy thing they are doing now. Not tagline copy. A compass.</p>
+        </div>
+
+        <div class="before-after">
+          <div class="ba-cell">
+            <div class="ba-label before">Before</div>
+            <div class="ba-copy">Powerful project management for modern teams.</div>
+          </div>
+          <div class="ba-cell">
+            <div class="ba-label after">After</div>
+            <div class="ba-copy">For agency ops leads still running projects out of spreadsheets and Slack, the project tool that gets usable in an afternoon.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p04">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 04</div>
+          <h2 class="part-title">Channel selection</h2>
+          <p class="part-desc">I do not start with channel preferences. I start with buying behavior, product shape, and whether the old growth engine belonged to the product or the founder.</p>
+        </div>
+        <div class="part-ghost">04</div>
+      </div>
+    </div>
+    <div class="part-body bg-lavender">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">04</span>
+            <span class="section-kicker-label">Decision frame</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <p class="lead">There are only a few questions that matter. Do buyers search for this type of product by category? Do they ask peers instead? Is the ACV low enough that this has to be inbound? Is this a SaaS discovery problem or a mobile app discovery problem?</p>
+        </div>
+
+        <div class="matrix">
+          <div class="matrix-grid">
+            <div class="matrix-head"></div>
+            <div class="matrix-head">Low ACV</div>
+            <div class="matrix-head">Higher ACV</div>
+
+            <div class="matrix-axis">Searching ICP</div>
+            <div class="matrix-cell"><strong>SEO, GEO, review categories</strong><p>Most of Everis's portfolio will live here. Compound channels first.</p></div>
+            <div class="matrix-cell"><strong>Search plus authority content</strong><p>Case studies, evaluation pages, category depth, and a stronger sales-assist layer.</p></div>
+
+            <div class="matrix-axis">Non-searching ICP</div>
+            <div class="matrix-cell"><strong>Community, integrations, referral later</strong><p>Useful where the problem is discussed before the tool is searched for.</p></div>
+            <div class="matrix-cell"><strong>Partnerships and direct relationship channels</strong><p>Events, co-marketing, partner distribution, targeted outbound.</p></div>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <h3>The channel hierarchy for Everis's typical acquisition</h3>
+          <ul class="list">
+            <li><strong>Email first.</strong> Annual plan offer, welcome email rewrite, dead trial reactivation. Fastest feedback, lowest lift, closest to revenue.</li>
+            <li><strong>Review velocity second.</strong> G2, Capterra, Trustpilot, App Store. Not vanity. Conversion signal and AI citation fuel.</li>
+            <li><strong>Search and GEO next.</strong> Category discovery still matters, and AI assistants now shape a share of that discovery.</li>
+            <li><strong>One new channel after that.</strong> One real experiment with one real hypothesis.</li>
+            <li><strong>Paid last.</strong> Because paid amplifies broken conversion faster than it creates growth.</li>
+          </ul>
+
+          <h3>On GEO in 2026</h3>
+          <p>Traditional SEO still matters. But if a buyer asks an AI assistant what tool to use and the product never appears, that is now a distribution gap worth fixing in the first 90 days.</p>
+        </div>
+
+        <div class="note">
+          <p>The first time I ran the AI visibility audit on a newly acquired product, the product did not appear in any of the four tools I checked. Its supposed competitor appeared in all of them. That is not a future problem. That is a current one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p05">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 05</div>
+          <h2 class="part-title">The 90 day experiment</h2>
+          <p class="part-desc">Not a campaign calendar. Not a pile of activity. A hypothesis, a metric, and a decision threshold set before launch.</p>
+        </div>
+        <div class="part-ghost">05</div>
+      </div>
+    </div>
+    <div class="part-body bg-white">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">05</span>
+            <span class="section-kicker-label">Hypothesis</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <p class="lead">If I cannot write the hypothesis sentence, I am not ready to run the test.</p>
+          <p>We believe this customer discovers this product in this way when this trigger happens. We will test it by doing this. We will define success as this metric reaching this number by this date.</p>
+          <p>That forces clarity. "Let's try content" does not fit that sentence. A real experiment does.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="time-card">
+            <strong>Weeks 1 and 2</strong>
+            <p>Audit only. No experiments before the product's reality is clear.</p>
+          </article>
+          <article class="time-card">
+            <strong>Weeks 3 and 4</strong>
+            <p>Positioning refined. Core message chosen. Hypothesis written.</p>
+          </article>
+          <article class="time-card">
+            <strong>Month 2</strong>
+            <p>Run the first real test. Track signal weekly, not vaguely.</p>
+          </article>
+          <article class="time-card">
+            <strong>Day 60</strong>
+            <p>Scale it, adjust it, or kill it. No fuzzy middle.</p>
+          </article>
+        </div>
+
+        <div class="text-col">
+          <h3>What Everis products typically need first</h3>
+          <p>At Everis's typical product profile, B2B SaaS, underbuilt marketing infrastructure, modest ARR, a lean team, the sequence is usually the same. Month one is email and conversion clean-up. Month two is searchable content plus review velocity. Month three is the first paid or community test if the numbers support it.</p>
+        </div>
+
+        <div class="mini-stat-row">
+          <article class="mini-stat"><div class="num">30</div><p>Days to decide if paid ads are actually working</p></article>
+          <article class="mini-stat"><div class="num">60</div><p>Minimum before judging community efforts</p></article>
+          <article class="mini-stat"><div class="num">90</div><p>Fair window for content to show results</p></article>
+        </div>
+
+        <div class="note">
+          <p>I have seen month three turn into a vague conversation about whether something "felt promising." That is what happens when the threshold was never defined at the start. I want to avoid those vague conversations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p06">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 06</div>
+          <h2 class="part-title">Days 3 to 30</h2>
+          <p class="part-desc">Month one is where quiet decay either continues or gets interrupted. This is where we take action. Not theory. Execution.</p>
+        </div>
+        <div class="part-ghost">06</div>
+      </div>
+    </div>
+    <div class="part-body bg-mint">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">06</span>
+            <span class="section-kicker-label">First month</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <p class="lead">Month one is where weak products keep quietly decaying if nobody pays attention. This is the part that should feel most usable.</p>
+          <h3>Annual plan conversion</h3>
+          <p>The fastest cash-flow and retention move in many small SaaS products is simple. Add the annual option, price it cleanly, and tell monthly customers it exists. Not clever. Just underused.</p>
+          <h3>Welcome email rewrite</h3>
+          <p>The welcome email is usually the most-read message in the whole product and the worst-written one. I would rewrite it around one outcome and one next step. Not "explore the dashboard." One useful action.</p>
+        </div>
+
+        <div class="before-after">
+          <div class="ba-cell">
+            <div class="ba-label before">Old welcome email</div>
+            <div class="ba-copy">We're excited to have you on board. Explore the dashboard and let us know if you need any help getting started.</div>
+          </div>
+          <div class="ba-cell">
+            <div class="ba-label after">What I would send</div>
+            <div class="ba-copy">You signed up because something in your workflow is not working. The fastest next step is this one. It takes two minutes. What were you trying to fix when you found us?</div>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <h3>Dead trial reactivation</h3>
+          <p>This is the skipped move. Not because people do not know about it. Because it feels awkward to email people who vanished. I would rather have that awkwardness than ignore a list of people who were already close enough to sign up once.</p>
+          <p>Three emails. Honest tone. One friction point per send. One specific offer in the final message.</p>
+          <h3>Review velocity programme</h3>
+          <p>The moment a founder leaves, the review stream usually dies. That hurts conversion, category trust, and AI visibility at once. I would restart the review loop where value is already visible.</p>
+          <h3>Long-tenure customers</h3>
+          <p>Every customer who has been here since the early days is both a retention risk and a reputation asset. They need a human note early, before they invent a story about what ownership change means.</p>
+        </div>
+
+        <div class="action">
+          <p>By the end of week one, I want the annual offer live, the welcome email rewritten, and the list of long-tenure customers in front of me.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p07">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 07</div>
+          <h2 class="part-title">Build what compounds</h2>
+          <p class="part-desc">Quick wins buy time. They are not the system. The system is what keeps paying after the easy fixes stop being enough.</p>
+        </div>
+        <div class="part-ghost">07</div>
+      </div>
+    </div>
+    <div class="part-body bg-cream">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">07</span>
+            <span class="section-kicker-label">Longer game</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <p class="lead">The system is what compounds after the obvious fixes stop being enough.</p>
+          <h3>NRR above 100 percent</h3>
+          <p>If net revenue retention is below 100 percent, growth is partly replacing leakage. That changes how aggressively I would invest in acquisition. If Everis owns products with flat pricing, weak expansion paths, and no meaningful middle tier, that is not just a marketing issue. It is a structure issue.</p>
+        </div>
+
+        <div class="mini-stat-row">
+          <article class="mini-stat"><div class="num">113</div><p>Top quartile NRR is a very different business from the one living below 100. The gap compounds.</p></article>
+          <article class="mini-stat"><div class="num teal">1</div><p>Strong integration can outperform a pile of generic content when it lands in the customer's real workflow.</p></article>
+          <article class="mini-stat"><div class="num">4</div><p>Customer conversations a month is a better cadence than occasional research sprints followed by silence.</p></article>
+        </div>
+
+        <div class="text-col">
+          <h3>Integration-led distribution</h3>
+          <p>For many small SaaS products, the best growth channel is not paid. It is being embedded in the workflow the customer already uses.</p>
+          <h3>Community presence</h3>
+          <p>I care more about where people discuss the work than where they compare tools. Customer communities matter more than vendor chatter.</p>
+          <h3>Four customer interviews per month</h3>
+          <p>One churned customer. One recent convert. One power user. One long-tenure account. Every month. That is the part most teams let slide, then they wonder why the copy gets vague again.</p>
+        </div>
+
+        <div class="note">
+          <p>The churned customer interview is the one most people skip because it feels uncomfortable. After the first few, what replaces the discomfort is useful information.</p>
+        </div>
+
+        <div class="action">
+          <p>Book four customer interviews before anything else this week. Let the next month's decisions come from those calls.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p08">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 08</div>
+          <h2 class="part-title">SaaS and mobile apps are not the same problem</h2>
+          <p class="part-desc">Everis acquires both. The playbook should not pretend they behave the same way.</p>
+        </div>
+        <div class="part-ghost">08</div>
+      </div>
+    </div>
+    <div class="part-body bg-white">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">08</span>
+            <span class="section-kicker-label">Different motions</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+
+        <div class="compare">
+          <div class="compare-row">
+            <div class="compare-head"></div>
+            <div class="compare-head">B2B SaaS</div>
+            <div class="compare-head">Mobile app</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Primary discovery</div>
+            <div class="compare-cell">Search, review sites, referrals, LinkedIn, integrations</div>
+            <div class="compare-cell mobile">App Store search, rankings, screenshots, reviews, selective social</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">First audit priority</div>
+            <div class="compare-cell">Cohorts, activation, trial-to-paid, deliverability</div>
+            <div class="compare-cell mobile">Keyword rank, screenshot quality, paywall structure, review recency</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Retention lens</div>
+            <div class="compare-cell">NRR and expansion path</div>
+            <div class="compare-cell mobile">D1, D7, D30 retention and habit formation</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Pricing lever</div>
+            <div class="compare-cell">Annual plan, tier structure, usage logic</div>
+            <div class="compare-cell mobile">Paywall placement, plan framing, in-app purchase structure</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-label">Content priority</div>
+            <div class="compare-cell">Comparison pages, help centre, use-case pages</div>
+            <div class="compare-cell mobile">Title, subtitle, first lines, screenshot story, preview video</div>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <h3>ASO is usually the missed lever</h3>
+          <p>A bad app listing sounds like the founder describing what they built. A good listing sounds like the buyer describing what they are looking for. Title matters. Subtitle matters. First lines matter. Screenshots matter more than most teams admit.</p>
+          <p>If the app has not had fresh reviews in months, that matters too. Fresh reviews matter more than most people think. I'd treat this as a distribution problem, not just store cleanup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p09">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 09</div>
+          <h2 class="part-title">The portfolio layer</h2>
+          <p class="part-desc">At product three, the model changes. I stop asking how to market one product well and start asking how to run a portfolio system without drowning in context switching.</p>
+        </div>
+        <div class="part-ghost">09</div>
+      </div>
+    </div>
+    <div class="part-body bg-lavender">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">09</span>
+            <span class="section-kicker-label">Shared system</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+
+        <div class="ops-grid">
+          <article class="ops-card">
+            <h3>Standardise the stack early</h3>
+            <ul>
+              <li>Shared analytics logic</li>
+              <li>Shared email infrastructure</li>
+              <li>Shared review management rhythm</li>
+              <li>Shared naming for events and lifecycle moments</li>
+            </ul>
+          </article>
+          <article class="ops-card">
+            <h3>Protect comparability</h3>
+            <ul>
+              <li>Parallel tracking before migration</li>
+              <li>Preserve historical reference points</li>
+              <li>Document the baseline before changes</li>
+              <li>Avoid month four confusion masquerading as analysis</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="text-col">
+          <h3>Cross-portfolio CRM</h3>
+          <p>Some customers will overlap across products. Some audiences will too. That only becomes useful if someone can actually see it. This is where a holding company starts becoming smarter than a set of separate products.</p>
+          <h3>Shared learning system</h3>
+          <p>Every useful result should travel. Pricing test that worked. Subject line pattern that worked. Review prompt wording that worked. Integration strategy that worked. If one product learns and the others do not inherit it, the portfolio is slower than it needs to be.</p>
+          <h3>One marketer, more than one product</h3>
+          <p>One strong marketer can run more than one product if the system is built for it. Standard dashboards. Clean prompts. Shared experiment logs. Clear positioning memory. That is the difference between working across a portfolio and constantly reloading context from scratch.</p>
+        </div>
+
+        <div class="action">
+          <p>If Everis is already running two or more products, I would create a shared marketing learnings document this week and start logging results immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p10">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 10</div>
+          <h2 class="part-title">How Everis markets itself</h2>
+          <p class="part-desc">Not founder-brand content dressed up as company strategy. Everis-specific marketing. Why the right founder should think of Everis first when it is finally time to sell.</p>
+        </div>
+        <div class="part-ghost">10</div>
+      </div>
+    </div>
+    <div class="part-body bg-cream">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">10</span>
+            <span class="section-kicker-label">Reputation infrastructure</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+
+        <div class="text-col">
+          <p class="lead">The question is simple. Why should a strong bootstrapped founder think of Everis first when it is finally time to sell?</p>
+          <p>The answer is not just founder credibility. That helps. It is not enough. The answer is that Everis becomes known for what it actually does after the close.</p>
+          <p>That means public proof, not vague positioning. What changed after acquisition. What stayed the same. What improved. What the founder appreciated. What the team learned. What would be done differently next time.</p>
+        </div>
+
+        <div class="quote">
+          <p>What I want to build here is a reputation that compounds, not just a content schedule.</p>
+        </div>
+
+        <div class="flywheel">
+          <div class="flywheel-text">
+            <h3>The Everis narrative</h3>
+            <p>It should say this plainly. We buy useful software that never reached the heights it should have. We know how to run and grow it. We respect what made it work in the first place. And we are willing to show our work.</p>
+            <p>That last point matters most. Specific proof travels farther than abstract positioning. It also ages better.</p>
+            <h3>What that looks like in practice</h3>
+            <p>Case-led content. Honest founder stories. Clear operational notes. Running Remote as a room where the right founders already are. My take is simple: the event does not create trust. Trust comes from people seeing that you live what you preach and from the specific proof you bring. The event just gives that proof a bigger stage. Sidebar: <strong>such a cool community.</strong></p>
+          </div>
+          <div class="flywheel-wrap">
+            <svg viewBox="0 0 340 340" role="img" aria-label="Everis brand flywheel">
+              <defs>
+                <linearGradient id="gradCenter" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#0fb5d6"/>
+                  <stop offset="100%" stop-color="#5b16b8"/>
+                </linearGradient>
+              </defs>
+              <circle cx="170" cy="170" r="126" fill="none" stroke="rgba(15,181,214,.12)" stroke-width="1.1"/>
+              <circle cx="170" cy="170" r="112" fill="none" stroke="rgba(15,181,214,.14)" stroke-width="2.5"/>
+              <circle cx="170" cy="170" r="72" fill="none" stroke="rgba(91,22,184,.08)" stroke-width="1"/>
+              <circle cx="170" cy="58" r="31" fill="#0f0c2a"/>
+              <circle cx="276" cy="136" r="31" fill="#0f0c2a"/>
+              <circle cx="235" cy="261" r="31" fill="#0f0c2a"/>
+              <circle cx="105" cy="261" r="31" fill="#0f0c2a"/>
+              <circle cx="64" cy="136" r="31" fill="#0f0c2a"/>
+              <circle cx="170" cy="170" r="48" fill="url(#gradCenter)"/>
+              <g fill="#fff" font-family="DM Sans, sans-serif" text-anchor="middle" font-weight="700">
+                <text x="170" y="61" font-size="7.1" letter-spacing=".45">ACQUIRE</text>
+                <text x="276" y="139" font-size="7.2" letter-spacing=".45">GROW</text>
+                <text x="235" y="264" font-size="6.2" letter-spacing=".3">DOCUMENT</text>
+                <text x="105" y="264" font-size="6.8" letter-spacing=".42">PUBLISH</text>
+                <text x="64" y="139" font-size="6.9" letter-spacing=".4">ATTRACT</text>
+                <text x="170" y="175" font-size="12">EVERIS</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<div class="divider"><div class="divider-line"></div></div>
+
+<section class="part" id="p11">
+    <div class="part-head">
+      <div class="part-head-inner">
+        <div class="part-text">
+          <div class="part-badge">Part 11</div>
+          <h2 class="part-title">Anti-patterns</h2>
+          <p class="part-desc">These are the mistakes I would expect to see again and again. Not theoretical ones. Observable ones.</p>
+        </div>
+        <div class="part-ghost">11</div>
+      </div>
+    </div>
+    <div class="part-body bg-white">
+      <div class="part-body-inner">
+        <div class="section-kicker">
+          <div class="section-kicker-row">
+            <span class="section-kicker-num">11</span>
+            <span class="section-kicker-label">What kills momentum</span>
+            <span class="section-kicker-line"></span>
+          </div>
+        </div>
+
+        <div class="anti-grid">
+          <article class="anti-card pink">
+            <h3>Running campaigns on a burnout product</h3>
+            <p>More traffic into a shaky experience just creates negative sentiment faster.</p>
+          </article>
+          <article class="anti-card teal">
+            <h3>Rebranding too early</h3>
+            <p>A new owner does not need a new visual identity in week three. That usually signals anxiety, not strategy.</p>
+          </article>
+          <article class="anti-card purple">
+            <h3>Buying traffic before fixing conversion</h3>
+            <p>Paid amplifies the leak. It does not solve it.</p>
+          </article>
+        </div>
+
+        <div class="short-grid">
+          <article class="short-card">
+            <h4>Inherited technical debt</h4>
+            <p>If the founder accumulated years of shortcuts and quick fixes, I want to know before I build more on top of fragile foundations.</p>
+          </article>
+          <article class="short-card">
+            <h4>Broken deliverability</h4>
+            <p>A strong lifecycle sequence means nothing if the domain setup is quietly damaged.</p>
+          </article>
+          <article class="short-card">
+            <h4>Marketing to the founder's imagined customer</h4>
+            <p>The founder built for freelancers. The money came from agencies. That happens all the time.</p>
+          </article>
+          <article class="short-card">
+            <h4>Referral programme too early</h4>
+            <p>Do not pour more users into a bucket that is still leaking badly.</p>
+          </article>
+          <article class="short-card">
+            <h4>Using the handover period for the wrong questions</h4>
+            <p>Technical questions matter. Market memory matters more.</p>
+          </article>
+          <article class="short-card">
+            <h4>Building Everis out of the founders' old stories</h4>
+            <p>Time Doctor and Running Remote are credibility assets. They are not the Everis story on their own.</p>
+          </article>
+        </div>
+
+        <div class="watch">
+          <p>The biggest mistake is trying to fix everything at once. Too many changes, no sequencing, muddy measurement, false urgency. The order exists for a reason.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script src="site-shell.js?v=20260423b"></script>
+<script>
+document.querySelectorAll('.check-item').forEach(function(item){
+  item.addEventListener('click', function(){
+    item.classList.toggle('is-done');
+  });
+});
+
+const navLinks = Array.from(document.querySelectorAll('.nav-link'));
+const sections = navLinks.map(function(link){
+  return document.querySelector(link.getAttribute('href'));
+}).filter(Boolean);
+
+const observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(entry){
+    if(!entry.isIntersecting) return;
+    const activeId = '#' + entry.target.id;
+    navLinks.forEach(function(link){
+      link.classList.toggle('active', link.getAttribute('href') === activeId);
+    });
+  });
+}, {
+  rootMargin: '-28% 0px -58% 0px',
+  threshold: 0
+});
+
+sections.forEach(function(section){
+  observer.observe(section);
+});
+
+/* ── Scroll reveal ── */
+var revealSel = [
+  '.entry-card','.profile-card','.anti-card','.stat-card','.stat-lead',
+  '.q-card','.time-card','.mini-stat','.ops-card','.short-card',
+  '.note','.watch','.action','.quote','.before-after',
+  '.matrix','.compare','.flywheel','.mini-stat-row','.check-grid',
+  '.stat-band','.timeline'
+].join(',');
+
+document.querySelectorAll(revealSel).forEach(function(el){
+  if(el.closest('.hero')) return; // never animate hero elements
+  el.classList.add('sr');
+  var parent = el.parentElement;
+  if(!parent) return;
+  var siblings = Array.from(parent.children).filter(function(c){ return c.classList.contains('sr'); });
+  var idx = siblings.indexOf(el);
+  if(idx > 0) el.classList.add('sr-d' + Math.min(idx, 4));
+});
+
+var revealObs = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -36px 0px' });
+
+document.querySelectorAll('.sr').forEach(function(el){
+  revealObs.observe(el);
+});
+</script>
+</body>
+</html>
